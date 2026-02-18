@@ -56,12 +56,31 @@ Test $H_0:\E(zu)=0$. Under $H_0$ and homoskedasticity, the test statistic is $n\
 \subsection{Must Include Exogenous Regressors in First Stage}
 With endogenous $x_k$ and instruments $z=(x_{-k},z_k)$: the first stage \emph{must} regress $x_k$ on \emph{all} of $z$, not just $z_k$. Omitting $x_{-k}$ causes OVB in $\tilde\pi$, yielding $\hat\beta_k \pto \beta_k\pi/(\pi+\nu) \neq \beta_k$. Intuitively, $\hat{x}_k$ without controls captures variation from $x_{-k}$, which violates the ceteris paribus interpretation.
 
+\subsection{LATE Assumptions}
+With heterogeneous effects and binary $D,Z$, IV does not identify the ATE. The LATE framework (Imbens \& Angrist, 1994) imposes:
+\begin{itemize}[nosep]
+\item \textbf{Independence:} $(Y_i(0),Y_i(1),D_i(0),D_i(1))\perp Z_i$.
+\item \textbf{Exclusion:} $Y_i(d,z)=Y_i(d)$ $\forall d,z$ (instrument affects $Y$ only through $D$).
+\item \textbf{First stage:} $P(D\!=\!1|Z\!=\!1)\neq P(D\!=\!1|Z\!=\!0)$.
+\item \textbf{Monotonicity:} $D_i(1)\geq D_i(0)$ $\forall i$ (no defiers).
+\end{itemize}
+Monotonicity partitions the population into \textbf{compliers} ($D_i(1)>D_i(0)$), \textbf{always-takers} ($D_i(1)=D_i(0)=1$), and \textbf{never-takers} ($D_i(1)=D_i(0)=0$).
+
 \subsection{LATE Interpretation}
-With heterogeneous effects and binary $D,Z$, IV does not identify the ATE. Under \textbf{monotonicity} ($D_i(1)\geq D_i(0)$ $\forall i$, no defiers)---which, together with independence and exclusion, is equivalent to (A1)--(A5)---the Wald estimand is the \textbf{LATE}:
+Under the LATE assumptions, the Wald estimand identifies the \textbf{LATE}:
 \begin{align*}
-    \frac{\E(Y|Z\!=\!1)-\E(Y|Z\!=\!0)}{\E(D|Z\!=\!1)-\E(D|Z\!=\!0)} = \E(y(1)\!-\!y(0)|\text{complier}).
+    \frac{\E(Y|Z\!=\!1)-\E(Y|Z\!=\!0)}{\E(D|Z\!=\!1)-\E(D|Z\!=\!0)} = \E(Y(1)\!-\!Y(0)|\text{complier}).
 \end{align*}
-\textbf{Derivation:} Numerator $= \E(Y(1)\!-\!Y(0))$ by exogeneity. Always-takers/never-takers contribute zero ($D$ unchanged by $Z$); defiers ruled out. So numerator $= P(\text{c})\cdot\E(y(1)\!-\!y(0)|\text{c})$. Denominator $= P(\text{c})$. Ratio is the LATE.
+\textbf{Derivation:} Numerator $= \E(Y(1)\!-\!Y(0))$ by independence/exclusion. Always-takers and never-takers contribute zero ($D$ unchanged by $Z$); defiers ruled out by monotonicity. So numerator $= P(\text{c})\cdot\E(Y(1)\!-\!Y(0)|\text{c})$. Denominator $= P(\text{c})$.
+
+\subsection{Equivalence with Latent Variable Model (Vytlacil, 2002)}
+Consider the latent variable selection model $Y_d = \mu_d(X,U_d)$, $D = \mathbf{1}[\mu_D(Z)\geq U_D]$ with:
+(A1) $\mu_D(Z)$ nondegenerate $|X$;
+(A2) $(U_0,U_D),(U_1,U_D)\perp Z|X$;
+(A3) $U_D$ abs.\ continuous;
+(A4) $\E|Y_d|<\infty$;
+(A5) $0\!<\!P(D\!=\!1|X)\!<\!1$.
+Vytlacil (2002): (A1)--(A5) $\iff$ LATE assumptions. The latent variable model generates LATE, and the LATE assumptions generate the latent variable model. Breaks down for multivalued treatments.
 
 \subsection{Hausman Test (Exogeneity)}
 Test $H_0:\E(xu)=0$ using both OLS and IV. Under $H_0$, both are consistent; under $H_1$, only IV is. Joint distribution:

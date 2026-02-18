@@ -28,12 +28,3 @@ Both are random through $U$; $\beta$ may also be random (heterogeneous effects).
 In the all-causes model $Y = D'\beta + U$: $\E(DU)=0$ asserts observed and unobserved \emph{causes} are orthogonal---a substantive causal claim. In contrast, the BLP residual $\varepsilon = Y - D'\beta^*$ satisfies $\E(D\varepsilon)=0$ by construction (FOC of MSE minimization), with no causal content.
 
 $\beta^* = \beta$ iff the causal orthogonality condition $\E(DU)=0$ holds. When $\E(DU)\neq 0$ (endogeneity), $\beta^*\neq\beta$ and OLS is inconsistent for the causal parameter.
-
-\subsection{Assumptions (A1--A5) \& Equivalence}
-Latent variable model: $Y_d = \mu_d(X, U_d)$, $D = \mathbf{1}[\mu_D(Z) \geq U_D]$.
-(A1) $\mu_D(Z)$ nondegenerate $|X$;
-(A2) $(U_0,U_D),(U_1,U_D) \perp Z|X$;
-(A3) $U_D$ abs.\ continuous;
-(A4) $\E|Y_d|<\infty$;
-(A5) $0\!<\!P(D\!=\!1|X)\!<\!1$.
-By Vytlacil (2002), (A1)--(A5) $\iff$ LATE assumptions (independence, exclusion, relevance, monotonicity). Breaks down for multivalued treatments.
