@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 11:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,29 +575,30 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 27.
 
-[3]) (./Entries/10_IV.tex) (./Entries/11_Weak_Instruments.tex)
+[3]) (./Entries/10_IV.tex) (./Entries/10b_Control_Functions.tex)
+(./Entries/10c_MTE.tex [4]) (./Entries/11_Weak_Instruments.tex)
 (./Entries/12_DiD.tex
 Overfull \hbox (1.34152pt too wide) detected at line 18
 []
  []
 
-[4]) (./Entries/13_RDD.tex) (./Entries/14_Panel_Data.tex)
-(./Entries/15_Tips_and_Tricks.tex [5]) [6] (./main.aux)
+) (./Entries/13_RDD.tex [5]) (./Entries/14_Panel_Data.tex)
+(./Entries/15_Tips_and_Tricks.tex) [6] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BCDEDAEC2BE1CCC97BB7086460614B8A;22094.
+(rerunfilecheck)             Checksum: 07692ECE3B6C1658FBEE85F64B22DD38;24634.
  ) 
 Here is how much of TeX's memory you used:
- 12649 strings out of 476106
- 189652 string characters out of 5793934
+ 12693 strings out of 476106
+ 190496 string characters out of 5793934
  2018975 words of memory out of 5000000
- 34302 multiletter control sequences out of 15000+600000
+ 34326 multiletter control sequences out of 15000+600000
  567562 words of font info for 72 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 84i,18n,96p,541b,900s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,18n,96p,541b,760s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/jackruf/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.6
 00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
@@ -619,10 +620,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist
 type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (6 pages, 321954 bytes).
+Output written on main.pdf (6 pages, 330430 bytes).
 PDF statistics:
- 688 PDF objects out of 1000 (max. 8388607)
- 630 compressed objects within 7 object streams
- 142 named destinations out of 1000 (max. 500000)
- 1001 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 747 PDF objects out of 1000 (max. 8388607)
+ 689 compressed objects within 7 object streams
+ 156 named destinations out of 1000 (max. 500000)
+ 1113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

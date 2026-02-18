@@ -1,0 +1,42 @@
+\section{Marginal Treatment Effects}
+
+\subsection{Framework}
+Binary treatment $D\in\{0,1\}$, outcome $Y$, potential outcomes $Y(0),Y(1)$. Selection: $D=\mathbf{1}[U\leq p(Z)]$, where $p(Z)=P(D\!=\!1|Z)$ is the propensity score and $U\sim\text{Unif}[0,1]$ (normalized). Assumptions: \\
+(A1) $p(Z)$ nondegenerate given $X$; (A2) $(Y(0),Y(1),U)\perp Z|X$; \\
+(A3) $U$ absolutely continuous; (A4) $\E|Y_d|<\infty$; (A5) $0<P(D\!=\!1|X)<1$.
+
+\subsection{MTE Definition}
+\begin{align*}
+    \text{MTE}(u) \equiv \E[Y(1)-Y(0)|U=u].
+\end{align*}
+The MTE is the average treatment effect for agents at the margin of indifference when $U=u$. Low $U$ $\implies$ high propensity to select into treatment.
+
+\subsection{Target Parameters as Weighted Averages}
+All standard treatment parameters are weighted averages of MTE:
+\begin{align*}
+    \text{ATE} &= \int_0^1 \text{MTE}(u)\,du, \quad \omega_{\text{ATE}}=1, \\
+    \text{ATT} &= \int_0^1 \text{MTE}(u)\cdot\frac{P(u\leq p(Z))}{P(D\!=\!1)}\,du, \\
+    \text{ATU} &= \int_0^1 \text{MTE}(u)\cdot\frac{P(u> p(Z))}{P(D\!=\!0)}\,du.
+\end{align*}
+ATT overweights MTE at low $u$ (likely treated); ATU overweights high $u$.
+
+\subsection{Selection Patterns}
+\textbf{Selection on the gain:} MTE$(u)$ decreasing — those who select $D\!=\!1$ have higher returns. Implies ATT $>$ ATE $>$ ATU. \\
+\textbf{Selection on the loss:} MTE$(u)$ increasing — those who select $D\!=\!1$ gain less. ATU $>$ ATE $>$ ATT. \\
+\textbf{Essential heterogeneity:} Agents select based on unobserved idiosyncratic returns. Different instruments identify different weighted averages of MTE $\implies$ different IV estimates are not comparable.
+
+\subsection{Identification}
+With continuous $Z$, the MTE is identified from the derivative of the conditional expectation:
+\begin{align*}
+    \text{MTE}(p) = \frac{\partial}{\partial p}\E[Y|p(Z)=p].
+\end{align*}
+\textbf{Intuition:} a marginal increase in $p$ induces the agent at $U=p$ into treatment.
+
+\subsection{Vytlacil (2002) Equivalence}
+Assumptions (A1)--(A5) of the nonparametric selection model (generalized Roy) are \emph{equivalent} to the LATE assumptions of Imbens \& Angrist (1994) when $D$ is binary. The latent variable model implies their assumptions and vice versa. This equivalence breaks down for multivalued treatments.
+
+\subsection{Policy Relevant Treatment Effect}
+For a policy shifting $p(Z)$ from $p_{a'}$ to $p_a$:
+$\text{PRTE} = \int_0^1 \text{MTE}(u)\cdot\omega_{\text{PRTE}}(u)\,du$,
+where $\omega_{\text{PRTE}}(u)$ depends on the policy change. Unlike LATE, PRTE answers: ``what is the effect on people this policy would move into treatment?''
+

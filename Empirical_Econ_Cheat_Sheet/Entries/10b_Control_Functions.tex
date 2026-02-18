@@ -1,0 +1,29 @@
+\section{Control Functions}
+
+\subsection{Setup and Equivalence to 2SLS}
+Model: $y_1 = z_1'\delta_1 + \alpha_1 y_2 + u_1$, $\E(z'u_1)=0$. Reduced form: $y_2 = z'\pi_2 + v_2$, $\E(z'v_2)=0$. Endogeneity arises iff $\Cov(u_1,v_2)\neq 0$.
+
+\textbf{CF idea:} Project $u_1$ on $v_2$: $u_1 = \rho_1 v_2 + e_1$, where $\E(v_2 e_1)=0$ and $\E(z'e_1)=0$. Substituting:
+\begin{align*}
+    y_1 = z_1'\delta_1 + \alpha_1 y_2 + \rho_1 v_2 + e_1.
+\end{align*}
+Since $e_1\perp(z_1,y_2,v_2)$, OLS on this equation is consistent.
+Replace $v_2$ with $\hat{v}_2$ (OLS residuals from first stage). In the linear case, CF estimates of $\delta_1,\alpha_1$ are \textbf{numerically identical} to 2SLS. Test $H_0:\rho_1=0$ is a test of exogeneity.
+
+\subsection{Advantage: Nonlinear Models}
+For $y_1 = z_1'\delta_1 + \alpha_1 y_2 + \gamma_1 y_2^2 + u_1$, standard 2SLS needs extra instruments for $y_2^2$. CF only adds the scalar $\hat{v}_2$:
+\begin{align*}
+    y_1 \text{ on } z_1, y_2, y_2^2, \hat{v}_2.
+\end{align*}
+Requires stronger assumption: $\E(u_1|z,v_2)=\E(u_1|v_2)=\rho_1 v_2$ (independence of $v_2$ from $z$, linearity of conditional expectation).
+
+\subsection{Binary Endogenous Variable}
+If $y_2\in\{0,1\}$ with $y_2=\mathbf{1}[z'\pi_2+e_2\geq 0]$, $e_2\sim N(0,1)$: the CF uses the \textbf{generalized residual}
+$\widehat{gr}_{i2} = y_{i2}\lambda(z_i'\hat\pi_2) - (1-y_{i2})\lambda(-z_i'\hat\pi_2)$,
+where $\lambda(\cdot)=\phi(\cdot)/\Phi(\cdot)$ is the inverse Mills ratio. Regress $y_1$ on $z_1,y_2,\widehat{gr}_2$. Less robust than IV but more efficient when correct.
+
+\subsection{CF vs.\ IV: Tradeoffs}
+\textbf{IV (2SLS):} More robust — only needs $\E(z'u_1)=0$ and rank condition. Works regardless of $y_2$'s distribution. \\
+\textbf{CF:} More efficient — solves endogeneity with one scalar control. But requires correct specification of the first-stage distribution and $\E(u_1|v_2)$ linearity. Misspecification $\implies$ inconsistency.
+\subsection{Correlated Random Coefficients}
+Model: $y_1 = \alpha_0 + z_1'\delta_1 + a_1 y_2 + u_1$ where $a_1=\alpha_1+v_1$ is random. Write $e_1=v_1 y_2 + u_1$. 2SLS is inconsistent if $\Cov(z,v_1 y_2)\neq 0$. CF fix: include $\hat{v}_2$ and $\hat{v}_2 y_2$ as controls $\implies$ consistent $\hat\alpha_1$ (Heckman \& Vytlacil, 1998).
