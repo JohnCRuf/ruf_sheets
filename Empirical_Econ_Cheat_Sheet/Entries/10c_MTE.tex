@@ -1,9 +1,7 @@
 \section{Marginal Treatment Effects}
 
 \subsection{Framework}
-Binary treatment $D\in\{0,1\}$, outcome $Y$, potential outcomes $Y(0),Y(1)$. Selection: $D=\mathbf{1}[U\leq p(Z)]$, where $p(Z)=P(D\!=\!1|Z)$ is the propensity score and $U\sim\text{Unif}[0,1]$ (normalized). Assumptions: \\
-(A1) $p(Z)$ nondegenerate given $X$; (A2) $(Y(0),Y(1),U)\perp Z|X$; \\
-(A3) $U$ absolutely continuous; (A4) $\E|Y_d|<\infty$; (A5) $0<P(D\!=\!1|X)<1$.
+Binary treatment $D\in\{0,1\}$, outcome $Y$, potential outcomes $Y(0),Y(1)$. Under (A1)--(A5), we normalize $U \equiv F_{U_D}(U_D) \sim \text{Unif}[0,1]$ (WLOG by A3), so $D=\mathbf{1}[U\leq p(Z)]$ where $p(Z)=P(D\!=\!1|Z)$.
 
 \subsection{MTE Definition}
 \begin{align*}
@@ -26,14 +24,11 @@ ATT overweights MTE at low $u$ (likely treated); ATU overweights high $u$.
 \textbf{Essential heterogeneity:} Agents select based on unobserved idiosyncratic returns. Different instruments identify different weighted averages of MTE $\implies$ different IV estimates are not comparable.
 
 \subsection{Identification}
-With continuous $Z$, the MTE is identified from the derivative of the conditional expectation:
+With a continuous instrument (so that $p(Z)$ has continuous support), the MTE is identified from the derivative of the conditional expectation:
 \begin{align*}
     \text{MTE}(p) = \frac{\partial}{\partial p}\E[Y|p(Z)=p].
 \end{align*}
-\textbf{Intuition:} a marginal increase in $p$ induces the agent at $U=p$ into treatment.
-
-\subsection{Vytlacil (2002) Equivalence}
-Assumptions (A1)--(A5) of the nonparametric selection model (generalized Roy) are \emph{equivalent} to the LATE assumptions of Imbens \& Angrist (1994) when $D$ is binary. The latent variable model implies their assumptions and vice versa. This equivalence breaks down for multivalued treatments.
+\textbf{Intuition:} a marginal increase in $p$ induces the agent at $U=p$ into treatment. Without a continuous instrument, the derivative is not pointwise identified; see Brinch, Mogstad \& Wiswall (2017) for the discrete case.
 
 \subsection{Policy Relevant Treatment Effect}
 For a policy shifting $p(Z)$ from $p_{a'}$ to $p_a$:
