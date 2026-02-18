@@ -34,22 +34,22 @@
   \fcolorbox{black}{black!8}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{\centering #1}}}
 \titleformat{\section}[block]
   {\normalfont\large\bfseries}{}{0mm}{\sectionbox}
-\titlespacing*{\section}{0mm}{0.5ex plus .5ex minus .2ex}{0.5ex plus .2ex}
+\titlespacing*{\section}{0mm}{0.3ex plus .3ex minus .2ex}{0.3ex plus .2ex}
 
 \makeatletter
 \newcommand{\notimplies}{%
   \mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
 \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
-                                {-1explus -.5ex minus -.2ex}%
-                                {0.5ex plus .2ex}%
+                                {-0.8explus -.5ex minus -.2ex}%
+                                {0.3ex plus .2ex}%
                                 {\normalfont\normalsize\bfseries}}
 \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
-                                {-1ex plus -.5ex minus -.2ex}%
-                                {1ex plus .2ex}%
+                                {-0.8ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
                                
                                 {\normalfont\small\bfseries}}
 \makeatother
 \setcounter{secnumdepth}{0}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt plus 0.5ex}
+\setlength{\parskip}{0pt plus 0.3ex}
 % -----------------------------------------------------------------------

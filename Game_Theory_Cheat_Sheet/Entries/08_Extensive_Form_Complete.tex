@@ -32,16 +32,16 @@ with \(\tilde{A}_i\) the set of all of player \(i\)'s strategies \(\sigma_i\) an
 A strategy \(\sigma_i\) is \textbf{sequentially rational} against \(\sigma_{-i}\) if, for all \(h \in S(H)\) and \(\sigma_i'\), we have
 \[\omega(\sigma_i,\sigma_{-i},h) \succsim_i \omega(\sigma_i',\sigma_{-i},h).\]
 
-Notice that this must hold not just at the initial node (\(\emptyset\)), but at all subhistories. If every \(\sigma_i\) in \(\sigma = (\sigma_1,\ldots,\sigma_n)\) is sequentially rational against \(\sigma_{-i}\), then \(\sigma\) is a \textbf{sequential equilibrium}.
+Notice that this must hold not just at the initial node (\(\emptyset\)), but at all subhistories. If every \(\sigma_i\) in \(\sigma = (\sigma_1,\ldots,\sigma_n)\) is sequentially rational against \(\sigma_{-i}\), then \(\sigma\) is a \textbf{subgame perfect equilibrium} (SPE). (Full \textit{sequential equilibrium} additionally requires consistent beliefs; see incomplete-information section.)
 
 \subsection{One-Shot Deviation Principle}
 Given \(\sigma_i\), a \textbf{one-shot deviation} is a \(\sigma_i'\) such that there is a unique \(h\) with \(\sigma_i(h) \neq \sigma_i'(h)\).
 
-Now, let \(G\) be a finite EFGCI. Then, \(\sigma\) is a sequential equilibrium if and only if
+Now, let \(G\) be a finite EFGCI. Then, \(\sigma\) is an SPE if and only if
 \[\omega(\sigma,h) \succsim_i \omega(\sigma'_i,\, \sigma_{-i}, h)\]
-for all \(i\), all \(h \in S^*(H)\), and one-shot deviation \(\sigma_i\) to \(\sigma_i'\).
+for all \(i\), all \(h \in S^*(H)\), and one-shot deviation \(\sigma_i\) to \(\sigma_i'\). (OSD extends to infinitely repeated games with discounting.)
 
-\subsection{Existence of Sequential Equilibria}
+\subsection{Existence of SPE}
 An EFGCI has \textbf{purely sequential moves} if \(\abs{P(h)} = 1\) for all \(h \in S^*(H)\).
 
-\textbf{Every finite EFGCI with purely sequential moves has a sequential equilibrium.}
+\textbf{Every finite EFGCI with purely sequential moves has an SPE.}

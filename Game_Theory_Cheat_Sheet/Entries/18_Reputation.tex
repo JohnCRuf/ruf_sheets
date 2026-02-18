@@ -15,3 +15,6 @@ This is because, starting from any normal-type strategy \(\sigma_\mathrm{I}\), t
 where \(\epsilon(h)\) is the posterior probability of the incumbent being aggressive at history \(h\). From this, we see that an entrant will only continue to play \(\mathrm{In}\) so long as \(\epsilon(h, \mathrm{In}, \mathrm{F}) \geq 2\epsilon(h)\).
 
 After \(k\) iterations of \((\mathrm{In}, \mathrm{F})\), this becomes the condition \(\epsilon(h) \geq 2^k\epsilon\). Implied by this condition is that \(k \geq -\frac{\log(2\epsilon)}{\log(2)}\).
+
+\subsection{Folk Theorem (Repeated Games)}
+Let \(G^\infty(\delta)\) be the infinitely repeated game with discount \(\delta\). A payoff \(v\) is \textbf{individually rational} if \(v_i \geq \min_{a_{-i}}\max_{a_i} u_i\) for all \(i\), and \textbf{feasible} if \(v \in \mathrm{conv}(u(A))\). \textbf{Folk Thm:} Every feasible, individually rational \(v\) is an SPE payoff of \(G^\infty(\delta)\) for \(\delta\) sufficiently close to~1.
