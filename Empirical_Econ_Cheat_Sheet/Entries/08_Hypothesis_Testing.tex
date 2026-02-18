@@ -1,22 +1,22 @@
 \section{Hypothesis Testing}
 
 \subsection{Definitions}
-\textbf{Null:} $H_0:\theta_0\in\Theta_0$. Simple if $\Theta_0$ singleton; composite otherwise.
+The \textbf{null hypothesis} is $H_0:\theta_0\in\Theta_0$. It is \textbf{simple} if $\Theta_0$ is a singleton, and \textbf{composite} otherwise.
 
-\textbf{Test:} $\phi_n(X_1,\ldots,X_n)\to\{0,1\}$. Reject $H_0$ iff $\phi_n=1$.
+A \textbf{test} is a function $\phi_n(X_1,\ldots,X_n)\to\{0,1\}$; we reject $H_0$ iff $\phi_n=1$.
 
-\textbf{Type I Error:} Reject when $H_0$ true. \textbf{Type II:} Fail to reject when false.
+A \textbf{Type I error} occurs when we reject a true $H_0$; a \textbf{Type II error} when we fail to reject a false $H_0$.
 
-\textbf{Power function:} $\beta_n(\theta)=P_\theta(\phi_n=1)$.
+The \textbf{power function} is $\beta_n(\theta)=P_\theta(\phi_n=1)$.
 
-\textbf{Size:} $\alpha:=\sup_{\theta\in\Theta_0}\beta_n(\theta)$.
+The \textbf{size} of the test is $\alpha:=\sup_{\theta\in\Theta_0}\beta_n(\theta)$.
 
-\textbf{Asymptotic size $\alpha$:} $\lim_{n\to\infty}\sup_{\theta\in\Theta_0}\beta_n(\theta)\leq\alpha$.
+A test has \textbf{asymptotic size $\alpha$} if $\lim_{n\to\infty}\sup_{\theta\in\Theta_0}\beta_n(\theta)\leq\alpha$.
 
 \subsection{Confidence Sets}
 $C_n$ is a $1-\alpha$ confidence set if $P_\theta(\theta\in C_n)\geq 1-\alpha$ for all $\theta$.
 
-\textbf{Pivot:} A function of data and unknown parameters whose distribution doesn't depend on unknown parameters (e.g.\ $\frac{\sqrt{n}(\bar{X}_n-\mu)}{\sigma}\sim N(0,1)$).
+\textbf{Pivot:} A function of data and unknown parameters whose distribution does not depend on unknown parameters (e.g.\ $\frac{\sqrt{n}(\bar{X}_n-\mu)}{\sigma}\sim N(0,1)$).
 
 \textbf{Exact (known $\sigma^2$):} $C_n = \left[\bar{X}_n \pm \frac{\sigma}{\sqrt{n}}z_{1-\alpha/2}\right]$.
 
@@ -27,7 +27,7 @@ Under $Y|X\sim N(X\beta,\sigma^2 I_n)$: $\hat\beta|X\sim N(\beta,\sigma^2(X'X)^{
 
 \textbf{t-statistic:} $T_n=\frac{\hat\beta_j-\beta_{j,0}}{se(\hat\beta_j)}\sim t_{n-k-1}$, where $se(\hat\beta_j)=\hat\sigma\sqrt{e_j'(X'X)^{-1}e_j}$.
 
-Reject $H_0:\beta_j=\beta_{j,0}$ if $|T_n|>t_{n-k-1,1-\alpha/2}$.
+We reject $H_0:\beta_j=\beta_{j,0}$ if $|T_n|>t_{n-k-1,1-\alpha/2}$.
 
 \textbf{p-value:} $\hat{p}=2F(-|T_n|)$ where $F$ is the $t_{n-k-1}$ CDF.
 

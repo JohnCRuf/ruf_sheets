@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 12:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -536,10 +536,10 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 (./Entries/02_Delta_Method.tex) (./Entries/03_Estimation.tex)
-(./Entries/04_MLE.tex) (./Entries/05_OLS_Setup.tex [1
+(./Entries/04_MLE.tex [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Entries/06_OLS_Finite_
-Sample.tex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+(./Entries/05_OLS_Setup.tex) (./Entries/06_OLS_Finite_Sample.tex
 Overfull \hbox (0.35083pt too wide) detected at line 34
 []
  []
@@ -566,7 +566,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 31.
 
 [2]) (./Entries/08_Hypothesis_Testing.tex) (./Entries/09_Potential_Outcomes.tex
-) (./Entries/09b_All_Causes.tex
+) (./Entries/09b_All_Causes.tex [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 27.
@@ -575,7 +575,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 27.
 
-[3]) (./Entries/10_IV.tex) (./Entries/10b_Control_Functions.tex)
+) (./Entries/10_IV.tex) (./Entries/10b_Control_Functions.tex)
 (./Entries/10c_MTE.tex [4]) (./Entries/11_Weak_Instruments.tex)
 (./Entries/12_DiD.tex
 Overfull \hbox (1.34152pt too wide) detected at line 18
@@ -583,7 +583,11 @@ Overfull \hbox (1.34152pt too wide) detected at line 18
  []
 
 ) (./Entries/13_RDD.tex [5]) (./Entries/14_Panel_Data.tex)
-(./Entries/15_Tips_and_Tricks.tex) [6] (./main.aux)
+(./Entries/15_Tips_and_Tricks.tex)
+Overfull \vbox (5.05568pt too high) has occurred while \output is active []
+
+
+[6] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -594,11 +598,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  12693 strings out of 476106
  190496 string characters out of 5793934
- 2018975 words of memory out of 5000000
+ 2019975 words of memory out of 5000000
  34326 multiletter control sequences out of 15000+600000
  567562 words of font info for 72 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 84i,18n,96p,541b,760s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,18n,96p,541b,762s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/jackruf/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.6
 00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
@@ -620,7 +624,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist
 type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (6 pages, 330835 bytes).
+Output written on main.pdf (6 pages, 330892 bytes).
 PDF statistics:
  747 PDF objects out of 1000 (max. 8388607)
  689 compressed objects within 7 object streams

@@ -4,7 +4,7 @@
 \begin{align*}
     y_i = x_i'\beta + u_i, \quad \E(x_i u_i)=0.
 \end{align*}
-$x_i\in\R^{k+1}$ with $x_{i0}=1$. ``Linear'' means linear in parameters $\beta_j$. The error $u_i$ contains unobserved determinants of $y_i$.
+Here $x_i\in\R^{k+1}$ with $x_{i0}=1$. We say the model is ``linear'' because it is linear in the parameters $\beta_j$. The error $u_i$ captures all unobserved determinants of $y_i$.
 
 \subsection{Identification}
 Assume $\E(xu)=0$ and no perfect collinearity (no $a\neq 0$ with $P(a'x=0)=1$).
@@ -22,7 +22,7 @@ Given iid sample $\{y_i,x_i\}_{i=1}^n$. Unique OLS estimator (when $X'X$ inverti
 \begin{align*}
     \hat\beta_n = \left(\frac{1}{n}\sum x_ix_i'\right)^{-1}\frac{1}{n}\sum x_iy_i = (X'X)^{-1}X'Y.
 \end{align*}
-Equivalently solves $\min_{b}\|Y - Xb\|^2$. FOC: $X'\hat{U}=0$.
+Equivalently, $\hat\beta_n$ solves $\min_{b}\|Y - Xb\|^2$. The FOC gives $X'\hat{U}=0$.
 
 \subsection{Projection Matrix}
 $P_X = X(X'X)^{-1}X'$: projects onto column space $\mathcal{S}(X)$.
@@ -48,7 +48,7 @@ Partition $Y = X_1\beta_1 + X_2\beta_2 + U$. Then:
 \begin{align*}
     \hat\beta_2 = (X_2'M_{X_1}X_2)^{-1}X_2'M_{X_1}Y.
 \end{align*}
-i.e., $\hat\beta_2$ is obtained by regressing the residuals of $Y$ on $X_1$ onto the residuals of $X_2$ on $X_1$.
+That is, $\hat\beta_2$ is obtained by regressing the residuals of $Y$ on $X_1$ onto the residuals of $X_2$ on $X_1$.
 
 \textbf{Proof:} $M_{X_1}Y = M_{X_1}X_2\hat\beta_2 + \hat{U}$, multiply by $X_2'$: $X_2'M_{X_1}Y = X_2'M_{X_1}X_2\hat\beta_2$ since $X'\hat{U}=0$.
 

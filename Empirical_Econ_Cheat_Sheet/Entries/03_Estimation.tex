@@ -4,7 +4,7 @@
 Given a sample $\{X_i\}_{i=1}^n$ from distribution $F$, a \textbf{statistic} is a function $T_n:(X_1,\ldots,X_n)\to V$. An \textbf{estimator} is a statistic used to learn about some feature $\theta(F)$.
 
 \subsection{Finite Sample Properties}
-\textbf{Bias:} $\text{Bias}(\hat{\theta}_n)=\E(\hat{\theta}_n)-\theta$. Unbiased if $\E(\hat\theta_n)=\theta$.
+The \textbf{bias} of $\hat\theta_n$ is $\text{Bias}(\hat{\theta}_n)=\E(\hat{\theta}_n)-\theta$. We say $\hat\theta_n$ is \textbf{unbiased} if $\E(\hat\theta_n)=\theta$.
 
 \textbf{Mean Squared Error:}
 \begin{align*}
@@ -12,14 +12,14 @@ Given a sample $\{X_i\}_{i=1}^n$ from distribution $F$, a \textbf{statistic} is 
 \end{align*}
 
 \subsection{Large Sample Properties}
-\textbf{Consistency:} $\hat\theta_n\pto\theta$ (or $\hat\theta_n\asto\theta$).
+We say $\hat\theta_n$ is \textbf{consistent} if $\hat\theta_n\pto\theta$ (or $\hat\theta_n\asto\theta$).
 
-\textbf{Asymptotic Normality:} $\sqrt{n}(\hat\theta_n - \theta)\dto N(0,V)$ for some $V$.
+We say $\hat\theta_n$ is \textbf{asymptotically normal} if $\sqrt{n}(\hat\theta_n - \theta)\dto N(0,V)$ for some $V$.
 
-\textbf{Asymptotic Efficiency:} An estimator achieving the smallest possible asymptotic variance among regular estimators (e.g.\ MLE under regularity conditions).
+An estimator is \textbf{asymptotically efficient} if it achieves the smallest possible asymptotic variance among regular estimators (e.g.\ MLE under regularity conditions).
 
 \subsection{Method of Moments}
-\textbf{Sample Analogue Principle:} Replace population moments with sample moments.
+The \textbf{sample analogue principle} replaces population moments with their sample counterparts.
 
 If $\theta$ satisfies $\E(m(X,\theta))=0$ for moment function $m$, the MoM estimator solves:
 \begin{align*}

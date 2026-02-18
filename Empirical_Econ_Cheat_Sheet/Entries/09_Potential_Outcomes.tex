@@ -5,7 +5,7 @@ Individual $i$ has potential outcomes $y_i(1)$ (treated) and $y_i(0)$ (untreated
 \begin{align*}
     Y_i = y_i(1)D_i + y_i(0)(1-D_i).
 \end{align*}
-\textbf{Fundamental problem:} never observe both $y_i(1)$ and $y_i(0)$.
+The \textbf{fundamental problem} of causal inference is that we never observe both $y_i(1)$ and $y_i(0)$.
 
 \subsection{Treatment Effects}
 \textbf{ATE:} $\E(y(1)-y(0))$.
@@ -24,14 +24,14 @@ Individual $i$ has potential outcomes $y_i(1)$ (treated) and $y_i(0)$ (untreated
     &\E(Y|D=1) - \E(Y|D=0) \\
     &= \underbrace{\E(y(1)-y(0)|D=1)}_{\text{ATT}} + \underbrace{\E(y(0)|D=1)-\E(y(0)|D=0)}_{\text{Selection Bias}}.
 \end{align*}
-Naive comparison $=$ ATT only if selection bias $=0$.
+The naive comparison equals the ATT only when the selection bias vanishes.
 
 \subsection{Random Assignment}
 $D\perp (y(0),y(1))$ implies:
 \begin{align*}
     \E(y(d)|D) = \E(y(d)) \quad \text{for } d\in\{0,1\}.
 \end{align*}
-Selection bias vanishes, and $\beta_1 = \E(Y|D=1)-\E(Y|D=0) = \text{ATE}$.
+Now, selection bias vanishes, and $\beta_1 = \E(Y|D=1)-\E(Y|D=0) = \text{ATE}$.
 
 OLS of $Y$ on $D$ gives unbiased estimate of ATE.
 
@@ -53,7 +53,7 @@ If $x\in\{0,1\}$ and effects vary, the correct specification is:
 \end{align*}
 Here $\beta_2=\E(y(1)\!-\!y(0)|x\!=\!0)$ and $\beta_3=\text{ATE}(x\!=\!1)-\text{ATE}(x\!=\!0)$.
 
-\textbf{Misspecification trap:} If you omit $D_i x_i$ and run $y=b_0+b_1 x+b_2 D+e$, then $b_2$ converges to a \emph{variance-weighted} average of conditional ATEs:
+A common \textbf{misspecification trap} arises: if you omit $D_i x_i$ and run $y=b_0+b_1 x+b_2 D+e$, then $b_2$ converges to a \emph{variance-weighted} average of conditional ATEs:
 \begin{align*}
     b_2 \pto \sum_x \frac{\Var(D|x)\,P(x)}{\E(\Var(D|x))}\cdot\text{ATE}(x),
 \end{align*}

@@ -1,7 +1,7 @@
 \section{Panel Data}
 
 \subsection{Setup}
-$N$ individuals, $T$ time periods. Linear model:
+Consider $N$ individuals observed over $T$ time periods. The linear model is:
 \begin{align*}
     Y_{it} = X_{it}'\beta + \alpha_i + u_{it},
 \end{align*}
@@ -9,7 +9,7 @@ where $\alpha_i$ is an unobserved individual fixed effect. \\
 \textbf{Asymptotics:} Large $N$, small $T$.
 
 \subsection{Problem with Pooled OLS}
-Pooled OLS treats $\alpha_i + u_{it}$ as the error. If $\E(X_{it}\alpha_i)\neq 0$, the composite error is correlated with regressors, and pooled OLS is inconsistent.
+Pooled OLS treats $\alpha_i + u_{it}$ as a composite error. If $\E(X_{it}\alpha_i)\neq 0$, this composite error is correlated with the regressors, making pooled OLS inconsistent.
 
 \subsection{First Differencing (FD)}
 Difference across time to eliminate $\alpha_i$:
@@ -18,9 +18,9 @@ Difference across time to eliminate $\alpha_i$:
 \end{align*}
 FD estimator: $\hat\beta_{\text{FD}}$ is OLS applied to differenced data.
 
-\textbf{Consistency requires:} $\E(\Delta X_{it}'\Delta u_{it})=0$ (necessary and sufficient). Contemporaneous exogeneity of the \emph{changes} ($\E(\Delta u_{it}|\Delta X_{it})=0$) is sufficient for this, and is weaker than strict exogeneity of levels.
+\textbf{Consistency requires:} $\E(\Delta X_{it}'\Delta u_{it})=0$, that is, the changes in regressors are uncorrelated with the changes in errors. A sufficient (but stronger than necessary) condition is $\E(u_{it}|X_{it},X_{it-1})=0$; FD only requires the moment condition on the differences, not full contemporaneous exogeneity.
 
-\textbf{Not sufficient if:} unobservables in \emph{other} time periods are correlated with today's regressors.
+\textbf{Not sufficient if} unobservables in \emph{other} time periods are correlated with today's regressors.
 
 \subsection{Strict Exogeneity}
 $\E(u_{it}|X_{i1},\ldots,X_{iT})=0$ for all $t$. Stronger than contemporaneous exogeneity. Required for FE consistency. \\
@@ -41,6 +41,6 @@ With $T=2$: FD $=$ FE. \\
 With $T>2$: differ in general. FE more efficient under homoskedasticity of $u_{it}$; FD more robust to serial correlation patterns.
 
 \subsection{Serial Correlation and Clustered SEs}
-Standard errors must account for within-individual serial correlation in $u_{it}$. A \textbf{cluster} is a group of observations whose errors may be arbitrarily correlated (in panels, the natural cluster is the individual $i$, grouping all $T$ time periods together). \textbf{Cluster-robust variance:} allows arbitrary within-cluster correlation:
+Standard errors must account for within-individual serial correlation in $u_{it}$. \textbf{Cluster-robust variance:} allows arbitrary within-cluster correlation:
 $\hat{V} = (X'X)^{-1}\!\left(\sum_{j=1}^J X_j'\hat{U}_j\hat{U}_j'X_j\right)\!(X'X)^{-1}$,
 where $j$ indexes clusters, $X_j$ and $\hat{U}_j$ are the data and residuals for cluster $j$.
