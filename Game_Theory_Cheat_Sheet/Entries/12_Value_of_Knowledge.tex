@@ -1,0 +1,18 @@
+\section{Lecture 12: Value of Knowledge}
+\subsection{Experiment Game Setup}
+\begin{itemize}
+    \item Let (T, $\pi$), $\pi \in \Delta(\Theta \cross T)$
+    \item $\pi(\theta,t)= \mu(\theta)*\rho(t|\theta)$
+    \item E=(T, $\rho$) is an \textbf{experiment}
+\end{itemize}
+Note: the prior is given by $\mu$ and $\rho$ is the cond'l dist of t given $\theta$.
+\subsection{Informative Definition}
+Given $E=(T, \rho)$, and $E'=(T', \rho')$, we say E is \textbf{more informative} than $E'$ if $\exists$ a function $\lambda: T \rightarrow \Delta(T') \ s.t. \ \forall \theta, t', \ \rho'(t'|\theta)= \sum_{t} \lambda(t'|t) \rho(t|\theta)$. \\
+
+Where $\lambda$ is a garbling from $E \rightarrow E'$
+\subsection{Informativeness Theorem}
+E is more informative than $E'$ iff $\forall $ game forms $G=(A,u)$ and prior $\mu$
+
+\begin{align*}
+    \max_{\sigma : T \rightarrow \Delta (A)} \sum_{\theta, t, a} u(a, \theta) \sigma(a|t) \rho(t|\theta) \mu(\theta) \geq \\ \max_{\sigma' : T' \rightarrow \Delta (A)} \sum_{\theta, t', a} u(a, \theta) \sigma'(a|t') \rho'(t'|\theta) \mu(\theta)
+\end{align*}

@@ -1,0 +1,37 @@
+\section{Lecture 6: Correlated Equilibrium (CE)}
+\subsection{Correlation Device Definition}
+A correlation device is a collection $D= (\{\Omega_i\}_{i \in U}, \pi)$ where $\Omega=\prod_{i \in N} \Omega_i$ and $\pi \in \Delta (\Omega)$. IE: $\Omega_i$ is a finite set of signaled actions that player i observes and $\pi$ is the joint distribution of signals.
+\subsection{Augmented Game Definition}
+Given a game $G=(N, A, u)$ w/ exp utility prefs and a correlation device D, the augmented game $(\sigma, D)$ is a game in which player is actions are behavioral strategies
+$$
+\sigma_{i}: \Omega_{i} \rightarrow \Delta\left(A_{i}\right)
+$$
+
+We write $\sigma_{i}\left(a_{1} | w_{i}\right)$ for prob of $a_i$ given $\omega_{i}$, and $\sigma(a \mid \omega)=\prod_{i \in N} \sigma_{i}\left(a_{i} \mid \omega_{i}\right)$ for $a \in A_1$, $\omega \in \Omega$. \\
+
+Player i's payoff from a profile $\sigma$ is
+\begin{align*}
+    U_{i}(\sigma)=\sum_{\omega \in \Omega} \sum_{a \in A} u_{i}(a) \sigma(a \mid \omega) \pi(\omega)
+\end{align*}
+\subsection{Correlation Device Induction}
+Fix a game $\sigma=(N, A, u)$ and $D=(\Omega, \pi)$ and strategies $\sigma$. Then $(D, \sigma)$ induce $a$ distribution $\mu \in \Delta(A)$ a according to
+$$
+\mu(a)=\sum_{\omega \in \Omega} \pi(\omega) \sigma(a / \omega)
+$$
+\subsection{CE Definition}
+A correllated equilibrium is a $\mu$ such that $\forall i, a_i, a_i'$
+
+\begin{align*}
+    \sum_{a_{-i}} \mu(a_i, a_{-i})(u_i(a_i,a_{-i})-u_i(a_i',a_{-i})) \geq 0
+\end{align*}
+
+IE: The set of signals is such that a player will never benefit from deviating from "obedient" play to the signal. 
+\subsection{CE Induction Theorem}
+A distribution $\mu \in \Delta (A)$ is induced by some $(D,\sigma)$ s.t. $\sigma$ is a Nash Equilibrium of $(G,D)$ IFF $\mu$ is a correlated equilibrium.
+\subsection{CE Existence Theorem}
+Fix a finite game w/ exp utility preferences $G(N,A,u)$ then $\exists \mu \in \Delta (A)$ such that $\mu$ is a CE. 
+\subsection{CE Loss Lemma}
+For any Fixed $\sigma \exists \mu \in \Delta(\{1,...m\})$ such that $\forall u_i \{1,..,.\} \rightarrow \mathbb{R}$,
+\begin{align*}
+    L(\mu,u)=\sum_{j,k} \mu(j) \sigma(k \mid j)(u(j)-u(k))\geq 0
+\end{align*}

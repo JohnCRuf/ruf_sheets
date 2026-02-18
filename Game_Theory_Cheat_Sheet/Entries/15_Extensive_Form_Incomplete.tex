@@ -1,0 +1,110 @@
+\section{Lecture 15: Extensive Form Games with Incomplete Information}
+\subsection{Set-up and Notation}
+\begin{itemize}
+    \item Players: $i=1,...,N$
+    \item Nature $i=0$
+    \item Actions: $A: \ i=0,...,N$ and $a=\prod_{i=0}^N A_i$
+    \item Histories: $H \subseteq \bar{H}:= \bigcup_{t=0}^{\infty}A^t$
+    \item Given $h,h'$, $h$ follows $h'$ if $h=(h',h'')$ for some $h'' \in \bar{H}$ this is denoted $h \geq h'$ and $h >h'$ if $h \geq h'$ and $h\neq h'$.
+    \item $Z \subseteq H$ is the set of terminal histories. $h \in Z \implies \neg \exists \ h' \in H$ s.t. $h'>h$.
+    \item Players have EU Prefs over $Z$ represented by $u_i: Z \rightarrow \mathbb{R}$ 
+    \item $\forall h \in H \setminus Z$, $A_i^h \subset A_i$ is player $i$'s actions at h and $A^h= \prod_i A_i^h$ is the set of action profiles at h. 
+\end{itemize}
+The Structural Assumption on H is given as:
+
+\begin{align*}
+    \begin{gathered}
+\forall h \in H \setminus Z, \\
+\{(h, a) \in H \mid a \in A\}=\left\{(h, a) \mid a \in A^{n}\right\}
+\end{gathered}
+\end{align*}
+\subsection{Information in Sequential Games}
+$\forall i \ P_i$ is a partition of $H_i$.
+
+Note the following definitions:
+
+\begin{enumerate}
+    \item Let $p_i(h)$ be the cell of $P_i$ containing $h \in H \setminus Z$.
+    \item Given $h=(a^0,a^1,...a^T)$, let $t_1<...<t_K$ be the times at which $(a^0,a^1,...a^t)\in H^i$ for $0 \leq t \leq T$
+    \item Player $i's$ experience at $h$ is given by: $x_i(h)=(p_i(a^0,...,a^{t_k},a_i^{t_k+1})^K_{k=1}$
+\end{enumerate}Furthermore, 
+
+These knowledge partitions have the following two properties:
+
+\begin{enumerate}
+    \item $h,h' \in p_i \in P_i \ \implies A_i^h=A_i^{h'}$ (people know their actions)
+    \item  $\forall h, h' \in H \setminus Z$, $X_i(h) \neq x_i(h') \implies p_i(h) \neq p_i(h')$ (Perfect Recall)
+
+\end{enumerate}
+
+\subsection{Perfect Recall Lemma}
+$\forall h\in Z, p_i \in P_i$ there is at most one $h' \in H$ s.t. $h>h'$ and $h' \in P_i$
+
+\subsection{Perfect Recall Equivalency Proposition}
+Under the maintained assumption that
+the game has perf. recall. Then: $\forall \sigma, \in \Sigma_{i}$, $\exists \alpha \in \Delta\left(\Sigma_{i}^{p}\right)$ s.t. $\alpha ;$ and $\sigma_{i}$ are equivalent.
+
+\subsection{Kuhn's Theorem}
+Suppose the game has perfect recall, then for any $\alpha_i \in \Delta(\Sigma_i^P)$, $\exists \sigma_i \in \Sigma_i $ s.t. $\alpha_i$ and $\sigma_i$ are equivalent. This goes in the opposite direction of the previous propisition.
+
+\subsection{Total Probability and Some Definitions}
+
+\begin{itemize}
+    \item $A_i^{P_i}=A_i^h$ for $h\in p_i \in P_i$
+    \item A behavioral strategy is $\sigma_i:P_i \rightarrow \Delta(A_i)$ s.t. $\sigma(a_i|p_i) \geq 0 \implies a_i \in A_i^{P_i}$
+    \item $\Sigma_i=$ set of $i's$ behav. strat
+    \item $\Sigma= \Pi_{i \geq 1} \Sigma_i$
+    \item $\sigma \in \Sigma$ define $\forall h \in H \setminus Z$, $a \in A$, \begin{align*}
+        \tilde{\sigma}(a|h)=\sigma_0(a_0)|h \prod_{\{i|h \in H^i\}} \sigma_i(a_i|p_i(h))
+    \end{align*}
+\end{itemize}
+Define $\mu_i(h'|h.\sigma_i)$ as the probability $i$'s behaviors are consistent with reaching $h'$ from h. Which is equivalent to the following if we let $(h,a^1,...a^T)=\phi$,.
+
+\begin{align*}
+    \mu_{i}\left(h^{\prime} \mid h, \sigma_{i}\right)=\begin{cases}
+    1 & \text{if} \ h \geq h' \\
+    \Pi_{\{0 \leq t <T|(\phi)} \sigma_i(a^{t+1}|p_i(\phi)) \in H^i\} & \text{if} \  h'=(\phi) \\
+    0 & \text{o.w.}
+    \end{cases}
+\end{align*}
+\subsection{Expected Utility}
+Player i's exp wtility from $\sigma$ starting at h
+$$
+U_{i}(\sigma, h)=\sum_{h^{\prime} \in Z} u_{i}\left(h^{\prime}\right) \mu\left(h^{\prime} \mid h, \sigma\right)
+$$
+\subsection{Nash Equilibrium}
+$\sigma$ is a Nash equm if $\forall$ i, $\sigma ; \in \Sigma_i$
+$$
+u_{i}\left(\sigma_{,} \emptyset \right) \geq u_{i}\left(\sigma_{i}, \sigma_{-i}, \phi\right) \text {. }
+$$
+\subsection{Interim Beliefs and Assessments}
+An interim belice for player $i$ is a mapping
+
+\begin{align*}
+    \beta_i:P_{i} \rightarrow \Delta(H) \quad \text{s.t.} \quad \forall p_{i} \in P_{i}, \quad
+    \sum_{h \in p_{i}} \beta_{i}\left(h \mid p_{i}\right)=1
+\end{align*}
+(Player i believes what they know)
+
+An assessment is a pair of strategies and interim beliefs, $(\sigma, \beta)$
+\subsection{Consistency of assessments}
+An assessment $(\sigma, \beta)$ is consistent if $\exists$ a set $(\sigma^k)_{k=0}^\infty$ of totally mixed strategies such that $\sigma^k \rightarrow \sigma$. This is equivalent to: $\forall i, \ p_i, \ a_i \in A_i, \ \sigma_i^k(a_i|p_i) \rightarrow \sigma_i(a_i|p_i) $. \\ 
+
+And \begin{align*}
+    \beta_i(h|p_i)=\lim_{k \rightarrow \infty} \frac{\mu(h| \sigma^k ,\emptyset)}{\sum_{h' \in P_i}\mu(h'| \sigma^k ,\emptyset)}
+\end{align*}
+\subsection{Sequential Rationality}
+An assessment is sequentially ration if $\forall i, \ p_i \in P_i, \ \sigma'_i \in \Sigma_i$:
+
+\begin{align*}
+    \sum_{h\in P_i}u_i(\sigma,h) \beta_i(h|p_i) \geq \sum_{h \in p_i} u_i(\sigma_i', \sigma_{-i}, h) \beta_i(h|p_i)
+\end{align*}
+\subsection{Sequential Equilibrium}
+A sequential equilibrium is any assessment that is both consistent and sequentially rational. By the sequential equilibrium existence theorem, this exists.
+\subsection{Trembling Hand Equilibrium}
+A trembling hand, or perfect equilibrium if there exists a totally mixed strategy profile $\bar{\sigma}$ and a sequence $(\sigma^k)_{k=1}^K$ of strategies such that:
+
+\begin{enumerate}
+    \item $\sigma$ is the limit of $\sigma^k$ 
+    \item $\sigma^k$ is a nash equilibrium of the game with payoffs $U_{i}\left((1-1 / k) \sigma^{\prime}+(1 / k) \bar{\sigma}\right)$
+\end{enumerate}

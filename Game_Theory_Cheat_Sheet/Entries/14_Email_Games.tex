@@ -1,0 +1,56 @@
+\section{Lecture 14: E-Mail Games}
+\subsection{Setup}
+Two Players:
+\begin{enumerate}
+    \item $N= \{1,2\}$
+    \item $\Theta= \{G,B\}$
+    \item Prior $p<1/2$ that $\theta=G$
+    \item $A_i=\{F,R\}$
+\end{enumerate}
+
+The utility matrices are given by:
+
+    \begin{tabular}{*{4}{c|}}
+      \multicolumn{2}{c}{} & \multicolumn{2}{c}{State $\theta=B$}\\\cline{3-4}
+      \multicolumn{1}{c}{} &  & $R$  & $F$ \\\cline{2-4}
+      \multirow{2}*{}  & $R$ & $(2,2)$ & $(1,-3)$ \\\cline{2-4}
+      & $F$ & $(-3,1)$ & $(0,0)$ \\\cline{2-4}
+    \end{tabular}
+    \quad
+    \begin{tabular}{*{4}{c|}}
+      \multicolumn{2}{c}{} & \multicolumn{2}{c}{State $\theta=G$}\\\cline{3-4}
+      \multicolumn{1}{c}{} &  & $R$  & $F$ \\\cline{2-4}
+      \multirow{2}*{}  & $R$ & $(0,0)$ & $(1,-3)$ \\\cline{2-4}
+      & $F$ & $(-3,1)$ & $(2,2)$ \\\cline{2-4}
+    \end{tabular}
+    
+
+\subsection{Full Information}
+Now suppose that both generals observe the state with probability 1. Then:
+
+\begin{align*}
+    \pi(\theta, t)= \begin{cases}p & \text { if } \theta=t_{1}=t_{2}=G \\ 1-p & \text { if } \theta=t_{1}=t_{2}=B \\ 0 & \text{o.w} \end{cases}
+\end{align*}
+
+Thus when the state is bad, retreat is dominant and when the state is good there are two pure equilibria but fighting when the state is good is a BNE with the highest payoff. 
+\subsection{Player 1 Informed/ Player 2 Uninformed}
+If player 1 is informed and player 2 is uninformed then the priors given are the same as in the full information model, but player 2's signal is uninformative. Now if the state is bad, then retreating is strictly dominant for player 1. Thus the payoff for player 2 of fighting and retreating is given by:
+
+\begin{align*}
+    U_2(F) \leq (1-p)(-3)+2p \\
+    U_2(R) \geq 2(1-p)
+\end{align*}
+
+However, since we assumed $p<1/2$ so retreating is the unique best response, and so both generals always retreat.
+\subsection{Approximate Knowledge}
+Now suppose that the first general observes the state, and both generals get a number of confirmations that are sent back and forth. The new set of priors is that:
+\begin{align*}
+\pi(t, \theta)=\left\{\begin{array}{c}
+1-p \text { if } t=(B, 0) \text { and } \theta=B \\
+p(1-\varepsilon)^{2 k} \varepsilon \text { if } t=(k, k) \text { and } \theta=G \\
+p(1-\varepsilon)^{2 k+1} \varepsilon \text { if } t=(k, k+1) \text { and } \theta=G \\
+0 \text { o.w } \quad
+\end{array}\right.    
+\end{align*}
+
+From this set of priors, we can note that for an epsilon sufficiently high there is no number of messages that can be passed that causes both generals to want to attack. 

@@ -1,0 +1,66 @@
+\section{Lecture 13: Jury Games}
+\subsection{Jury Game Set-up}
+\begin{itemize}
+    \item $\Theta= \{Innocent, Guilty \}$
+    \item $A_i= \{Convict, Acquit$
+\end{itemize}
+
+\begin{align*}
+     u_i(a, \theta)=\begin{cases} 
+      -(1-y) & \text{if } \theta=G \text{ and } |\{i|a_i=c\}|< k \\
+      -y & \text{if } \theta=I \text{ and } |\{i|a_i=c\}|\geq k \\
+      0 & \text{o.w}
+   \end{cases}
+\end{align*}
+for some $k \in N=\{1,...,n\}$ and $y \in (0,1)$.
+
+Where y is the threshold probability of guilt s.t. conviction is preferred.
+\subsection{Jury Game: Odd Majority Rule}
+If every juror is truthful, then I only consider my decision when it is pivotal. IE: $\{\#j\neq i |a_j=c\}=\frac{n-1}{2}$. Thus the posterior of guilt is:
+
+\begin{align*}
+    \pi(\theta=G|t_i=G, \text{pivotal}) &= \\ \frac{\frac{1}{2}x*x^{\frac{n-1}{2}}(1-x)^{\frac{n-1}{2}}}{\frac{1}{2}x*x^{\frac{n-1}{2}}(1-x)^{\frac{n-1}{2}}+\frac{1}{2}(1-x)*(1-x)^{\frac{n-1}{2}}(x)^{\frac{n-1}{2}}} \\
+    &=x \\
+    \pi(\theta=I|t_i=I, \text{pivotal})
+\end{align*}
+\subsection{Jury Game: Unanimity Equilibrium}
+We are looking for a setup where:
+
+\begin{align*}
+    \sigma_i(c|G)=1 \\
+    \sigma_i(c|I)= \gamma \ \in (0,1)
+\end{align*}
+This implies:
+\begin{align*}
+    y&=\pi(G|t_i=I, \ \text{pivotal}) \\
+    &=\frac{\frac{1}{2}(1-x)(x+(1-x)\gamma)^{n-1}}{\frac{1}{2}(1-x)(x+(1-x)\gamma)^{n-1}+\frac{1}{2}x(1-x+x\gamma)^{n-1}}
+\end{align*}
+This comes out to:
+\begin{align*}
+    y=\frac{x z^{\frac{1}{n-1}}-(1-x)}{x-(1-x)z^{\frac{1}{n-1}}}
+\end{align*}
+Where $z=(\frac{1-x}{x} \frac{1-y}{y})^{\frac{1}{n-1}}$.
+
+Notice that, under unanimity, truthful voting is \textbf{not} an equilibrium. In fact, the equilibrium under unanimity requires mixing when a juror receives an innocent signal.
+\subsection{Jury Game: Even Majority Rule}
+In this case, an agent is pivotal only when $k-1=N / 2$ of the other agents vote to convict and the remaining $N / 2$ - 1 other agents vote to acquit. In this event, using Bayes' rule, the posterior probability that the defendant is guilty conditional on a signal of $t_{i}=G$ is
+\begin{align*}
+    \pi(G \mid G)&=\frac{(1 / 2) x^{(N / 2+1)}(1-x)^{(N / 2-1)}}{(1 / 2) x^{(N / 2+1)}(1-x)^{(N / 2-1)}+(1 / 2) x^{(N / 2-1)}(1-x)^{(N / 2+1)}} \\ &=\frac{x^{2}}{x^{2}+(1-x)^{2}}
+\end{align*}
+Note that
+$$
+\begin{array}{r}
+x<\frac{x^{2}}{x^{2}+(1-x)^{2}} \\
+\Longleftrightarrow x>x^{2}+(1-x)^{2}
+\end{array}
+$$
+$$
+\begin{aligned}
+&\Longleftrightarrow \frac{1}{2}<x<1
+\end{aligned}
+$$
+As $x \in(1 / 2,1)$ and $x \geqslant y \geqslant 1-x$ the agent will convict when they observe $t_{i}=G$. When they observe $t_{i}=I$ their posterior is
+$$
+\pi(I \mid I)=\frac{(1 / 2) x^{(N / 2)}(1-x)^{(N / 2)}}{(1 / 2) x^{(N / 2)}(1-x)^{(N / 2)}+(1 / 2) x^{(N / 2)}(1-x)^{(N / 2)}}=\frac{1}{2}
+$$
+Thus $\pi(G \mid I)=1 / 2$ and the agent will only acquit if $y<\frac{1}{2}$.

@@ -1,0 +1,26 @@
+\section{Lecture 17: Durable Goods Monopoly}
+\subsection{Set-up}
+In the durable goods monopoly, 
+\begin{itemize}
+    \item \textbf{Actions:} at each period \(t\), the seller makes a take-it-or-leave-it offer at price \(p_t\) and the consumer chooses to buy or not buy
+    \item \textbf{Preferences:} Sellers get \(0\) if the consumer doesn't buy, and \(p_t\) if they buy at period \(t\). Consumers have a value distributed according to \(F(v) = v^\alpha\), and receive \(p_t  - v\) when they purchase at period \(t\).
+\end{itemize}
+\subsection{Commitment Solution}
+Let \(\delta\) be the discount factor from one period to the next; then, the profit associated with selling at \(t\) is \(\delta^tp_t\), and the payoff for purchasing at \(t\) is \(\delta^t(v - p_t)\).
+If the seller could credibly commit to a price, they could simply set \(p_t = p_0\) for all \(t\), so that no transactions would occur after the initial period.
+\subsection{Coase Conjecture}
+The Coase Conjecture states that, if waiting is nearly costless, then the outcome is close to the competitive outcome. (\textit{The intuition here is that the monopoly is competing with its future self}). Turns out it's true! (Taking the limit as \(\delta \to 1\),
+\subsection{Non-Commitment Solution}
+We search for a solution of the form \(p_t = (\gamma\beta)^t \beta\) for some \(\beta\) and \(\gamma\), where \(\beta\) is the per-period reduction in cost and \(\delta\) determines the consumer's willingness to purchase.
+
+From optimality conditions, we get that
+\[\delta = \frac{1}{1 - \delta(a-\beta)},\quad \textit{(buyer optimality)}\]
+\[\frac{\alpha}{1 + \alpha} = \frac{1 - (\gamma\beta)^\alpha}{1 - \delta(\gamma\beta)^{1+\alpha}},\quad \textit{(seller optimality}.\]
+
+The latter condition is derived from using the envelope theorem on the revenue,
+\[\frac{d}{dv}R(v) = \left[\frac{\partial}{\partial v}R(v, p) + \frac{\partial}{\partial p}R(v,p)\right]_{p = \beta v} = \left.\frac{\partial R(v,p)}{\partial p}\right|_{p = \beta v}.\]
+We also have, from \(R(v) = \beta v^{\alpha + 1}(1 - (\gamma\beta)^\alpha)\sum_{t = 0}^\infty (\delta(\gamma\beta)^{\alpha + 1})^t\), we have
+\[\beta = \frac{1 - \delta}{\frac{1}{x} - \delta},\]
+where \(x = \gamma\beta\).
+Combining these, we find that, in the case where \(\alpha = 1\) (uniform distribution),
+\[\beta = \frac{\sqrt{1 - \delta}}{1 + \sqrt{1 - \delta}}\quad \text{and} \quad \gamma = \frac{1}{\sqrt{1 - \delta}}.\]

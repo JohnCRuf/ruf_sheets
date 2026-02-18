@@ -1,0 +1,104 @@
+\section{Lecture 7: Nash's Theorem and Lemke-Howson Algorithm}
+\subsection{Nash's Theorem}
+Every finite game with mixed strategies has a Nash Equilibrium
+\subsection{Non-Degenerate Symmetric 2 Player Game Definition}
+Define $G= (\{1,2\},A,u)$ is \textbf{non-degenerate} if $\forall i$ and mixed strategy $\alpha_i$ the number of \textbf{pure} best responses to $\alpha_i$ for player j is at most $|\{a_i \mid \alpha_i(a_i)>0\}|$. Typically $m$ denotes this quantity of pure best responses, and $A_i=\{1,...,m\}$ denotes each best response as a numbering.
+\subsection{Slack Variables Definitions and Notation}
+Let $U \in \mathbb{R}^{mxm}$ where $U_{ij}=u_1(i,j)$. IE $U_{ij}$ is the payoff matrix for player 1's ith action as a response to player 2 playing j. \\
+Thus we can represent a mixed strategy as $x \in \mathbb{R}^m$ with traditional probability properties. \\
+Let $U_x=(u(a_1,x),...,u(a_j,x))$ and $v=max_j(U_x)_j$ be the best response payoff to j. Then x is a symmetric NE if $x_i>0 \implies U_{x_i}=v$. Thus we can define
+
+\begin{align*}
+    y=x/v &&\text{strategy that divides x by BR payout} \\
+    z=\Vec{1}-U_y &&\text{ratio of payoff gap between x and BR}
+\end{align*}
+
+Now let M be $[U I]$ thus $[U I ] (y, z)=\Vec{1}$. Using this we can define:
+
+\begin{align*}
+    F=\{(y,z|y\geq 0, z \geq 0, Mf=1\}
+\end{align*} 
+
+and $f=(y,z) \in F$.
+
+\textbf{Add definition giving intuition for what exactly f=(y,z) is.}
+\subsection{Slack Variables Mixed Strategy Proposition}
+For any $f=(y,z) \in F$, $y_i>0$ iff i is played w/ positive probability in the corresponding mixed strategy: $x=\frac{y}{\sum y_i}$ where $z_i=1-(U_y)_i=0$ iff i is a best response.
+\subsection{Slack Variable Definition of Nash Equilibrium}
+$(y,z) \in F$ is an NE if $y_i>0 \implies z_i=0$ and $y_i \neq 0$.
+\subsection{Best Response Support Definition}
+$f=(y,z)$ is supported on best responses if $\forall i$ $y_i z_i=0$. IE: Either i is not played or its a BR.
+\subsection{Best Response Support NE Lemma}
+$f=(y,z) \in F$ is an NE iff $y\neq 0$ and $(y,z)$ is supported on BR.
+
+\subsection{I-Almost Supported Definition and Notation}
+f is i-almost supported on best responses if $y_j z_j=0 \ \forall j \neq i$ . Note: \\
+\begin{align*}
+    F^*&=\{f \in F \ \textbf{supp on BR} \} \\ 
+F_i&=\{f \in F \ \textbf{i-almost supp on BR} \} \\
+F^* & \subseteq F_i \forall i
+\end{align*}
+\subsection{Basis Definition and notation}
+Given $B \subseteq \{1,...,2m\}$ then \\
+$M_B= \text{submatrix of M w/ columns in B}$. \\ Given $f \in F$ $f_B= \text{sub vector of f w/ indices in B}$. \\
+We call B a \textbf{Basis} if $|B|=m$
+\subsection{Basis Hammer Lemma}
+If G is non-degenerate, let B be a basis and $f \in F$ with $f_i=0 \ \forall i \not\in B$ Then:
+
+\begin{itemize}
+    \item Number of actions played w/ positive probability under f is equal to the number of BR. $f=(y,z)|\{i|y_i>0\}|=|\{i|z_i=0\}|$
+    \item $f_i>0 \forall i \in B$ 
+    \item $M_B$ is invertible and $f_B=(M_B)^{-1}*\Vec{1}$
+\end{itemize}
+\subsection{Basic}
+We say $f \in F$ is \textbf{Basic} if $|B(f)|=m$
+\subsection{Basis Ankh Lemma}
+Suppose $f=(y,z) \in F_i$ is basic and not supported on BR, then $y_i>0, z_i>0$ and $\forall j \neq i$ $y_j z_j=0$ Moreover, $\exists $ exactly one $j\neq i$ with $y_j=z_j=0$
+\subsection{Pivot Operation Definition}
+Step 1: Start w/ basic point f. Pick $i \not\in B(f)=B$ and make $f_i$ positive. Define a new solution $f(t)$ where $f_i(g)=t$. Now let $t^*$ be the smallest t such that:
+
+\begin{align*}
+    f_j(t)=0=(M_B^{-1}(1-M_i t)) \\
+    t^*=(M_B^{-1}*1)_j-(M_B^{-1}M_i)_j t \\
+    t_j=\frac{(M_B^{-1}*1)_j}{M_B^{-1} M_i}
+\end{align*}
+New point $f'=f(t^*)$ where this operation is called pivoting from f on i which leads to $f'$.
+\subsection{Reversible Pivot Lemma}
+Suppose $f=(y,z) \in F$ is basic then pivoting from f on $i \not\in B(f)$ leads to a basic point $f'$ s.t. $|B(f) \cap B(f')|=m-1$. Moreover, pivoting from $f'$ on $j \in B(f) \ B(f')$ leads to f.
+\subsection{I-Adjacency Definition}
+Two Basic points, $f,f'$ are $i-adjacent$ if $\exists$ a pivot from f that leads to $f'$ and vice versa such that the path from $f(t)$ from f to f' is in $F_i$
+\subsection{I-Adjacency Lemma}
+Suppose $f \in F_i$ is basic. If $f$ is supported on best responses, $\exists$ exactly one $f' \in F_i$, $f' \neq f$ s.t. $f'$ is i-adjacent to $f$. \\
+If f is not supported on BR's then there are exactly two $f',f''$ $f' \neq f'' \neq f$ that are i-adjacent to $f$.
+\subsection{I-Path Definition Lemma}
+Let $f \in F_i$ be basic and supported on best responses. $\exists!$ sequence of basic points (called an \(i\)-path)  $\{f^\ell\}_{\ell=0}^L$ with $L>0$ such that
+\begin{itemize}
+    \item $f^0=f$
+    \item $f^\ell \neq f^{\ell'} \forall \ell \neq \ell'$
+    \item $f^\ell$ is i-adj to $f^{\ell+1} \forall \ell=0,...,L-1$ 
+    \item $f^L$ is also supported on best responses
+\end{itemize}
+
+\subsection{Parity of Nash equilibria}
+Any non-degenerate, two-player symmetric game has an odd number of (symmetric) Nash equilibria. (This follows from the pairwise matching of best response supported basic points we established in the construction of Lemke-Howson, together with the fact that the artificial equilibrium is a basic point)
+
+\subsection{Perturbations to Degenerate Games}
+Let \(G = \left(\{1,\,2\},\, A = \{1,2, \ldots, m\}, u\right)\) be any symmetric, two-player game. For any \(\epsilon \geq 0\), define
+
+\[G^\epsilon = \left(\{1,\,2\},\, A = \{1,2, \ldots, m\}, u^\epsilon\right),\]
+where \(u_i^\epsilon(a) = \frac{1}{1 + \epsilon^{a_i}}u_i(a)\). Then, there exists some \(\hat{\epsilon} > 0\) such that \(\epsilon \in (0,\, \hat{\epsilon})\) implies \(G^\epsilon\) is non-degenerate.
+
+\subsection{Coincidence of Nash Equilibria Between Degenerate and Preturbed Game}
+For any symmetric, two-player game \(G\), there exists some \(\Bar{\epsilon} > 0\) such that \(\epsilon \in (0,\,\Bar{\epsilon}\) implies \(G^\epsilon\) is nondegenerate, and if \(f\) is a (non-artificial) basic solution for \(G^\epsilon\) with basis \(B\), then there exists some feasible and non-artificial \(f'\) which is a solution for \(G\) with \(B(f') \subseteq B\).
+
+\subsection{Dropping Non-degeneracy}
+For all two-player finite games with mixed strategies, there exists a Nash equilibrium.
+
+\subsection{Bolzano-Weierstrass}
+Recall that, for any \(N \in \mathbb{N}\) and any bounded sequence \(\{x^k\}_{k=0}^\infty\) in \(\R^N\), we have that some subsequence \(\{x^{k_l}\}_{l=0}^\infty\) which converges.
+
+\subsection{Imitation Games}
+Fix \(G = \left(N,\, Z,\, u\right)\). Define a sequence of \textit{imitation games} given by \(\left\{G^m\right\}_{m=0}^\infty\) by
+\[G^m = \left(\{1,\,2\},\, X^m \cross X^m,\, \Tilde{u}_i\right),\]
+where \(X^m = \prod_{i \in N}x_i^m\), \(x_i^m \overset{\text{fin.}}{\subseteq} \Delta(A_i)\). That is, the set of actions for each player in the imitation game is the product set of some finite collections of mixed strategies for each player in the original game. We construct the utilities as
+\[\tilde{u}_1(\mu_1,\, \mu_2) = \sum \mu^1(\alpha_1) \mu^2(\alpha^2)\sum_{i \in N} u_i(\alpha_i^1,\, \alpha_{-i}^2)\]

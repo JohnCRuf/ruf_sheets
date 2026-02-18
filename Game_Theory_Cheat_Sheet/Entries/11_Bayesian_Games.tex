@@ -1,0 +1,45 @@
+\section{Lecture 11: Bayesian Games}
+\subsection{Type Space Definition}
+A type space consists of the following:
+\begin{itemize}
+    \item Payoff relevant state of the world $\theta \in \Theta$
+    \item Set of players N 
+    \item Player i's information is described by a \textbf{type} $t_i \in T_i$
+    \item $T= \prod_i T_i$ is the set of type profiles $t=(t_1,...,t_n)$ 
+    \item Beliefs denoted: $\pi_i: T_i \rightarrow \Delta(\Theta \times T_{-i}$ notated formally by $\pi_i(\theta, t_{-i}|t_i)$ 
+\end{itemize}
+\subsection{Relationship to Aumann}
+There is a direct correspondence between type spaces and the Aumann Knowledge model, namely:
+
+\begin{align*}
+    S= \Theta \times T \\
+    k_i(s)= \{(\theta, t')|t_i'=t_i\} \\
+    p_i(s'|s) \iff \pi(\theta, t_{-i}|t_i)
+\end{align*}
+\subsection{Common Prior Definition}
+A belief $\pi \in \Delta(\theta \times T)$ is a common prior for the type space $(\Theta, N, T, \{\pi_i\})$ if $\forall i, t_i, \ \pi(\theta, t) = \pi_i(\theta, t_{-i}|t_i)*(\sum_{\theta',t_{-i}'} \pi (\theta', t_i, t_{-i}'))$
+\subsection{Bayesian Game Definition}
+A bayesian game consists of the regular parts of a game:
+\begin{itemize}
+    \item Players, N 
+    \item Actions $A_i$ for player i, $A= \pi_i A_i$
+    \item Utility functions $u_i: \ A \times \Theta \rightarrow \mathbb{R}$ 
+    \item types, T
+\end{itemize}
+Where the addition of types and the subtle manipulations of the old game definitions and the addition of a type space delineate it from normal mixed-strategy games.
+\subsection{Behavioral Strategies}
+A behavioral Strategy for player i is a mapping: $\sigma_i: \ T_i \rightarrow \Delta (A_i)$. \\
+$\Sigma_i$ is a set of strategies for player i, whereas: \\
+$\Sigma = \pi_i \Sigma_i$ strategy profiles of $\sigma = ( \sigma_1,...,\sigma_n)$. 
+\subsection{Type Preferences}
+Given $(T,G)$ player i's type $t_i$ preferences over $\Sigma$ are represented by:
+\begin{align*}
+    U_i(t_i,\sigma)=\sum_{\theta} \sum_{t_{-i}} \pi_i(\theta, t_{-i} |t_i) \sigma(a|t_i) u_i(a, \theta)
+\end{align*}
+\subsection{Bayes Nash Equilibrium}
+$\sigma$ is a bayes nash equilibrium if:
+\begin{align*}
+    u_i(t_i, \sigma) \geq u_i(t_i, \sigma_i',\sigma_{-i}) \forall i, t_i, \sigma_i' 
+\end{align*}
+\subsection{Finite Bayesian Game NE Existence Theorem}
+Suppose $(T, G)$ is a finite bayesian game then a nash equilibrium exists.

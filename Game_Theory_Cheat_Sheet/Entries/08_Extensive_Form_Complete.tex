@@ -1,0 +1,47 @@
+\section{Lecture 8: Extensive Form Games}
+\subsection{Components of an Extensive Form Game}
+An extensive form game is comprised of
+\begin{enumerate}
+    \item Players: \(N = \{1,\ldots, n\}\)
+    \item Actions: \(A_i\) for each \(i \in N\); for all \(\Tilde{N} \subseteq N\), define \(A_{\Tilde{N}} = \prod_{i \in \Tilde{N}}A_i\), and we must have \(A = \bigcup_{\Tilde{N} \subseteq N} A_{\Tilde{N}}\).
+    \item Terminal histories: \(H\), where an element \(h \in H\) is a sequence \(\{a^t\}_{t = 0}^T\), for \(T\) finite or infinite.
+    \item Player correspondence: \(P:S^*(H) \to 2^N\)
+    \item Feasibility correspondence: \(F: H_i \to 2^{A_i}\)
+    \item Preferences over \(H\), \(\succsim_i\),
+\end{enumerate}
+where \((H,\, P,\, F\) are consistent, meaning \(F(h) = \{a\,|\,(h,a) \in S(H)\}\), with \(S(H\) the set of subhistories of histories in \(H\), \(S^*(H)\) the set of proper subhistories, and \(H_i\) the set of histories at which player \(i\) can act (that is, \(H_i = \{h \in S^*(H)\,|\, i \in P(h)\}\)).
+
+We say that an extensive form game is finite if \(N\), \(A\), and \(H\) are all finite.
+
+\subsection{Strategies, Nash Equilibria, and Sequential Rationality}
+For an extensive form game of complete information (EFGCI) \(G\), a strategy for player \(i\) is a mapping \(\sigma_i: H_i \to A_i\) such that \(\sigma_i(h) \in F_i(h)\). Given a strategy \(\sigma = (\sigma_1,\ldots,\sigma_n)\) and a non-terminal history \(h\), we define 
+\[\omega(\sigma, h) = (h,\, h'),\]
+where \(h' = \{\sigma_i(h^k)\}_{i \in P(h)}\). That is, each subsequent entry in the history is determined by the strategy \(\sigma\)'s choice. We define \(\omega(\sigma,\emptyset)\) to be the \textbf{path of play}.
+
+\subsection{Nash Equilibrium}
+A strategy profile \(\sigma\) is a Nash Equilibrium of the game if
+\[\omega(\sigma_i,\, \sigma_{-i}, \emptyset) \succsim_i \omega(\sigma_i',\, \sigma_{-i},\, \emptyset)\]
+for all \(i \in N\) and \(\sigma_i'\).
+
+\subsection{Normal Form}
+Given an extensive form game \(G\), the normal form is defined as 
+\[(N,\, \{\Tilde{A}_i\},\, \{\tilde{\succsim}_i\}),\]
+with \(\tilde{A}_i\) the set of all of player \(i\)'s strategies \(\sigma_i\) and \(\sigma\,\tilde{\succsim}_i\,\sigma'\) if and only if \(\omega(\sigma,\emptyset) \succsim_i \omega(\sigma',\emptyset)\).
+
+\subsection{Sequential Rationality}
+A strategy \(\sigma_i\) is \textbf{sequentially rational} against \(\sigma_{-i}\) if, for all \(h \in S(H)\) and \(\sigma_i'\), we have
+\[\omega(\sigma_i,\sigma_{-i},h) \succsim_i \omega(\sigma_i',\sigma_{-i},h).\]
+
+Notice that this must hold not just at the initial node (\(\emptyset\)), but at all subhistories. If every \(\sigma_i\) in \(\sigma = (\sigma_1,\ldots,\sigma_n)\) is sequentially rational against \(\sigma_{-i}\), then \(\sigma\) is a \textbf{sequential equilibrium}.
+
+\subsection{One-Shot Deviation Principle}
+Given \(\sigma_i\), a \textbf{one-shot deviation} is a \(\sigma_i'\) such that there is a unique \(h\) with \(\sigma_i(h) \neq \sigma_i'(h)\).
+
+Now, let \(G\) be a finite EFGCI. Then, \(\sigma\) is a sequential equilibrium if and only if
+\[\omega(\sigma,h) \succsim_i \omega(\sigma'_i,\, \sigma_{-i}, h)\]
+for all \(i\), all \(h \in S^*(H)\), and one-shot deviation \(\sigma_i\) to \(\sigma_i'\).
+
+\subsection{Existence of Sequential Equilibria}
+An EFGCI has \textbf{purely sequential moves} if \(\abs{P(h)} = 1\) for all \(h \in S^*(H)\).
+
+\textbf{Every finite EFGCI with purely sequential moves has a sequential equilibrium.}

@@ -1,0 +1,70 @@
+\section{Lecture 19: Mechanism Design}
+
+We now expand our analysis of the durable goods monopoly, by extending the range of monopoly strategies to include any combination \((q, p)\) of allocation rules \(q\) and prices \(p\). Formally, we define a \textbf{mechanism} \(\mathcal{M}\) as
+\begin{enumerate}
+    \item A set of messages \(M\) that the consumer can send to the monopolist
+    \item An allocation rule \(q(M)\)
+    \item A price \(p(M)\).
+\end{enumerate}
+
+In this framework, the strategies for a consumer are \(\sigma_i(\underline{v}, \overline{v}) \to \Delta(M)\) (that is, lotteries over the set of possible messages). Preferences are given by
+\[U(\sigma, \mathcal{M}) = \int_v \int_m (vq(m) - p(m))\sigma(dm|v)F(dv),\]
+and revenue
+\[R(\sigma, \mathcal{M}) = \int_v\int_m p(m)\sigma(dm|v)F(dv).\]
+
+\subsection{Revelation Principle}
+It is without loss of generality to examine mechanisms for which
+\[M = [\underline{v}, \overline{v}],\qquad \sigma(\{v\}|v) = 1,\]
+wherein the consumer just honestly reports their value. This is called a \textit{truthful direct mechanism}.
+
+\subsection{Incentive Compatibility and Individual Rationality}
+For truth-telling to be optimal, the \(p\) and \(q\) from the mechanism must satisfy
+\[vq(v) - p(v) \geq vq(v') - p(v'),\quad \forall v,v'.\qquad \mathrm{IC}\]
+This condition is equivalent to requiring that \(q\) must be non-decreasing, provided that \(p(v)\) takes the form
+\[p(v) = vq(v) - \int_{\underline{v}}^v q(x)\,dx - U(\underline{v}).\]
+
+To regularize the monopolist's behavior, we further impose the constraint
+\[U(v) \geq 0,\quad \forall\, v, \qquad \mathrm{IR}\]
+so that the consumer is willing to participate at any value. (In particular, with \(\mathrm{IC}\), this implies that \(U(\underline{v}) = 0\).
+
+\subsection{Posted Price}
+A posted price mechanism takes the form
+\[q^r(v) = \begin{cases}
+    1 &v \geq r,\\
+    0 &\text{o.w.}
+\end{cases}\]
+and
+\[p^r(v) = \begin{cases}
+    0 &x \leq r\\
+    r &x > r,
+\end{cases}\]
+where \(r \in [0,1]\) is the posted price.
+
+\subsection{Multiple Buyers}
+We now assume that there are a collection of \(N\) consumers, all with values independently distributed according to \(v_i \sim F_i(v)\) with support a subset of \([\underline{v}, \overline{v}]\).
+
+The mechanism we consider is characterized by \(q_i: M \to [0,1]\) and \(p_i: M \to \R\), where \(\sum_i q_i(m) \leq 1\). Preferences are given by the general definition for mechanism utility. Revenue is
+\[R(v) = \int_v \int_m \sum_i p_i(m) \sigma(dm|v)f(v)\,dv\]
+
+\subsection{Revelation Principle}
+
+For any mechanism \(\mathcal{M}\) and Bayes Nash Equilibrium \(\sigma\), there is a direct mechanism satisfying \(\mathrm{IC}\) and \(\mathrm{IR}\) with equivalent revenue.
+
+This can be intuitively understood as, for whichever mechanism you pick, instead just reporting your type to the mechanism and having it ``play for you''.
+
+Under such a mechanism, where \(Q_i(v_i') = q_i(v_i', v_{-i})\) and \(P_i(v_i') = p_i(v_i', v_{-i})\), revenue is
+\[R = \sum_i \int_{v_i}\left[v_i - \frac{1 - F_i(v_i)}{f_i(v_i)}\right]q_i(v)f(v)\,dv - \sum_i U_i(\underline{v}).\]
+
+We call \(\varphi_i(v_i) = v_i - \frac{1 - F_i(v_i)}{f_i(v_i)}\) the \textit{virtual value} for consumer \(i\).
+
+\subsection{Revenue Equivalence}
+For any mechanism \(\mathcal{M}\) and Bayes Nash Equilibrium \(\sigma\), expected revenue is equal to the expected virtual value of the bidder allocated the good, minus the utilities of the lowest types.
+
+As a corrolary, if \(\mathcal{M}\) and \(\mathcal{M}'\) implement the same allocation in some BNE for each, and give the same lowest utility to the lowest types, they are revenue equivalent. Examples include
+\begin{itemize}
+    \item First- and Second-Price auctions with symmetric distributions \(F_i = F_j\)
+    \item First- and Second-Price auctions with a reserve price.
+\end{itemize}
+
+\subsection{Optimal Auctions}
+For the design of an auction to be revenue-optimal, we must have that \(U(\underline{v}) = 0\). We say that the distributions \(F_i\) are regular if \(\varphi_i\) is non-decreasing. Then, under symmetry and regularity, expected revenue is maximized by SPA/FPA with reserve price \(r^* = \min\{x | \varphi(x) \geq 0\}\).

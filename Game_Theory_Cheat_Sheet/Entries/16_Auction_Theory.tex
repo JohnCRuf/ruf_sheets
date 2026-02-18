@@ -1,0 +1,43 @@
+\section{Lecture 16: Basics of Auction Theory}
+\subsection{General Auctions}
+Single item up for auction.
+\begin{itemize}
+    \item Players (bidders): indexed by \(i = 1,\,\ldots, N\)
+    \item Bidder \(i\) has associated value \(v_i\) for the item.
+    \begin{itemize}
+        \item If bidder \(i\) observes their and only their value, we call these \textbf{private values}.
+        \item Usually, we consider these values \(v_1,\, \ldots, v_N\) as being random variables. When they are statistically independent from each other and private, we call them \textbf{independent private values} (IPV).
+    \end{itemize}
+    \item Actions: bids for each bidder \(i\), \(b_i \in \mathbb{R}_+\).
+    \item Allocation function \(q_i(b)\), which gives the probability of bidder \(i\) winning the item when bidding profile \(b\) is played.
+    \item Transfer function \(t_i(b)\), which gives the (expected) net payment from bidder \(i\) to the seller.
+    \item Preferences given by utility function \(u_i(v_i,b) = v_i q_i(b) - t_i(b)\), which we modify to account for uncertainty in \(b_{-i}\) by defining
+    \[u_i(v_i,b_i) = \mathbb{E}_{b_{-i}}\left[u_i(v_i, b_i, b_{-i})\right]\]
+\end{itemize}
+
+\subsection{Basic Examples}
+In the following examples, we will assume that \(v_i\) are independently and identically distributed according to \(U[0,\,1]\), the standard uniform distribution.
+
+\subsection{Second Price Auctions: Definitions}
+The setup for a SPA is that a price, beginning at zero, rises. Each bidder chooses a cutoff, their bid, which sets the price at which they drop out. The price will continue rising until \(N-1\) bidders have dropped out. The final price is, then, \(b^{(2)}\), the second-highest bid.
+
+We define the winning correspondence as
+\[W(b) = \{i\,|\,b_i = b^{(1)}\},\]
+so that we can define the allocation by
+\[q_i^\mathrm{SPA}(b) = \begin{cases}
+    \frac{1}{\abs{W(b)}} & i \in W(b)\\
+    0 &\text{o.w.}
+\end{cases}\]
+and the transfer by \(t_i^\mathrm{SPA}(b) = b^{(2)}q_i^\mathrm{SPA}(b)\).
+\subsection{Second Price Auctions: Equilibrium Bid}
+An equilibrium (not unique!) is given by each bidder bidding their value; that is, \(b_i = v_i\).
+\subsection{Second Price Auctions: Equilibrium Revenue}
+The equilibrium revenue is
+\[R^\mathrm{SPA} = \mathbb{E}_v[b^{(2)}] = \mathbb{E}_v[v^{(2)}] = \frac{N-1}{N+1}\]
+\subsection{First Price Auction: Definitions}
+In a FPA, we can understand the bidding process as being a sealed-bid auction in which the highest bidder wins and pays their bid. Hence, the final price is \(b^{(1)}\).
+Winning and allocation are the same as in SPA (that is, \(q_i^\mathrm{SPA} = q_i^\mathrm{FPA}\)). Transfers are now given by \(t_i^\mathrm{FPA}(b) = q_i^\mathrm{FPA}b_i\).
+\subsection{First Price Auctions: Equilibrium Bid}
+An equilibrium is given by each bidder \textbf{bid shading} (that is, intentionally bidding less than their private value) by the appropriate amount; in particular, \(b_i = \frac{N-1}{N}\,v_i\).
+\subsection{First Price Auctions: Equilibrium Revenue}
+In the end, the revenue is the same as in the SPA; we have \(R^\mathrm{FPA} = \frac{N-1}{N+1} = R^\mathrm{SPA}\).

@@ -1,0 +1,39 @@
+\section{Lecture 2: Lotteries and Expected Utility}
+\subsection{Lottery Definition}
+A lottery has the following elements:
+
+\begin{itemize}
+    \item Finite Set of Outcomes $\Omega$ 
+    \item Lotteries: $x:\Omega \rightarrow [0,1]$ such that $\sum_{\omega \in \Omega}x(\omega)=1$.
+    \item X=set of all lotteries, or $\Delta(\Omega)$
+\end{itemize}
+
+\subsection{Expected Utility Functions \& Lotteries}
+An EUF is defined as:
+\begin{align*}
+    \sum_{\omega}x(\omega)y(\omega)
+\end{align*}
+\subsection{Lottery Mixtures}
+Given $x,y \in X$, $\alpha \in [0,1]$ the lottery mixture $\alpha_x+(1-\alpha)y$ is defined by $\alpha x(\omega)+(1-\alpha)y(w)$ \\
+
+\subsection{Independence Axiom}
+Given $x,y,z \in X$ and $\alpha \in (0,1]$, $x \succeq y$ iff $\alpha x (1-\alpha)z \succeq \alpha y + (1-\alpha)z$.
+
+This implies:
+
+\begin{align}
+    x \succ y \ \&  \ \alpha \in (0,1] \implies \\
+    \alpha x (1-\alpha)z \succ \alpha y + (1-\alpha)z
+\end{align}
+\subsection{Continuity} 
+$\succeq$ is \textbf{continuous} if: \\
+\begin{align}
+    \forall x,y,z \ s.t. \ x \succeq y \succeq z, \exists \alpha \in [0,1] s.t. \\
+    \alpha x + (1-\alpha)z \sim y
+\end{align}
+\subsection{Expected Utility Theorem}
+$\succeq$ on X has an expected utility representation iff $\succeq$ is rational, satisfies independence, and is continuous. 
+\subsection{Positive Affine Transformations}
+Given EUF's u and v, v is a positive affine transformation of u if $\exists a>0,b$ s.t. $v(x)=a*u(x)+b$. \\
+\textbf{EUF Representation Theorem:}
+Suppose $\succeq$ is a preference relation on x and u is an EUF that represents it. Then v is also an EUF that represents it iff v is a PAT of u. 

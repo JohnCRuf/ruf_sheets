@@ -1,0 +1,98 @@
+\section{Lecture 1: Basics of Game Theory}
+\subsection{Common Proof Techniques}
+Want to show that $A \implies B$. \\\
+\textbf{Contradiction}
+Suppose C is a known false statement
+\begin{align*}
+   \neg (A \implies B) \implies C
+\end{align*}
+\textbf{Contraposition}
+\begin{align*}
+   \neg A \implies \neg B
+\end{align*}
+\textbf{Exhaustion}
+Suppose $A = \{A_1,A_2...,A_n\}$
+\begin{align*}
+    A_1 &\implies B \\
+    A_2 &\implies B \\
+    &... \\
+    A_n &\implies B
+\end{align*}
+\subsection{What is a game?}
+Game has 3 items:
+\begin{itemize}
+    \item Players
+    \item Actions for each player
+    \item Preferences for each player over everyone's actions
+\end{itemize}
+
+\subsection{Properties of preferences}
+A preference relation is a method of ranking alternatives in a set X. There are 3 kinds of relations:
+\begin{itemize}
+    \item Preference: $\succeq$
+    \item Indifference: $x \sim y$ if $x \succeq y$ \& $y \succeq x$
+    \item Strict Preference $x \succ y$ if $\neg (y \succeq x)$
+\end{itemize}
+
+A relation, R,   have the following properties: \\
+\textbf{Completeness}
+\begin{align*}
+    \text{if} \  \forall x,y \in X: \ \text{Either} \ (x R y), (y R x), \ \text{or both}
+\end{align*}
+\textbf{Transitive}
+\begin{align*}
+    \text{if} \  \forall x,y,z \in X: \\
+    (x R y) \ \& \ (y Rz) \implies (x R z)
+\end{align*}
+\textbf{Rational}
+\begin{align*}
+    \text{If \textbf{Complete} \& \textbf{Transitive}}
+\end{align*}
+\textbf{Reflexive}
+\begin{align*}
+    x R x \  \forall \ x \in X
+\end{align*}
+\textbf{Asymmetric}
+\begin{align*}
+    x R y \implies \neg(y R x)
+\end{align*}
+\textbf{Anti-symmetric}
+\begin{align*}
+    xRy \ \& \ yRx \implies x=y
+\end{align*}
+\textbf{Negative Transitive}
+\begin{align*}
+    \text{if} \  \forall x,y,z \in X: \\
+    \neg (x R y) \ \& \ \neg (y R z) \implies \neg (x R z)
+\end{align*}
+\textbf{Total}
+\begin{align*}
+    xRy \ \text{or} \ yRx \ \text{whenever} \ x \neq y 
+\end{align*}
+\subsection{Implications of Rationality}
+If a preference relation $\succeq$ is rational, then :
+
+\begin{itemize}
+    \item The indifference relation $\sim$ is reflexive and symmetric
+    \item The strict preference relation $\succ$ is asymmetric and negative transitive
+    \item If $\succeq$ is complete and anti-symmetric then $\succ$ is total (pset1)
+\end{itemize}
+Propositions about utility and preferences
+
+\textbf{Proposition: If $\succeq$ is represented by U then $\succeq$ is rational.} \\
+Note: This does not go in the opposite way. proved in class w/ counterexample:
+
+\subsection{Rational implies U counterexample}
+Let $X=[0,1]$ and we have lexicographic preferences, ie. $(x,y) \succeq (x',y')$ if $x \geq x'$ or $x=x'$ and $y \geq y')$. This is derived in class by contradiction in that a utility function existing implies that the cardinality of [0,1] is weakly less than the rationals. 
+
+\subsection{Useful Math Definitions}
+\textbf{Surjective}: A function $f: A \rightarrow B$ is surjective if $\forall b \in B \exists a \in A$ s.t. $f(a)=b$ \\
+\textbf{Injective}: A function $f: A \rightarrow B$ is injective if $\forall a \in A$, $f(a) \neq f(a')$ whenever $a\neq a'$. \\
+\textbf{Countable}: A set X is countable if $\exists$ a surjective function f: $\mathbb{N} \rightarrow X$ \\
+\textbf{}
+
+\subsection{Countability, Rationality, and Utility Functions}
+If a set \(X\) is countable, and \(\succsim\) is a rational preference relation on \(X\), then there exists some utility function \(u\) which represents \(\succsim\).
+
+\subsection{Separability and Utility Functions}
+If \((X,\,d)\) is a separable metric space (equipped with the metric \(d\)), \(\succsim\) is rational, and for all \(x \in X\) the set \(\{y \in X\,|\, x \succ y\}\) is open, then there exists some utility function which represents \(\succsim\).

@@ -1,0 +1,37 @@
+\section{Lecture 9: Subjective Utility}
+\subsection{Basic Definitions}
+A state of the world is $s \in S$ where S is finite. \\
+
+An act is a function, $f: s \rightarrow \mathbb{R}_+$ the set of acts is denoted as $F$\\
+
+Note that acts have the following properties: 
+\begin{align*}
+    \forall f,g \in F :
+    h=f+g \\
+    h(s)=f(s)+g(s) \forall s \\
+    \forall f \in F, \alpha \in \mathbb{R}_+ , \ h= \alpha f \\
+    h(s)= \alpha f(s) \ \forall s
+\end{align*}
+
+\subsection{Subjective Utility Representation (SEU Reps) of Preferences}
+$\succeq$ has a subjective utility representation $p \in \Delta(S)$ if 
+
+\begin{align*}
+    f \succeq g \iff \sum_s p(s)f(s) \geq \sum_s p(s)g(s)
+\end{align*}
+
+Where each sum is denoted as a subjective expected utility function.
+
+Note the following proposition: If p and q are SEU reps for $\succeq$ then p=q. 
+
+\subsection{SEU Axioms}
+\textbf{SEU Existence Theorem}  $\succeq$ on F has a SEU rep iff it is rational, monotonic, additive, non-trivial, and continuous.
+Note that $\succeq$ must be rational. \\
+ \textbf{1. Monotonicity} \\
+$f(s) \geq g(s) \forall s \implies f \succeq g$ \\
+ \textbf{2. Additivity} \\
+$f \succeq g \iff f+h \succeq g+h \forall h$ \\
+\textbf{3. Non-triviality} \\
+$ \exists f,g, \ s.t. \ f \succ g$ \\
+\textbf{4. Continuity} \\
+If $f \succeq g \succeq g$, then $\exists \ \alpha \in [0,1]$ s.t. $\alpha f + (1-\alpha) h \sim g$

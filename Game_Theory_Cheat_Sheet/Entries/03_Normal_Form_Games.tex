@@ -1,0 +1,27 @@
+\section{Lecture 3: Normal Form Games}
+\subsection{Definitions}
+Normal form games take on the same definition introduced initially:
+\begin{align*}
+    G=(N,A,\succeq)
+\end{align*}
+Where players are denoted by N, actions are denoted of A, and preferences are rational on A for every player in N.
+\subsection{Solution Concepts and Nash Equilibrium}
+The best response correspondance for player i is given by:
+\begin{align*}
+    B_i: A_{-i} &\rightarrow 2^{A_i} \\
+    B_i: a_{-i} &\rightarrow \{ a_i | \text{$a_i$ is a BR to $a_{-i}$}\} \\
+\end{align*}
+A Nash equilibrium of G is an $a \in A$ s.t. $a_i \in B_i(a_{-i})\,\forall i$. This means 
+\subsection{Mixed Strategy Games}
+A game with mixed strategies is a tuple
+\[\left(N,\, \left\{A_i\right\}_{i \in N},\, \left\{\succsim\right\}_{i \in N}\right),\]
+where player \(i\)'s actions are mixed strategies in \(\Delta(A_i)\) (lotteries over \(A_i\)) and \(\succsim_i\) is defined over \(\Delta(A_i)\) and are expected utility preferences.
+
+For a game \(G = \left(N,\, A,\, \succsim\right)\), the game with mixed strategies
+\[\Tilde{G} = \left(N,\, \Tilde{A},\, \Tilde{\succsim}\right)\]
+is a mixed extension if \(\Tilde{A}_i = A_i\) and if \(\succsim\) and \(\Tilde{\succsim}\) give the same ranking on pure actions.
+
+\textbf{Best Responses: Definition} 
+A mixed strategy profile \(\alpha_i\) is a best response to \(\alpha_{-i}\) if
+\[u_i(\alpha_i,\,\alpha_{-i}) \geq u_i(\alpha_i',\,\alpha_{-i}),\,\, \forall\alpha_i'.\]\\
+\textbf{Best Responses: Proposition} Fix a game with mixed strategies and a mixed strategy profile \(\alpha\). Then, \(\alpha_i\) is a best response to \(\alpha_{-i}\) if and only if \(a_i\) is a best response to \(\alpha_{-i}\) for all \(a_i\) such that \(\alpha(a_i) > 0\).

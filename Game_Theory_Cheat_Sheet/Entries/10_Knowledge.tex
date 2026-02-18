@@ -1,0 +1,38 @@
+\section{Lecture 10: The Basics of Knowledge}
+\subsection{Aumann Knowledge Model Definitions}
+Let S be a set of finite states, and $E \subseteq S$ is an event. \\
+
+Let a knowledge partition $K_i$ be defined as a set of states that an agent in the model cannot distinguish between being the true state of the world or not: IE a partition of S. \\
+Let a knowledge function $k_i (s)=E \in K_i$ that contains s. \\
+Note the following property of the knowledge function:
+
+\begin{align*}
+    s \in k_i (s) \ \& \ s' \in k_i(s) \implies k_i(s)=k_i (s')
+\end{align*} 
+i knows E at s if $k_i(s) \subseteq E$
+
+
+\subsection{Mutual Knowledge}
+\textbf{Definition}\\
+$E \subseteq S$ is mutual knowledge at $s \in S$ if $k_i(s) \subseteq E \forall i$ \\
+\textbf{Mutual Knowledge Function Definition:}
+Given E, $m(E)= \{s | \text{E is mutual knowledge at s} \}$ \\
+\textbf{Mutual Knowledge Induction Proposition:} \\
+If $E \subseteq E'$ then $\forall \  \ell \geq 1$, $m^\ell(E) \subseteq m^\ell(E')$ \\
+\subsection{Common Knowledge and Self-Evidence} 
+\textbf{Common Knowledge Definition:} \\
+E is common knowledge at s if $s \in m^\ell(E) \forall \ell  \geq 1 $ \\
+\textbf{Self-Evident Knowledge Definitions:} \\
+E is self evident if $\forall s \in E$, $k_i(s) \subseteq E$. Equivalently: \\
+E is mutual knowledge at every $s \in E$ \\
+$E=m(E)$ \\
+\textbf{Common Knowledge and Self-Evidence Correspondence Theorem:} \\
+E is common knowledge at s if $\exists$  a self evident event $E'$ s.t. $s \in E' \subseteq E$ \\
+\textbf{Self-Evident Union Proposition: }
+E is self evident iff $\forall i$, $\exists \Tilde{K_i} \subseteq K_i$ s.t. $E= \cup_{E' \in \Tilde{K_i}} E'$
+
+\subsection{Aumann's Agreement Theorem}
+Suppose \(\abs{N} = 2\) and there is a common prior. Also, suppose that, for some \(E\), \(\eta_1\) and \(\eta_2\), the event
+\[\Tilde{E} = \{s'\,|\,p_1(E|k_1(s')) = \eta_1 \text{ and } p_2(E|k_2(s')) = \eta_2\}\]
+
+is common knowledge at some \(s\). Then, \(\eta_1 = \eta_2\).
