@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 10:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 11:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -558,13 +558,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 426CCA46E6856C1FE9A6C6FD720CF532;30805.
  ) 
 Here is how much of TeX's memory you used:
- 12378 strings out of 476106
- 187566 string characters out of 5793934
- 1980975 words of memory out of 5000000
- 33955 multiletter control sequences out of 15000+600000
+ 12380 strings out of 476106
+ 187596 string characters out of 5793934
+ 1981975 words of memory out of 5000000
+ 33957 multiletter control sequences out of 15000+600000
  567484 words of font info for 69 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 84i,16n,96p,666b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,16n,96p,666b,802s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/jackruf/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.6
 00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.p
@@ -584,7 +584,7 @@ y5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (8 pages, 316054 bytes).
+Output written on main.pdf (8 pages, 316305 bytes).
 PDF statistics:
  866 PDF objects out of 1000 (max. 8388607)
  808 compressed objects within 9 object streams
