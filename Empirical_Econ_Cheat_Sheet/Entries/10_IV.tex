@@ -59,10 +59,11 @@ With endogenous $x_k$ and instruments $z=(x_{-k},z_k)$: the first stage \emph{mu
 \subsection{LATE Assumptions}
 With heterogeneous effects and binary $D,Z$, IV does not identify the ATE. The LATE framework (Imbens \& Angrist, 1994) imposes:
 \begin{itemize}[nosep]
-\item \textbf{Independence:} $(Y_i(0),Y_i(1),D_i(0),D_i(1))\perp Z_i$.
-\item \textbf{Exclusion:} $Y_i(d,z)=Y_i(d)$ $\forall d,z$ (instrument affects $Y$ only through $D$).
-\item \textbf{First stage:} $P(D\!=\!1|Z\!=\!1)\neq P(D\!=\!1|Z\!=\!0)$.
-\item \textbf{Monotonicity:} $D_i(1)\geq D_i(0)$ $\forall i$ (no defiers).
+\item \textbf{Independence} (A2): $(Y_i(0),Y_i(1),D_i(0),D_i(1))\perp Z_i$.
+\item \textbf{Exclusion} (A2): $Y_i(d,z)=Y_i(d)$ $\forall d,z$ (instrument affects $Y$ only through $D$).
+\item \textbf{First stage} (A1): $P(D\!=\!1|Z\!=\!1)\neq P(D\!=\!1|Z\!=\!0)$.
+\item \textbf{Monotonicity} (A3): $D_i(1)\geq D_i(0)$ $\forall i$ (no defiers). Implied by threshold crossing $D=\mathbf{1}[\mu_D(Z)\geq U_D]$ with $U_D$ abs.\ continuous.
+\item \textbf{Regularity} (A4, A5): $\E|Y_d|<\infty$ and $0\!<\!P(D\!=\!1|X)\!<\!1$ (overlap).
 \end{itemize}
 Monotonicity partitions the population into \textbf{compliers} ($D_i(1)>D_i(0)$), \textbf{always-takers} ($D_i(1)=D_i(0)=1$), and \textbf{never-takers} ($D_i(1)=D_i(0)=0$).
 
@@ -75,12 +76,14 @@ Under the LATE assumptions, the Wald estimand identifies the \textbf{LATE}:
 
 \subsection{Equivalence with Latent Variable Model (Vytlacil, 2002)}
 Consider the latent variable selection model $Y_d = \mu_d(X,U_d)$, $D = \mathbf{1}[\mu_D(Z)\geq U_D]$ with:
-(A1) $\mu_D(Z)$ nondegenerate $|X$;
-(A2) $(U_0,U_D),(U_1,U_D)\perp Z|X$;
-(A3) $U_D$ abs.\ continuous;
-(A4) $\E|Y_d|<\infty$;
-(A5) $0\!<\!P(D\!=\!1|X)\!<\!1$.
-Vytlacil (2002): (A1)--(A5) $\iff$ LATE assumptions. The latent variable model generates LATE, and the LATE assumptions generate the latent variable model. Breaks down for multivalued treatments.
+\begin{itemize}[nosep]
+\item[(A1)] $\mu_D(Z)$ nondegenerate $|X$ (relevance / first stage).
+\item[(A2)] $(U_0,U_D),(U_1,U_D)\perp Z|X$ (independence \& exclusion).
+\item[(A3)] $U_D$ abs.\ continuous (implies monotonicity via threshold crossing).
+\item[(A4)] $\E|Y_d|<\infty$.
+\item[(A5)] $0\!<\!P(D\!=\!1|X)\!<\!1$ (overlap).
+\end{itemize}
+Vytlacil (2002): (A1)--(A5) $\iff$ LATE assumptions. Breaks down for multivalued treatments.
 
 \subsection{Hausman Test (Exogeneity)}
 Test $H_0:\E(xu)=0$ using both OLS and IV. Under $H_0$, both are consistent; under $H_1$, only IV is. Joint distribution:
