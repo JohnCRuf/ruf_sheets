@@ -1,0 +1,37 @@
+\section{All-Causes (Latent Variable) Framework}
+
+\subsection{Setup}
+The \textbf{all-causes} (or \textbf{latent variable}) model specifies:
+\begin{align*}
+    Y = g(D, U),
+\end{align*}
+where $D$ denotes observed determinants and $U$ encompasses \emph{all} unobserved determinants of $Y$. Together, $D$ and $U$ exhaustively cause the outcome. The linear case: $Y = \alpha + \beta D + U$.
+
+\textbf{Key distinction:} $U$ has a \emph{causal} interpretation (unobserved causes of $Y$), unlike a regression residual $\varepsilon$ which is a statistical object minimizing MSE.
+
+\subsection{From Potential Outcomes to All-Causes}
+Binary $D\in\{0,1\}$ with potential outcomes $Y(0),Y(1)$:
+\begin{align*}
+    Y &= DY(1) + (1-D)Y(0) \\
+      &= \underbrace{\E(Y(0))}_{\alpha} + \underbrace{(Y(1)-Y(0))}_{\beta}\cdot D + \underbrace{Y(0)-\E(Y(0))}_{U}.
+\end{align*}
+$\beta$ is deterministic under homogeneous effects; a random variable under heterogeneous effects.
+
+\subsection{From All-Causes to Potential Outcomes}
+Given $Y = \alpha + \beta D + U$, define:
+\begin{align*}
+    Y(0) \equiv g(0,U) = \alpha + U, \quad Y(1) \equiv g(1,U) = \alpha + \beta + U.
+\end{align*}
+Both are random through $U$; $\beta$ may also be random (heterogeneous effects).
+
+\subsection{Causal $U$ vs.\ Regression Residual}
+In the all-causes model $Y = D'\beta + U$: $\E(DU)=0$ asserts observed and unobserved \emph{causes} are orthogonal---a substantive causal claim. In contrast, the BLP residual $\varepsilon = Y - D'\beta^*$ satisfies $\E(D\varepsilon)=0$ by construction (FOC of MSE minimization), with no causal content.
+
+$\beta^* = \beta$ iff the causal orthogonality condition $\E(DU)=0$ holds. When $\E(DU)\neq 0$ (endogeneity), $\beta^*\neq\beta$ and OLS is inconsistent for the causal parameter.
+
+\subsection{Equivalence Result (Vytlacil, 2002)}
+The latent variable selection model (Heckman--Vytlacil):
+\begin{align*}
+    Y_d &= \mu_d(X, U_d), \quad D^* = \mu_D(Z) - U_D, \quad D = \mathbf{1}[D^*\!\geq\! 0],
+\end{align*}
+with (A1) $\mu_D(Z)$ nondegenerate $|X$; (A2) $(U_0,U_D),(U_1,U_D)\perp Z|X$; (A3) $U_D$ absolutely continuous; (A4) $\E|Y_d|<\infty$; (A5) $0<P(D\!=\!1|X)<1$, is \textbf{equivalent} to the LATE assumptions of Imbens--Angrist (1994): independence, exclusion, relevance, and monotonicity. The latent variable model generates LATE, and LATE assumptions generate the latent variable model.
