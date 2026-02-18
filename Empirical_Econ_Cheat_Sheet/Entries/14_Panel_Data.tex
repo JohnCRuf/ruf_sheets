@@ -1,0 +1,44 @@
+\section{Panel Data}
+
+\subsection{Setup}
+$N$ individuals, $T$ time periods. Linear model:
+\begin{align*}
+    Y_{it} = X_{it}'\beta + \alpha_i + u_{it},
+\end{align*}
+where $\alpha_i$ is an unobserved individual fixed effect. \\
+\textbf{Asymptotics:} Large $N$, small $T$.
+
+\subsection{Problem with Pooled OLS}
+Pooled OLS treats $\alpha_i + u_{it}$ as the error. If $\E(X_{it}\alpha_i)\neq 0$, the composite error is correlated with regressors, and pooled OLS is inconsistent.
+
+\subsection{First Differencing (FD)}
+Difference across time to eliminate $\alpha_i$:
+\begin{align*}
+    \Delta Y_{it} = \Delta X_{it}'\beta + \Delta u_{it}.
+\end{align*}
+FD estimator: $\hat\beta_{\text{FD}}$ is OLS applied to differenced data.
+
+\textbf{Consistency requires:} $\E(\Delta X_{it}'\Delta u_{it})=0$, i.e.\ \textbf{contemporaneous exogeneity}: $\E(u_{it}|X_{it},X_{it-1})=0$.
+
+\textbf{Not sufficient if:} unobservables in \emph{other} time periods are correlated with today's regressors.
+
+\subsection{Strict Exogeneity}
+$\E(u_{it}|X_{i1},\ldots,X_{iT})=0$ for all $t$. Stronger than contemporaneous exogeneity. Required for FE consistency. \\
+Violated if, e.g., past outcomes affect future regressors (feedback effects).
+
+\subsection{Fixed Effects (FE) / Within Estimator}
+For general $T\geq 2$, define within-transformed variables $\ddot{Y}_{it}=Y_{it}-\bar{Y}_i$:
+\begin{align*}
+    \ddot{Y}_{it} = \ddot{X}_{it}'\beta + \ddot{u}_{it}.
+\end{align*}
+FE estimator is OLS on demeaned data. Eliminates $\alpha_i$ without differencing. \\
+Under strict exogeneity: $\hat\beta_{\text{FE}}$ is consistent as $N\to\infty$ (fixed $T$).
+
+\textbf{FE = LSDV equivalence:} Regressing $Y$ on $X$ and $N$ individual dummies (LSDV) yields the same $\hat\beta$ as the within estimator. \textbf{Proof:} By FWL, $\hat\beta_{\text{LSDV}}=(X'M_D X)^{-1}X'M_D Y$ where $D$ is the matrix of individual dummies. $M_D$ demeans within each individual: $(M_D Y)_{it}=Y_{it}-\bar{Y}_i=\ddot{Y}_{it}$. So $\hat\beta_{\text{LSDV}}=(\ddot{X}'\ddot{X})^{-1}\ddot{X}'\ddot{Y}=\hat\beta_{\text{FE}}$.
+
+\subsection{FD vs.\ FE}
+With $T=2$: FD $=$ FE. \\
+With $T>2$: differ in general. FE more efficient under homoskedasticity of $u_{it}$; FD more robust to serial correlation patterns.
+
+\subsection{Serial Correlation}
+Panel structure allows arbitrary correlation of $u_{it}$ with $\alpha_i$ (eliminated by FD/FE), but standard errors must account for within-individual serial correlation in $u_{it}$. Cluster standard errors at the individual level.

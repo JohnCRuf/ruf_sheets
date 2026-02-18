@@ -1,0 +1,55 @@
+\section{Hypothesis Testing}
+
+\subsection{Definitions}
+\textbf{Null:} $H_0:\theta_0\in\Theta_0$. Simple if $\Theta_0$ singleton; composite otherwise.
+
+\textbf{Test:} $\phi_n(X_1,\ldots,X_n)\to\{0,1\}$. Reject $H_0$ iff $\phi_n=1$.
+
+\textbf{Type I Error:} Reject when $H_0$ true. \textbf{Type II:} Fail to reject when false.
+
+\textbf{Power function:} $\beta_n(\theta)=P_\theta(\phi_n=1)$.
+
+\textbf{Size:} $\alpha:=\sup_{\theta\in\Theta_0}\beta_n(\theta)$.
+
+\textbf{Asymptotic size $\alpha$:} $\lim_{n\to\infty}\sup_{\theta\in\Theta_0}\beta_n(\theta)\leq\alpha$.
+
+\subsection{Confidence Sets}
+$C_n$ is a $1-\alpha$ confidence set if $P_\theta(\theta\in C_n)\geq 1-\alpha$ for all $\theta$.
+
+\textbf{Pivot:} A function of data and unknown parameters whose distribution doesn't depend on unknown parameters (e.g.\ $\frac{\sqrt{n}(\bar{X}_n-\mu)}{\sigma}\sim N(0,1)$).
+
+\textbf{Exact (known $\sigma^2$):} $C_n = \left[\bar{X}_n \pm \frac{\sigma}{\sqrt{n}}z_{1-\alpha/2}\right]$.
+
+\textbf{Exact (unknown $\sigma^2$, normal):} $\frac{\sqrt{n}(\bar{X}_n-\mu)}{\tilde{S}_n}\sim t_{n-1}$, yielding $C_n = \left[\bar{X}_n \pm \frac{\tilde{S}_n}{\sqrt{n}}t_{n-1,1-\alpha/2}\right]$, where $\tilde{S}_n^2 = \frac{1}{n-1}\sum(X_i-\bar{X}_n)^2$.
+
+\subsection{Finite Sample Inference (Normal Regression)}
+Under $Y|X\sim N(X\beta,\sigma^2 I_n)$: $\hat\beta|X\sim N(\beta,\sigma^2(X'X)^{-1})$, $\frac{(n-k-1)\hat\sigma^2}{\sigma^2}\sim\chi^2_{n-k-1}$, and $\hat\beta\perp\hat\sigma^2|X$.
+
+\textbf{t-statistic:} $T_n=\frac{\hat\beta_j-\beta_{j,0}}{se(\hat\beta_j)}\sim t_{n-k-1}$, where $se(\hat\beta_j)=\hat\sigma\sqrt{e_j'(X'X)^{-1}e_j}$.
+
+Reject $H_0:\beta_j=\beta_{j,0}$ if $|T_n|>t_{n-k-1,1-\alpha/2}$.
+
+\textbf{p-value:} $\hat{p}=2F(-|T_n|)$ where $F$ is the $t_{n-k-1}$ CDF.
+
+\subsection{Testing Single Linear Restriction (Asymptotic)}
+$H_0: r'\beta=c$. Under $\sqrt{n}(\hat\beta_n-\beta)\dto N(0,V)$ with $\hat{V}_n\pto V$:
+\begin{align*}
+    T_n = \frac{\sqrt{n}(r'\hat\beta_n - c)}{\sqrt{r'\hat{V}_n r}}\dto N(0,1) \text{ under } H_0.
+\end{align*}
+Reject if $|T_n|>z_{1-\alpha/2}$. CI: $C_n = r'\hat\beta_n \pm z_{1-\alpha/2}\sqrt{r'\hat{V}_n r/n}$.
+
+\subsection{Testing Multiple Linear Restrictions}
+$H_0: R\beta=c$, $R$ is $p\times(k+1)$ full row rank.
+\begin{align*}
+    T_n = n\cdot(R\hat\beta_n-c)'(R\hat{V}_nR')^{-1}(R\hat\beta_n-c)\dto\chi^2_p.
+\end{align*}
+Reject if $T_n>\chi^2_{p,1-\alpha}$. Confidence set: ellipsoid $\{c: T_n(c)\leq\chi^2_{p,1-\alpha}\}$.
+
+$RVR'$ positive definite because: if $a\neq 0$, $R'a\neq 0$ (full rank), so $(R'a)'V(R'a)>0$.
+
+\subsection{Testing Non-Linear Restrictions}
+$H_0: f(\beta)=0$, $f:\R^{k+1}\to\R^p$ continuously differentiable. Delta method:
+\begin{align*}
+    \sqrt{n}(f(\hat\beta_n)-f(\beta))\dto N(0,D_\beta f(\beta)\,V\,D_\beta f(\beta)').
+\end{align*}
+Construct $\chi^2_p$ statistic as before. Note $f(\beta)=R\beta$ yields linear case since $D_\beta f = R$.

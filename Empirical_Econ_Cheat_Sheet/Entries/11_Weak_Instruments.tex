@@ -1,0 +1,41 @@
+\section{Weak Instruments}
+
+\subsection{Setup}
+$y=\beta x + u$, $x=\pi z + v$, $\E(zu)=\E(zv)=0$. Identification requires $\pi\neq 0$.
+
+\subsection{The Problem with \texorpdfstring{$\pi\approx 0$}{pi near 0}}
+\begin{align*}
+    \hat\beta_{\text{IV}} = \beta + \frac{\frac{1}{\sqrt{n}}\sum z_i u_i}{\frac{1}{n}\sum z_i x_i}.
+\end{align*}
+If $\pi=0$: denominator $\pto 0$ but numerator $\dto$ normal. Can't apply Slutsky. The ratio converges to a \textbf{ratio of correlated normals}, not $N(0,V)$.
+
+\subsection{Finite Sample Bias}
+With joint normal errors and fixed instruments, $\hat\beta_{\text{IV}}$ has number of moments equal to (\# excluded instruments $-$ \# endogenous variables). With $K=1$ excluded instrument and 1 endogenous variable: $\hat\beta_{\text{IV}}$ has \textbf{no finite moments}.
+
+$\hat\beta_{\text{OLS}}\pto\frac{\sigma_{uv}}{\sigma_v^2}$ (biased toward OLS probability limit).
+
+\subsection{Rule of Thumb}
+First-stage F-statistic $\geq 10$ for relative bias $\leq 10\%$ (Stock \& Yogo, 2005). Critical values range 9--12 for 3--30 instruments. But this is only an approximation.
+
+\subsection{Anderson-Rubin Test}
+Robust to weak instruments. Suppose $y=x'\beta+u$, $\E(zu)=0$.
+
+Under $H_0:\beta=\beta_0$: $\E(z(y-x'\beta_0))=0$, so regress $u(\beta_0)=y-x'\beta_0$ on $z$:
+\begin{align*}
+    u_i(\beta_0) = z_i'\gamma + \epsilon_i, \quad \E(z\epsilon)=0.
+\end{align*}
+Under $H_0$: $\gamma=0$. Test statistic:
+\begin{align*}
+    T_n = n\hat\gamma'\hat{V}^{-1}\hat\gamma\dto\chi^2_l.
+\end{align*}
+Reject if $T_n>\chi^2_{l,1-\alpha}$.
+
+\textbf{Why robust:} Under $H_0$, $\sqrt{n}\hat\gamma = \left(\frac{1}{n}\sum z_iz_i'\right)^{-1}\frac{1}{\sqrt{n}}\sum z_i u_i$. This uses CLT on $z_iu_i$ directly---no division by a possibly-near-zero first stage.
+
+\textbf{Power:} Under $H_1:\beta\neq\beta_0$, we have $\gamma = \E(zz')^{-1}\E(zx')(\beta-\beta_0)\neq 0$, so the test has power against any alternative.
+
+\subsection{With Included Instruments}
+Separate $z=(z_1,z_2)$, $x=(x_1,z_1)$. Under $H_0:\beta_1=\beta_{1,0}$, regress $y-x_1'\beta_{1,0}$ on $z_1$ and $z_2$. Test whether coefficients on $z_2$ are zero:
+\begin{align*}
+    T_n = n\hat\gamma_{z_2}'\hat{V}^{-1}\hat\gamma_{z_2}\dto\chi^2_{l_2}.
+\end{align*}

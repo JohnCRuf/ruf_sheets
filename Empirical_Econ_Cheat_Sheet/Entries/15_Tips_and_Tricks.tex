@@ -1,0 +1,61 @@
+\section{Tips and Tricks}
+
+\subsection{Proof Strategies for Consistency}
+\begin{enumerate}[nosep]
+    \item Write estimator as function of sample averages.
+    \item Apply SLLN to each sample average.
+    \item Apply CMT to the composed function.
+\end{enumerate}
+For extremum estimators (MLE, GMM): show uniform convergence of objective function + identification at $\theta_0$.
+
+\subsection{Trace Trick for Quadratic Forms}
+For scalar $U'AU$: $U'AU = \tr(U'AU) = \tr(AUU')$, so $\E[U'AU|X] = \tr(A\,\E[UU'|X])$. Key identity: $\tr(AB)=\tr(BA)$. Used to prove $\E[\text{SSR}|X]=\sigma^2(n\!-\!k\!-\!1)$.
+
+\subsection{Proof Strategies for Asymptotic Normality}
+\begin{enumerate}[nosep]
+    \item Decompose $\sqrt{n}(\hat\theta-\theta)$ into a CLT term and remainder.
+    \item Apply CLT to iid mean-zero term.
+    \item Show remainder is $o_p(1)$ using Slutsky.
+\end{enumerate}
+Template: $\sqrt{n}(\hat\beta-\beta) = \left(\frac{1}{n}\sum x_ix_i'\right)^{-1}\frac{1}{\sqrt{n}}\sum x_iu_i$. CLT on second factor, Slutsky with first.
+
+\subsection{Useful Inequalities}
+\textbf{Markov:} $P(|X|\geq t)\leq \frac{\E|X|}{t}$. \\
+\textbf{Chebyshev:} $P(|X-\mu|\geq t)\leq \frac{\Var(X)}{t^2}$. \\
+\textbf{Jensen:} If $g$ convex, $g(\E(X))\leq \E(g(X))$. Strict if $g$ strictly convex and $X$ non-degenerate. \\
+\textbf{Cauchy-Schwarz:} $|\E(XY)|^2\leq \E(X^2)\E(Y^2)$.
+
+\subsection{Key \texorpdfstring{$o_p/O_p$}{op/Op} Arguments}
+To show $\frac{1}{n}\sum \hat{u}_i^2 x_ix_i' \pto \E(u^2xx')$: \\
+Bound $\max_{i\leq n}|\hat{u}_i^2-u_i^2| \leq \|\hat\beta-\beta\|^2\max\|x_i\|^2 + 2\|\hat\beta-\beta\|\max\|x_iu_i\|$. \\
+Use: $\frac{\max\|Z_i\|}{n^{1/r}}=o_p(1)$ when $\E\|Z\|^r<\infty$.
+
+\subsection{Common Endogeneity Sources}
+\begin{itemize}[nosep]
+    \item Omitted variables correlated with both $x$ and $y$
+    \item Simultaneity / reverse causality
+    \item Measurement error in regressors
+    \item Self-selection into treatment
+\end{itemize}
+
+\subsection{IV Checklist}
+\begin{enumerate}[nosep]
+    \item \textbf{Relevance:} First-stage F $\geq 10$ (weak instrument check)
+    \item \textbf{Exclusion:} $z$ affects $y$ only through $x$ (untestable)
+    \item \textbf{Exogeneity:} $\E(zu)=0$ (partially testable via overid)
+    \item \textbf{Monotonicity:} For LATE interpretation with heterogeneous effects
+\end{enumerate}
+
+\subsection{Identification Strategy Summary}
+\begin{itemize}[nosep]
+    \item \textbf{RCT:} Random assignment $\implies$ ATE from simple regression
+    \item \textbf{Selection on observables:} Unconfoundedness + overlap $\implies$ ATE
+    \item \textbf{IV:} Exogeneity + relevance $\implies$ causal effect (LATE if heterogeneous)
+    \item \textbf{DiD:} Common trends $\implies$ ATT
+    \item \textbf{RDD:} Continuity at cutoff $\implies$ treatment effect at cutoff
+    \item \textbf{Panel FE/FD:} Eliminates time-invariant unobservables
+\end{itemize}
+
+\subsection{Bias-Variance Tradeoff (Irrelevant Variables)}
+Including irrelevant variable ($\beta_2\!=\!0$): no bias, but \emph{increases} variance. Omitting relevant variable ($\beta_2\!\neq\! 0$): introduces OVB, but \emph{decreases} variance.
+Via FWL: $\Var(\hat\beta_1|X) = \sigma^2/\text{SSR}_1$ where $\text{SSR}_1$ is residual SS from regressing $x_1$ on other regressors. Adding correlated regressors lowers $\text{SSR}_1$, inflating variance.

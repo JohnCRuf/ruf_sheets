@@ -1,0 +1,43 @@
+\section{OLS: Large Sample Properties}
+
+\subsection{Consistency}
+Under $y=x'\beta+u$, $\E(xu)=0$, $\E(xx')$ invertible:
+\begin{align*}
+    \hat\beta_n = \left(\frac{1}{n}\sum x_ix_i'\right)^{-1}\frac{1}{n}\sum x_iy_i \asto \E(xx')^{-1}\E(xy) = \beta.
+\end{align*}
+by SLLN and CMT.
+
+\subsection{Asymptotic Normality}
+Assume $\Var(xu)=\E(u^2xx')$ exists. Then:
+\begin{align*}
+    \sqrt{n}(\hat\beta_n - \beta) \dto N(0,\Sigma),
+\end{align*}
+where $\Sigma = \E(xx')^{-1}\E(u^2xx')\E(xx')^{-1}$.
+
+\textbf{Proof:} $\sqrt{n}(\hat\beta_n-\beta)=\left(\frac{1}{n}\sum x_ix_i'\right)^{-1}\frac{1}{\sqrt{n}}\sum x_iu_i$. CLT gives $\frac{1}{\sqrt{n}}\sum x_iu_i\dto N(0,\E(u^2xx'))$, then apply Slutsky.
+
+\subsection{Variance Estimation: Homoskedastic Case}
+Under $\E(u|x)=0$, $\Var(u|x)=\sigma^2$: $\Sigma=\sigma^2\E(xx')^{-1}$. Estimate:
+\begin{align*}
+    \hat\Sigma = \hat\sigma^2\left(\frac{1}{n}\sum x_ix_i'\right)^{-1}, \quad \hat\sigma^2 = \frac{1}{n}\sum \hat{u}_i^2.
+\end{align*}
+
+\subsection{Variance Estimation: Heteroskedastic Case}
+Without homoskedasticity, use the \textbf{Eicker-Huber-White} (robust) estimator:
+\begin{align*}
+    \hat\Sigma = \left(\frac{1}{n}\sum x_ix_i'\right)^{-1}\!\left(\frac{1}{n}\sum \hat{u}_i^2 x_ix_i'\right)\!\left(\frac{1}{n}\sum x_ix_i'\right)^{-1}.
+\end{align*}
+
+\subsection{Consistency of $\hat\Sigma$ (Key Proof Step)}
+Need $\frac{1}{n}\sum\hat{u}_i^2 x_ix_i'\pto \E(u^2xx')$. Decompose:
+\begin{align*}
+    \frac{1}{n}\sum \hat{u}_i^2x_ix_i' = \frac{1}{n}\sum u_i^2 x_ix_i' + \frac{1}{n}\sum(\hat{u}_i^2-u_i^2)x_ix_i'.
+\end{align*}
+First term $\asto \E(u^2xx')$ by SLLN. Second term $=o_p(1)$ because:
+\begin{align*}
+    |\hat{u}_i^2-u_i^2| &= |x_i'(\beta-\hat\beta_n)|\cdot|\hat{u}_i+u_i| \\
+    \max_{i\leq n}|\hat{u}_i^2-u_i^2| &\leq \|\beta-\hat\beta_n\|^2\max\|x_i\|^2 + 2\|\beta-\hat\beta_n\|\max\|x_iu_i\|.
+\end{align*}
+Use the lemma: if $\E(\|Z_i\|^r)<\infty$ and $Z_i$ identically distributed, then $\frac{\max_{i\leq n}\|Z_i\|}{n^{1/r}}\pto 0$.
+
+Applied: $\frac{\max\|x_i\|^2}{n}=o_p(1)$, $\frac{\max\|x_iu_i\|}{\sqrt{n}}=o_p(1)$, and $\sqrt{n}(\hat\beta-\beta)=O_p(1)$.

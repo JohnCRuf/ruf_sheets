@@ -1,0 +1,28 @@
+\section{Estimation}
+
+\subsection{Definitions}
+Given a sample $\{X_i\}_{i=1}^n$ from distribution $F$, a \textbf{statistic} is a function $T_n:(X_1,\ldots,X_n)\to V$. An \textbf{estimator} is a statistic used to learn about some feature $\theta(F)$.
+
+\subsection{Finite Sample Properties}
+\textbf{Bias:} $\text{Bias}(\hat{\theta}_n)=\E(\hat{\theta}_n)-\theta$. Unbiased if $\E(\hat\theta_n)=\theta$.
+
+\textbf{Mean Squared Error:}
+\begin{align*}
+    \text{MSE}(\hat\theta_n) = \E\!\left[(\hat\theta_n - \theta)^2\right] = \Var(\hat\theta_n) + \text{Bias}(\hat\theta_n)^2.
+\end{align*}
+
+\subsection{Large Sample Properties}
+\textbf{Consistency:} $\hat\theta_n\pto\theta$ (or $\hat\theta_n\asto\theta$).
+
+\textbf{Asymptotic Normality:} $\sqrt{n}(\hat\theta_n - \theta)\dto N(0,V)$ for some $V$.
+
+\textbf{Asymptotic Efficiency:} An estimator achieving the smallest possible asymptotic variance among regular estimators (e.g.\ MLE under regularity conditions).
+
+\subsection{Method of Moments}
+\textbf{Sample Analogue Principle:} Replace population moments with sample moments.
+
+If $\theta$ satisfies $\E(m(X,\theta))=0$ for moment function $m$, the MoM estimator solves:
+\begin{align*}
+    \frac{1}{n}\sum_{i=1}^n m(X_i,\hat\theta_n)=0.
+\end{align*}
+Consistency follows from SLLN + CMT if identification holds.

@@ -1,0 +1,65 @@
+\section{Asymptotics}
+
+\subsection{Modes of Convergence}
+Let $\{X_n\}_{n\geq 1}$ and $X$ be random variables on $(\Omega,\mathcal{F},P)$.
+
+\textbf{Almost Sure Convergence:}
+$X_n \asto X$ if $P(\{\omega: X_n(\omega)\to X(\omega)\})=1$.
+
+\textbf{Convergence in Probability:}
+$X_n \pto X$ if $\forall \epsilon>0$: $P(|X_n - X|>\epsilon)\to 0$.
+
+\textbf{Convergence in $r$-th Mean:}
+$X_n \xrightarrow{r} X$ if $\E(|X_n - X|^r)\to 0$.
+
+\textbf{Convergence in Distribution:}
+$X_n \dto X$ if $F_{X_n}(x)\to F_X(x)$ for all $x$ where $F_X$ is continuous.
+
+\subsection{Implications between modes}
+\begin{align*}
+    X_n \asto X &\implies X_n \pto X \implies X_n \dto X \\
+    X_n \xrightarrow{r} X &\implies X_n \pto X \implies X_n \dto X \\
+    X_n \xrightarrow{r} X &\implies X_n \xrightarrow{s} X \text{ for } s \leq r
+\end{align*}
+None of the reverse implications hold in general.
+Exception: $X_n \dto c$ (constant) $\implies X_n \pto c$.
+
+\subsection{Continuous Mapping Theorem}
+Let $g:\R^k\to\R^n$ be continuous on $S\subset\R^k$ with $P(X\in S)=1$. Then:
+\begin{align*}
+    X_n \asto X &\implies g(X_n) \asto g(X) \\
+    X_n \pto X &\implies g(X_n) \pto g(X) \\
+    X_n \dto X &\implies g(X_n) \dto g(X)
+\end{align*}
+\textbf{Does NOT hold for $\xrightarrow{r}$}. Counterexample: $X_n=n$ w.p.\ $1/n^2$, $0$ otherwise. $g(x)=x^2$: $\E|X_n|\to 0$ but $\E|X_n^2|=1$.
+
+\textbf{Important:} Need $P(X\in S)=1$. E.g.\ $g(x,y)=x/y$ continuous on $S=\R^2\setminus\{(x,0)\}$; need $c\neq 0$ for $X_n/Y_n\dto X/c$.
+
+\subsection{Slutsky's Theorem}
+If $X_n\dto X$ and $Y_n\pto c$ (constant), then:
+\begin{align*}
+    X_n + Y_n &\dto X + c \\
+    X_n Y_n &\dto cX \\
+    X_n/Y_n &\dto X/c \quad (c\neq 0)
+\end{align*}
+\textbf{Critical:} $Y_n$ must converge to a \emph{constant}. If $Y_n\dto Y$ (non-degenerate), Slutsky does not apply.
+
+\subsection{Weak Law of Large Numbers}
+If $\{X_i\}_{i\geq 1}$ iid with $\E(X_i)=\mu$, $\Var(X_i)=\sigma^2<\infty$, then $\bar{X}_n \pto \mu$.
+
+\textbf{Proof (Chebyshev):} $P(|\bar{X}_n-\mu|>\epsilon)\leq \frac{\Var(\bar{X}_n)}{\epsilon^2}=\frac{\sigma^2}{n\epsilon^2}\to 0$.
+
+\subsection{Central Limit Theorem}
+If $\{X_i\}_{i\geq 1}$ iid with $\E(X_i)=\mu$, $\Var(X_i)=\Sigma$ (finite), then:
+\begin{align*}
+    \sqrt{n}(\bar{X}_n - \mu) \dto N(0,\Sigma).
+\end{align*}
+
+\subsection{Stochastic Order Notation}
+$X_n = O_p(1)$: $\{X_n\}$ is bounded in probability, i.e.\ $\forall \epsilon>0$, $\exists M$ s.t.\ $\sup_n P(|X_n|>M)<\epsilon$.
+
+$X_n = o_p(1)$: $X_n\pto 0$. \\
+\textbf{Key rules:}
+$O_p(1)\cdot o_p(1)=o_p(1)$; \quad $O_p(1)+O_p(1)=O_p(1)$. \\
+$X_n\dto X \implies X_n = O_p(1)$. \\
+If $\sqrt{n}(X_n - c)\dto X$, then $X_n \pto c$ and $\sqrt{n}(X_n-c)=O_p(1)$.

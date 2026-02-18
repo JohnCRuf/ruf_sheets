@@ -1,0 +1,75 @@
+\section{Potential Outcomes \& Causality}
+
+\subsection{Setup}
+Individual $i$ has potential outcomes $y_i(1)$ (treated) and $y_i(0)$ (untreated). Treatment $D_i\in\{0,1\}$. Observed outcome:
+\begin{align*}
+    Y_i = y_i(1)D_i + y_i(0)(1-D_i).
+\end{align*}
+\textbf{Fundamental problem:} never observe both $y_i(1)$ and $y_i(0)$.
+
+\subsection{Treatment Effects}
+\textbf{ATE:} $\E(y(1)-y(0))$.
+
+\textbf{ATT:} $\E(y(1)-y(0)|D=1)$.
+
+\textbf{ATU:} $\E(y(1)-y(0)|D=0)$.
+
+\textbf{Decomposition:}
+\begin{align*}
+    \text{ATE} = \text{ATT}\cdot P(D=1) + \text{ATU}\cdot P(D=0).
+\end{align*}
+
+\subsection{Naive Comparison and Selection Bias}
+\begin{align*}
+    &\E(Y|D=1) - \E(Y|D=0) \\
+    &= \underbrace{\E(y(1)-y(0)|D=1)}_{\text{ATT}} + \underbrace{\E(y(0)|D=1)-\E(y(0)|D=0)}_{\text{Selection Bias}}.
+\end{align*}
+Naive comparison $=$ ATT only if selection bias $=0$.
+
+\subsection{Random Assignment}
+$D\perp (y(0),y(1))$ implies:
+\begin{align*}
+    \E(y(d)|D) = \E(y(d)) \quad \text{for } d\in\{0,1\}.
+\end{align*}
+Selection bias vanishes, and $\beta_1 = \E(Y|D=1)-\E(Y|D=0) = \text{ATE}$.
+
+OLS of $Y$ on $D$ gives unbiased estimate of ATE.
+
+\subsection{Conditional Independence (Unconfoundedness)}
+$y(0),y(1)\perp D|w$ (selection on observables). Then:
+\begin{align*}
+    \text{ATE} = \E[\E(Y|D=1,w)-\E(Y|D=0,w)].
+\end{align*}
+Requires \textbf{overlap}: $0<P(D=1|w=w')<1$ for all $w'$.
+
+\subsection{Homogeneous vs.\ Heterogeneous Effects}
+\textbf{Homogeneous:} $y_i(1)-y_i(0)=\beta_1$ for all $i$. Then $y_i = \beta_0 + \beta_1 D_i + u_i$ has a causal interpretation: $\beta_1$ is the treatment effect. \\
+\textbf{Heterogeneous:} Effects vary across $i$. Regression coefficient is an average effect, not the individual effect.
+
+\subsection{Heterogeneous Effects with Interactions}
+If $x\in\{0,1\}$ and effects vary, the correct specification is:
+\begin{align*}
+    y_i = \beta_0 + \beta_1 x_i + \beta_2 D_i + \beta_3 D_i x_i + v_i, \;\; \E(v|D,x)=0.
+\end{align*}
+Here $\beta_2=\E(y(1)\!-\!y(0)|x\!=\!0)$ and $\beta_3=\text{ATE}(x\!=\!1)-\text{ATE}(x\!=\!0)$.
+
+\textbf{Misspecification trap:} If you omit $D_i x_i$ and run $y=b_0+b_1 x+b_2 D+e$, then $b_2$ converges to a \emph{variance-weighted} average of conditional ATEs:
+\begin{align*}
+    b_2 \pto \sum_x \frac{\Var(D|x)\,P(x)}{\E(\Var(D|x))}\cdot\text{ATE}(x),
+\end{align*}
+which generally $\neq$ ATE unless effects are homogeneous or $P(D\!=\!1|x)$ is constant.
+
+\subsection{Inverse Probability Weighting (IPW)}
+Under unconfoundedness and overlap, with $p(x):=P(D\!=\!1|X\!=\!x)$:
+\begin{align*}
+    \text{ATE} &= \E\!\left[\frac{Y(D-p(X))}{p(X)(1-p(X))}\right], \\
+    \text{ATT} &= \E\!\left[\frac{YD}{P(D\!=\!1)}\right] - \E\!\left[\frac{Y(1\!-\!D)p(X)}{P(D\!=\!1)(1\!-\!p(X))}\right].
+\end{align*}
+Useful when the propensity score $p(x)$ is easier to model than $\E(Y|D,X)$.
+
+\subsection{Multiple Treatments}
+$k$ treatments, $k+1$ potential outcomes. With random assignment:
+\begin{align*}
+    \E(Y|x) = \beta_0 + \beta_1 x_1 + \cdots + \beta_k x_k,
+\end{align*}
+where $\beta_0=\E(y(0))$ and $\beta_j = \E(y(j)-y(0))$.

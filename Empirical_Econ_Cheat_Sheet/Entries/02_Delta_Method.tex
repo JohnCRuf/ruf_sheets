@@ -1,0 +1,31 @@
+\section{Delta Method}
+
+\subsection{Delta Method (General)}
+Let $\{X_n\}_{n\geq 1}$ be $(K\times 1)$ random vectors with $n^r(X_n - c)\dto X$ for some $r>0$ and constant $c$. Let $g:\R^k\to\R^d$ be differentiable at $c$ with Jacobian $Dg(c)$. Then:
+\begin{align*}
+    n^r(g(X_n)-g(c))\dto Dg(c)\, X.
+\end{align*}
+If $X\sim N(0,\Sigma)$:
+\begin{align*}
+    n^r(g(X_n)-g(c))\dto N\!\left(0,\, Dg(c)\,\Sigma\, Dg(c)'\right).
+\end{align*}
+
+\subsection{Proof Sketch}
+By Taylor: $g(x)=g(c)+Dg(c)(x-c)+h_1(x)(x-c)$ with $h_1(c)=0$. Then:
+\begin{align*}
+    n^r(g(X_n)-g(c)) &= Dg(c)\,n^r(X_n-c) + h_1(X_n)\,n^r(X_n-c).
+\end{align*}
+Since $X_n\pto c$, CMT gives $h_1(X_n)\pto 0$, and $n^r(X_n-c)=O_p(1)$, so the remainder is $o_p(1)\cdot O_p(1)=o_p(1)$.
+
+\subsection{Second-Order Delta Method}
+If $g'(c)=0$ and $g''(c)$ exists (scalar case), then:
+\begin{align*}
+    n^{2r}(g(X_n)-g(c))\dto \frac{g''(c)}{2}X^2.
+\end{align*}
+Use when first-order term vanishes (degenerate limit).
+
+\subsection{Application: Sample Variance}
+Let $X_i$ iid with $\E(X_i)=\mu$, $\Var(X_i)=\sigma^2$, $\E(X_i-\mu)^4=\kappa$. Let $S_n^2=\frac{1}{n}\sum_{i=1}^n(X_i-\bar{X})^2$. Using the Delta Method on $g(\mu,m_2)=m_2-\mu^2$ applied to the sample moments $(\bar{X}_n, \frac{1}{n}\sum X_i^2)$:
+\begin{align*}
+    \sqrt{n}(S_n^2 - \sigma^2) \dto N(0, \kappa - \sigma^4).
+\end{align*}

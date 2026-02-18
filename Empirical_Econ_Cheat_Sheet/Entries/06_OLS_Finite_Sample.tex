@@ -1,0 +1,63 @@
+\section{OLS: Finite Sample Properties}
+
+\subsection{Assumptions}
+$Y=X\beta+U$ with $\E(U|X)=0$ (equivalently $\E(Y|X)=X\beta$). Since $(u_i,x_i)$ independent of $x_j$ for $j\neq i$: $\E(u_i|x_1,\ldots,x_n)=0$.
+
+\subsection{Unbiasedness}
+\begin{align*}
+    \E(\hat\beta_n|X) &= (X'X)^{-1}X'\E(Y|X)= (X'X)^{-1}X'X\beta = \beta.
+\end{align*}
+By LIE: $\E(\hat\beta_n)=\E[\E(\hat\beta_n|X)]=\beta$.
+
+\subsection{Variance under Homoskedasticity}
+Assume $\Var(u_i|x_i)=\sigma^2$ (homoskedastic). Then $\Var(U|X)=\sigma^2 I_n$ and:
+\begin{align*}
+    \Var(\hat\beta_n|X) = \sigma^2(X'X)^{-1}.
+\end{align*}
+
+\subsection{Variance under Heteroskedasticity}
+If $\E(u_i^2|x_i)=\sigma^2(x_i)$, then $\Var(U|X)=\Omega$ (diagonal, varying entries):
+\begin{align*}
+    \Var(\hat\beta_n|X) = (X'X)^{-1}X'\Omega X(X'X)^{-1}.
+\end{align*}
+
+\subsection{Gauss-Markov Theorem}
+Under $\E(U|X)=0$ and homoskedasticity, OLS is BLUE: for any linear unbiased estimator $\tilde\beta=AY$ with $AX=I_{k+1}$,
+\begin{align*}
+    \Var(\tilde\beta|X) - \Var(\hat\beta_n|X) = \sigma^2 CC' \succeq 0,
+\end{align*}
+where $C=A-(X'X)^{-1}X'$.
+
+\textbf{Proof:} $\Var(AY|X)=\sigma^2 AA'$. Let $C=A-(X'X)^{-1}X'$. Then $CX=AX-I_{k+1}=0$, so:
+\begin{align*}
+    AA' - (X'X)^{-1} &= CC' + (X'X)^{-1}X'C' + CX(X'X)^{-1} = CC' \succeq 0.
+\end{align*}
+
+\textbf{Implication:} For any $r\in\R^{k+1}$, $r'\hat\beta$ is BLUE for $r'\beta$: $\Var(r'\tilde\beta|X)-\Var(r'\hat\beta|X)=r'CC'r\geq 0$.
+
+\subsection{Unbiasedness of $\hat\sigma^2$}
+Under normality, $\hat\sigma^2=\frac{\text{SSR}}{n-k-1}$ is unbiased. \textbf{Proof (trace trick):}
+\begin{align*}
+    \E[\text{SSR}|X] &= \E[U'M_X U|X] = \E[\tr(U'M_X U)|X] \\
+    &= \E[\tr(M_X UU')|X] = \tr(M_X\,\E[UU'|X]) \\
+    &= \sigma^2\tr(M_X) = \sigma^2(n-k-1),
+\end{align*}
+since $\tr(M_X)=\tr(I_n)-\tr(P_X)=n-(k+1)$ (idempotent: $\tr(P_X)=\tr(X(X'X)^{-1}X')=\tr(I_{k+1})$).
+
+\subsection{GLS (Known Heteroskedasticity)}
+If $\Var(U|X)=\Omega$ with $\Omega$ known, pre-multiply by $\Omega^{-1/2}$:
+$Y^*=X^*\beta+U^*$, where $\Var(U^*|X)=I_n$.
+\begin{align*}
+    \hat\beta_{\text{GLS}} = (X'\Omega^{-1}X)^{-1}X'\Omega^{-1}Y.
+\end{align*}
+This is OLS applied to the transformed model, hence BLUE by Gauss-Markov in the transformed space. Equivalently, it is BLUE in the original model.
+
+\subsection{Coefficient of Determination}
+$R^2 = 1 - \frac{\text{SSR}}{\text{TSS}} = 1 - \frac{\|M_X Y\|^2}{\|M_c Y\|^2} = \frac{\|P_X M_c Y\|^2}{\|M_c Y\|^2}$.
+
+Where TSS $=\sum(y_i-\bar{y})^2$, SSR $=\sum \hat{u}_i^2$, ESS $=\sum(\hat{y}_i-\bar{y})^2$. \\
+$0\leq R^2\leq 1$. Always weakly increases with additional regressors. \\
+Adjusted: $\bar{R}^2 = 1 - \frac{n-1}{n-k-1}\cdot\frac{\text{SSR}}{\text{TSS}}\leq R^2$. \\
+Population: $R^2_{\text{pop}} = 1 - \frac{\Var(u)}{\Var(y)}$.
+
+High $R^2$ does not imply causality; low $R^2$ does not preclude it.

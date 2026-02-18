@@ -1,0 +1,62 @@
+\section{OLS: Setup \& Projections}
+
+\subsection{Linear Model}
+\begin{align*}
+    y_i = x_i'\beta + u_i, \quad \E(x_i u_i)=0.
+\end{align*}
+$x_i\in\R^{k+1}$ with $x_{i0}=1$. ``Linear'' means linear in parameters $\beta_j$. The error $u_i$ contains unobserved determinants of $y_i$.
+
+\subsection{Identification}
+Assume $\E(xu)=0$ and no perfect collinearity (no $a\neq 0$ with $P(a'x=0)=1$).
+
+$\E(xx')$ invertible $\iff$ no perfect collinearity. Then:
+\begin{align*}
+    \beta = \E(xx')^{-1}\E(xy).
+\end{align*}
+\textbf{Proof ($\E(xx')$ invertible $\iff$ no collinearity):} \\
+($\Rightarrow$) If $P(x'a=0)=1$ for $a\neq 0$, then $\E(xx')a=\E(x\cdot x'a)=0$, not invertible. \\
+($\Leftarrow$) No collinearity $\implies$ $c'\E(xx')c = \E[(x'c)^2]>0$ $\forall c\neq 0$, so $\E(xx')$ is positive definite.
+
+\subsection{OLS Estimator}
+Given iid sample $\{y_i,x_i\}_{i=1}^n$. Unique OLS estimator (when $X'X$ invertible):
+\begin{align*}
+    \hat\beta_n = \left(\frac{1}{n}\sum x_ix_i'\right)^{-1}\frac{1}{n}\sum x_iy_i = (X'X)^{-1}X'Y.
+\end{align*}
+Equivalently solves $\min_{b}\|Y - Xb\|^2$. FOC: $X'\hat{U}=0$.
+
+\subsection{Projection Matrix}
+$P_X = X(X'X)^{-1}X'$: projects onto column space $\mathcal{S}(X)$.
+
+$M_X = I_n - P_X$: residual maker.
+
+\textbf{Properties:}
+\begin{itemize}[nosep]
+    \item $P_X = P_X'$, $M_X = M_X'$ (symmetric)
+    \item $P_X^2 = P_X$, $M_X^2 = M_X$ (idempotent)
+    \item $P_X M_X = M_X P_X = 0$
+    \item $P_X X = X$, $M_X X = 0$
+    \item For any $Y$: $Y = P_X Y + M_X Y = \hat{Y} + \hat{U}$
+\end{itemize}
+
+\subsection{Projection Theorem}
+Let $\mathcal{S}$ be a nonempty subspace of $\R^n$. There exists a unique $\hat{y}\in\mathcal{S}$ minimizing $\|y-\hat{y}\|$. Necessary and sufficient: $y-\hat{y}$ is orthogonal to every vector in $\mathcal{S}$.
+
+Applying to $\mathcal{S}=\mathcal{S}(X)$: the condition $X'(Y-\hat{Y})=0$ yields $\hat{Y}=P_X Y$.
+
+\subsection{Frisch-Waugh-Lovell}
+Partition $Y = X_1\beta_1 + X_2\beta_2 + U$. Then:
+\begin{align*}
+    \hat\beta_2 = (X_2'M_{X_1}X_2)^{-1}X_2'M_{X_1}Y.
+\end{align*}
+i.e., $\hat\beta_2$ is obtained by regressing the residuals of $Y$ on $X_1$ onto the residuals of $X_2$ on $X_1$.
+
+\textbf{Proof:} $M_{X_1}Y = M_{X_1}X_2\hat\beta_2 + \hat{U}$, multiply by $X_2'$: $X_2'M_{X_1}Y = X_2'M_{X_1}X_2\hat\beta_2$ since $X'\hat{U}=0$.
+
+\textbf{Population version:} $\beta_2 = \E(\tilde{x}_2\tilde{x}_2')^{-1}\E(\tilde{x}_2 y)$, where $\tilde{x}_2 = x_2 - \tilde\gamma x_1$ is the residual from projecting $x_2$ onto $x_1$. This holds because $\E(\tilde{x}_2 x_1')=0$.
+
+\subsection{Omitted Variables Bias}
+If $y=\beta_0+\beta_1 x_1 + \beta_2 x_2 + u$ but we regress $y$ on $x_1$ only:
+\begin{align*}
+    b_1 = \beta_1 + \beta_2\frac{\Cov(x_1,x_2)}{\Var(x_1)}.
+\end{align*}
+The bias term $\beta_2\frac{\Cov(x_1,x_2)}{\Var(x_1)}$ is the effect of the omitted variable $\times$ correlation with included variable.

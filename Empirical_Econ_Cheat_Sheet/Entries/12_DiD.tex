@@ -1,0 +1,45 @@
+\section{Difference-in-Differences}
+
+\subsection{Setup}
+Two periods: $T\in\{0,1\}$. Two groups: $G\in\{0,1\}$ (treated/control). Observed outcome:
+\begin{align*}
+    Y = \begin{cases} y(1) & \text{if } G=1,\, T=1 \\ y(0) & \text{otherwise}. \end{cases}
+\end{align*}
+Target: $\text{ATT}=\E(y(1)-y(0)|G=1,T=1)$.
+
+\subsection{Naive Comparisons Fail}
+\textbf{Across time (treated group):}
+\begin{align*}
+    \E(Y|G\!=\!1,T\!=\!1)-\E(Y|G\!=\!1,T\!=\!0) = \text{ATT} + \text{Temporal trend}.
+\end{align*}
+\textbf{Across groups (post-period):}
+\begin{align*}
+    \E(Y|G\!=\!1,T\!=\!1)-\E(Y|G\!=\!0,T\!=\!1) = \text{ATT} + \text{Selection bias in } y(0).
+\end{align*}
+
+\subsection{Common Trends Assumption}
+In the absence of treatment, the change in outcomes would be the same for treated and control groups:
+\begin{align*}
+    &\E(y(0)|G=1,T=1)-\E(y(0)|G=1,T=0) \\
+    &= \E(y(0)|G=0,T=1)-\E(y(0)|G=0,T=0).
+\end{align*}
+Note: the LHS involves an \emph{unobservable} counterfactual.
+
+\subsection{DiD Estimand}
+Under common trends:
+\begin{align*}
+    \text{ATT} &= [\E(Y|G\!=\!1,T\!=\!1)-\E(Y|G\!=\!1,T\!=\!0)] \\
+    &\quad - [\E(Y|G\!=\!0,T\!=\!1)-\E(Y|G\!=\!0,T\!=\!0)].
+\end{align*}
+
+\subsection{Regression Implementation}
+\begin{align*}
+    Y_{it} = \beta_0 + \beta_1 G_i + \beta_2 T_t + \beta_3 (G_i\cdot T_t) + u_{it}.
+\end{align*}
+$\beta_3$ is the DiD estimator $=$ ATT under common trends. \\
+$\beta_1$: group difference at baseline. $\beta_2$: common time effect.
+
+\subsection{Data Requirements}
+\textbf{Repeated cross section:} Random sample in each period (different units). \\
+\textbf{Panel data:} Same units observed in both periods (stronger). \\
+Every panel is a repeated cross section, but not vice versa.

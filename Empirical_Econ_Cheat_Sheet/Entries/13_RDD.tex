@@ -1,0 +1,50 @@
+\section{Regression Discontinuity Design}
+
+\subsection{Setup}
+Running variable $X$, cutoff $c$, treatment $D$. Potential outcomes $y(0),y(1)$.
+
+\subsection{Sharp RDD}
+$D=\mathbf{1}(X\geq c)$: treatment is deterministic in $X$.
+
+Unconfoundedness holds: $y(0),y(1)\perp D|X$ (since $D$ is a function of $X$).
+
+\textbf{Overlap fails:} $P(D=1|X=x)=\mathbf{1}(x\geq c)\in\{0,1\}$.
+
+\subsection{Identification}
+Under continuity: $\E(y(0)|X=x)$ continuous at $c$:
+\begin{align*}
+    \E(y(1)-y(0)|X=c) = \E(Y|X=c) - \lim_{x\uparrow c}\E(Y|X=x).
+\end{align*}
+Identifies treatment effect \textbf{at the cutoff only}.
+
+\subsection{Estimation: Local Linear Regression}
+Choose bandwidth $h$ and solve:
+\begin{align*}
+    \min_{\alpha_0,\beta_0,\gamma,\delta}\sum_{i=1}^n \mathbf{1}(|X_i-c|\leq h)(y_i - \alpha_0 - \beta_0 x_i - \gamma d_i - \delta d_i x_i)^2.
+\end{align*}
+Equivalent to two separate regressions on $\{i:X_i\in[c-h,c)\}$ and $\{i:X_i\in[c,c+h]\}$.
+
+Recentering: $Y_i=\alpha_0+\beta_0(X_i-c)+\gamma D_i + \delta D_i(X_i-c)+\epsilon_i$ makes $\gamma$ the discontinuity.
+
+\subsection{Bandwidth Choice}
+Optimal: $h=C\cdot n^{-1/5}$ (bias-variance tradeoff). Larger $h$ $\Rightarrow$ lower variance, higher bias. \\
+IK (2012) and CCT (2014) propose data-driven bandwidth selectors. CCT accounts for asymptotic bias.
+
+\subsection{Threats to Validity}
+\textbf{Manipulation:} Individuals choosing $X$ values near cutoff. McCrary (2008): test for density discontinuity at $c$. \\
+\textbf{Multiple treatments:} Cannot identify which treatment caused the jump. \\
+\textbf{Covariate balance:} Pre-determined covariates should be continuous at $c$; discontinuities suggest violations.
+
+\subsection{Fuzzy RDD}
+$P(D=1|X=x)$ is discontinuous at $c$, but $D\neq\mathbf{1}(X\geq c)$. Then $Z=\mathbf{1}(X\geq c)$ is an instrument for $D$.
+
+Under monotonicity ($P(D_1\geq D_0)=1$), the estimand is a LATE at the cutoff:
+\begin{align*}
+    &\E(y(1)\!-\!y(0)|X\!=\!c,\text{complier}) \\
+    &= \frac{\lim_{x\downarrow c}\E(Y|X\!=\!x)-\lim_{x\uparrow c}\E(Y|X\!=\!x)}{\lim_{x\downarrow c}\E(D|X\!=\!x)-\lim_{x\uparrow c}\E(D|X\!=\!x)}.
+\end{align*}
+
+\subsection{Fuzzy RDD Implementation}
+2SLS on subsample $\{i:|X_i-c|\leq h\}$: \\
+First stage: $D = \pi_0+\pi_1 Z + \pi_2(X-c)+\pi_3 Z(X-c)+v$. \\
+Second stage: $Y=\beta_0+\beta_1 D+\beta_2(X-c)+\beta_3 Z(X-c)+u$.
