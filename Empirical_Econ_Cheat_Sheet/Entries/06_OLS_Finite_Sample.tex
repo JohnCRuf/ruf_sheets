@@ -56,7 +56,7 @@ This is OLS applied to the transformed model, hence BLUE by Gauss-Markov in the 
 $R^2 = 1 - \frac{\text{SSR}}{\text{TSS}} = 1 - \frac{\|M_X Y\|^2}{\|M_c Y\|^2} = \frac{\|P_X M_c Y\|^2}{\|M_c Y\|^2}$.
 
 Where TSS $=\sum(y_i-\bar{y})^2$, SSR $=\sum \hat{u}_i^2$, ESS $=\sum(\hat{y}_i-\bar{y})^2$. \\
-$0\leq R^2\leq 1$. Always weakly increases with additional regressors. \\
+\textbf{Note:} TSS $=$ ESS $+$ SSR (hence $0\leq R^2\leq 1$) holds only when the model includes an intercept; without one, $R^2$ may be negative. \\
 Adjusted: $\bar{R}^2 = 1 - \frac{n-1}{n-k-1}\cdot\frac{\text{SSR}}{\text{TSS}}\leq R^2$. \\
 Population: $R^2_{\text{pop}} = 1 - \frac{\Var(u)}{\Var(y)}$.
 

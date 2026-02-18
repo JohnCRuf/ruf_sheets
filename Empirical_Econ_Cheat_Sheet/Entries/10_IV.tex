@@ -51,19 +51,17 @@ When $l>k$: $\E(zx')$ is $l+1\times k+1$, not square. Use GMM:
 where $P_Z=Z(Z'Z)^{-1}Z'$. Equivalently: regress $X$ on $Z$ (first stage), then $Y$ on $\hat{X}$ (second stage).
 
 \subsection{Overidentification Tests (Sargan/Hansen)}
-Test $H_0:\E(zu)=0$. Under homoskedasticity, the F-statistic from regressing $\hat{u}$ on $z$ is asymptotically $\chi^2_{l_2-k_1}$. Rejection $\implies$ invalid instruments or misspecification, but cannot tell which instrument is bad.
+Test $H_0:\E(zu)=0$. Under $H_0$ and homoskedasticity, the test statistic is $n\times R^2$ from regressing $\hat{u}_i$ on all instruments $z$, distributed $\chi^2_{L-K}$ asymptotically, where $L=$ \# instruments and $K=$ \# endogenous regressors. Rejection $\implies$ invalid instruments or misspecification, but cannot tell which instrument is bad.
 
 \subsection{Must Include Exogenous Regressors in First Stage}
-With $x=(x_{-k},x_k)$, endogenous $x_k$, instruments $z=(x_{-k},z_k)$: the first stage \emph{must} regress $x_k$ on \emph{all} of $z$, not just $z_k$.
+With endogenous $x_k$ and instruments $z=(x_{-k},z_k)$: the first stage \emph{must} regress $x_k$ on \emph{all} of $z$, not just $z_k$. Omitting $x_{-k}$ causes OVB in $\tilde\pi$, yielding $\hat\beta_k \pto \beta_k\pi/(\pi+\nu) \neq \beta_k$. Intuitively, $\hat{x}_k$ without controls captures variation from $x_{-k}$, violating ceteris paribus.
 
-\textbf{Why:} If you omit $x_{-k}$, the first-stage estimate $\tilde\pi$ suffers OVB:
-$\tilde\pi \pto \pi + \frac{\Cov(z_k,x_{-k})}{\Var(z_k)}\delta \neq \pi$.
-The 2SLS estimate becomes $\hat\beta_k = \hat\gamma_k/\tilde\pi \pto \beta_k\pi/(\pi+\nu) \neq \beta_k$, where $\hat\gamma_k$ is the reduced-form coefficient.
-
-Intuitively, $\hat{x}_k$ without controls captures variation from $x_{-k}$, violating ceteris paribus.
-
-\subsection{IV Finite Sample Bias}
-IV is generally biased in finite samples. With one excluded instrument and one endogenous variable, $\hat\beta_{\text{IV}}$ has \emph{no finite moments}. For proof: $\E[\hat\beta_{\text{IV}}|Z] = \beta + \E\!\left[\frac{\sum z_i u_i}{\sum z_i x_i}\bigg|Z\right]$, and the ratio need not have finite expectation.
+\subsection{LATE Interpretation}
+With heterogeneous effects and binary $D,Z$, IV does not identify the ATE. Under \textbf{monotonicity} ($D_i(1)\geq D_i(0)$ $\forall i$, no defiers), the Wald estimand is the \textbf{LATE}:
+\begin{align*}
+    \frac{\E(Y|Z\!=\!1)-\E(Y|Z\!=\!0)}{\E(D|Z\!=\!1)-\E(D|Z\!=\!0)} = \E(y(1)\!-\!y(0)|\text{complier}).
+\end{align*}
+\textbf{Derivation:} Numerator $= \E(Y(1)\!-\!Y(0))$ by exogeneity. Always-takers/never-takers contribute zero ($D$ unchanged by $Z$); defiers ruled out. So numerator $= P(\text{c})\cdot\E(y(1)\!-\!y(0)|\text{c})$. Denominator $= P(\text{c})$. Ratio is the LATE.
 
 \subsection{Hausman Test (Exogeneity)}
 Test $H_0:\E(xu)=0$ using both OLS and IV. Under $H_0$, both are consistent; under $H_1$, only IV is. Joint distribution:

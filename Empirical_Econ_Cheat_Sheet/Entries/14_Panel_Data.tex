@@ -18,7 +18,7 @@ Difference across time to eliminate $\alpha_i$:
 \end{align*}
 FD estimator: $\hat\beta_{\text{FD}}$ is OLS applied to differenced data.
 
-\textbf{Consistency requires:} $\E(\Delta X_{it}'\Delta u_{it})=0$, i.e.\ \textbf{contemporaneous exogeneity}: $\E(u_{it}|X_{it},X_{it-1})=0$.
+\textbf{Consistency requires:} $\E(\Delta X_{it}'\Delta u_{it})=0$, i.e.\ the changes in regressors are uncorrelated with the changes in errors. A sufficient (but stronger than necessary) condition is $\E(u_{it}|X_{it},X_{it-1})=0$; FD only requires the moment condition on the differences, not full contemporaneous exogeneity.
 
 \textbf{Not sufficient if:} unobservables in \emph{other} time periods are correlated with today's regressors.
 
@@ -40,5 +40,7 @@ Under strict exogeneity: $\hat\beta_{\text{FE}}$ is consistent as $N\to\infty$ (
 With $T=2$: FD $=$ FE. \\
 With $T>2$: differ in general. FE more efficient under homoskedasticity of $u_{it}$; FD more robust to serial correlation patterns.
 
-\subsection{Serial Correlation}
-Panel structure allows arbitrary correlation of $u_{it}$ with $\alpha_i$ (eliminated by FD/FE), but standard errors must account for within-individual serial correlation in $u_{it}$. Cluster standard errors at the individual level.
+\subsection{Serial Correlation and Clustered SEs}
+Standard errors must account for within-individual serial correlation in $u_{it}$. \textbf{Cluster-robust variance:} allows arbitrary within-cluster correlation:
+$\hat{V} = (X'X)^{-1}\!\left(\sum_{j=1}^J X_j'\hat{U}_j\hat{U}_j'X_j\right)\!(X'X)^{-1}$,
+where $j$ indexes clusters, $X_j$ and $\hat{U}_j$ are the data and residuals for cluster $j$.
