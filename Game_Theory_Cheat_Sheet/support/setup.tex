@@ -29,9 +29,9 @@
 
 \pagestyle{empty}
 
-% Section: centered in a light gray box for visual distinction
+% Section: centered in a light gray box with black outline
 \newcommand{\sectionbox}[1]{%
-  \colorbox{black!8}{\parbox{\dimexpr\columnwidth-2\fboxsep\relax}{\centering #1}}}
+  \fcolorbox{black}{black!8}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{\centering #1}}}
 \titleformat{\section}[block]
   {\normalfont\large\bfseries}{}{0mm}{\sectionbox}
 \titlespacing*{\section}{0mm}{0.5ex plus .5ex minus .2ex}{0.5ex plus .2ex}
