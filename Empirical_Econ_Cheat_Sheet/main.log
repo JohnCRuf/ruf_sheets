@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 11:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 11:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -424,8 +424,26 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
 \Hy@SectionHShift=\skip66
-))
-(./main.aux)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -446,7 +464,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count305
 \scratchdimen=\dimen182
@@ -502,37 +520,26 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 149.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 2.
- (./main.out)
-(./main.out)
+(./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
  (./support/heading.tex) (./Entries/01_Asymptotics.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 (./Entries/02_Delta_Method.tex) (./Entries/03_Estimation.tex)
-(./Entries/04_MLE.tex [1
+(./Entries/04_MLE.tex) (./Entries/05_OLS_Setup.tex [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-(./Entries/05_OLS_Setup.tex) (./Entries/06_OLS_Finite_Sample.tex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Entries/06_OLS_Finite_
+Sample.tex
 Overfull \hbox (0.35083pt too wide) detected at line 34
 []
  []
@@ -584,13 +591,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: BCDEDAEC2BE1CCC97BB7086460614B8A;22094.
  ) 
 Here is how much of TeX's memory you used:
- 12240 strings out of 476106
- 184226 string characters out of 5793934
- 2015975 words of memory out of 5000000
- 33896 multiletter control sequences out of 15000+600000
- 566315 words of font info for 67 fonts, out of 8000000 for 9000
+ 12649 strings out of 476106
+ 189652 string characters out of 5793934
+ 2016975 words of memory out of 5000000
+ 34302 multiletter control sequences out of 15000+600000
+ 567562 words of font info for 72 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 84i,18n,96p,541b,762s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,18n,96p,541b,900s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/jackruf/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.6
 00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
@@ -612,7 +619,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist
 type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (6 pages, 320942 bytes).
+Output written on main.pdf (6 pages, 321310 bytes).
 PDF statistics:
  688 PDF objects out of 1000 (max. 8388607)
  630 compressed objects within 7 object streams
