@@ -46,3 +46,34 @@ Recall that, if \(u_1\) represents the utility of the maximizer, we can always w
 \begin{itemize}
     \item If an assessment \((\beta,\, \sigma)\) is consistent, it is sequentially rational if and only if it has no one-shot deviations. Here, we understand an OSD to be a strategy \(\sigma'_i\) which differs from \(\sigma_i\) at exactly one information set.
 \end{itemize}
+
+%%% Worked Examples %%%
+\subsection{Example: Mixed NE in 2\texttimes2}
+\begin{center}
+\begin{tabular}{c|cc}
+ & $L$ & $R$ \\ \hline
+$T$ & $2,1$ & $0,0$ \\
+$B$ & $0,0$ & $1,2$
+\end{tabular}
+\end{center}
+Pure NE: $(T,L)$ and $(B,R)$. For mixed NE, let P1 play $T$ w.p.\ $p$ and P2 play $L$ w.p.\ $q$. P2 indifferent $\implies p \cdot 1 = (1-p)\cdot 2 \implies p = 2/3$. P1 indifferent $\implies q\cdot 2=(1-q)\cdot 1\implies q=1/3$. Mixed NE: $(\frac{2}{3}T + \frac{1}{3}B,\, \frac{1}{3}L + \frac{2}{3}R)$.
+
+\subsection{Example: Backward Induction}
+P1 chooses $\{L,R\}$; then P2 observes and chooses $\{l,r\}$. Payoffs $(u_1,u_2)$: $(L,l)\to(2,1)$, $(L,r)\to(0,0)$, $(R,l)\to(1,2)$, $(R,r)\to(3,0)$. \\
+\textbf{Step 1}: At P2's nodes: after $L$, P2 picks $l$ ($1>0$); after $R$, P2 picks $l$ ($2>0$). \\
+\textbf{Step 2}: P1 anticipates: $L\to(2,1)$, $R\to(1,2)$. P1 picks $L$. \\
+BI outcome: $(L, (l,l))$ with payoffs $(2,1)$.
+
+\subsection{Example: BNE (Cournot)}
+Firm 1: $c_1=0$. Firm 2: $c_2 \in \{0,2\}$ w.p.\ $\frac{1}{2}$ each. $P=10-Q$. Firm 2's BR: $q_2(c_2)= \frac{10-c_2-q_1}{2}$. Firm 1 maximizes $\mathbb{E}[q_1(10-q_1-q_2)]$, giving $q_1^* = \frac{10 - \frac{1}{2}q_2(0) - \frac{1}{2}q_2(2)}{2}$. Substituting BRs and solving: $q_1^* = \frac{11}{3}$, $q_2(0)=\frac{19}{6}$, $q_2(2)=\frac{13}{6}$.
+
+\subsection{Example: Verifying a CE}
+In the Battle of the Sexes with payoffs:
+\begin{center}
+\begin{tabular}{c|cc}
+ & $O$ & $F$ \\ \hline
+$O$ & $3,2$ & $0,0$ \\
+$F$ & $0,0$ & $2,3$
+\end{tabular}
+\end{center}
+Claim: $\mu(O,O)=\frac{1}{2},\, \mu(F,F)=\frac{1}{2}$ is a CE. Check: P1 told $O$: deviation to $F$ gives $\mu(O|O)(u_1(O,O)-u_1(F,O))= 1\cdot(3-0)=3 \geq 0$ \checkmark. P1 told $F$: $1\cdot(2-0)=2\geq 0$ \checkmark. By symmetry, P2's conditions hold too.
