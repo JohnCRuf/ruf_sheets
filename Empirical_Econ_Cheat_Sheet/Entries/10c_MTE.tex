@@ -1,7 +1,7 @@
 \section{Marginal Treatment Effects}
 
 \subsection{Framework}
-Binary treatment $D\in\{0,1\}$, outcome $Y$, potential outcomes $Y(0),Y(1)$. Under (A1)--(A5), we normalize $U \equiv F_{U_D}(U_D) \sim \text{Unif}[0,1]$ (WLOG by A3), so $D=\mathbf{1}[U\leq p(Z)]$ where $p(Z)=P(D\!=\!1|Z)$.
+Binary treatment $D\in\{0,1\}$, outcome $Y$, potential outcomes $Y(0),Y(1)$. Under (A1)--(A5), we normalize $U \equiv F_{U_D}(U_D) \sim \text{Unif}[0,1]$ (WLOG by A3), so $D=\mathbf{1}[U\leq p(Z)]$ where $p(Z)=P(D\!=\!1|Z)$ is the propensity score (here conditioning on $Z$, not $X$ as in IPW).
 
 \subsection{MTE Definition}
 \begin{align*}

@@ -2,9 +2,9 @@
 
 \subsection{Linear Model}
 \begin{align*}
-    y_i = x_i'\beta + u_i, \quad \E(x_i u_i)=0.
+    y_i = x_i'\beta + u_i, \quad \E(x_i u_i)=0 \;\text{(exogeneity)}.
 \end{align*}
-Here $x_i\in\R^{k+1}$ with $x_{i0}=1$. We say the model is ``linear'' because it is linear in the parameters $\beta_j$. The error $u_i$ captures all unobserved determinants of $y_i$.
+Here $x_i\in\R^{k+1}$ with $x_{i0}=1$. We say the model is ``linear'' because it is linear in the parameters $\beta_j$. The error $u_i$ captures all unobserved determinants of $y_i$. When $\E(xu)\neq 0$, we say $x$ is \textbf{endogenous}.
 
 \subsection{Identification}
 Assume $\E(xu)=0$ and no perfect collinearity (no $a\neq 0$ with $P(a'x=0)=1$).

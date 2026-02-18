@@ -60,12 +60,12 @@ A common \textbf{misspecification trap} arises: if you omit $D_i x_i$ and run $y
 which generally $\neq$ ATE unless effects are homogeneous or $P(D\!=\!1|x)$ is constant.
 
 \subsection{Inverse Probability Weighting (IPW)}
-Under unconfoundedness and overlap, with $p(x):=P(D\!=\!1|X\!=\!x)$:
+Under unconfoundedness and overlap, define the \textbf{propensity score} $p(x):=P(D\!=\!1|X\!=\!x)$. Then:
 \begin{align*}
     \text{ATE} &= \E\!\left[\frac{Y(D-p(X))}{p(X)(1-p(X))}\right], \\
     \text{ATT} &= \E\!\left[\frac{YD}{P(D\!=\!1)}\right] - \E\!\left[\frac{Y(1\!-\!D)p(X)}{P(D\!=\!1)(1\!-\!p(X))}\right].
 \end{align*}
-Useful when the propensity score $p(x)$ is easier to model than $\E(Y|D,X)$.
+Useful when $p(x)$ is easier to model than $\E(Y|D,X)$.
 
 \subsection{Multiple Treatments}
 $k$ treatments, $k+1$ potential outcomes. With random assignment:
