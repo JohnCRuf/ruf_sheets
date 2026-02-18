@@ -1,6 +1,6 @@
 \section{Tips and Tricks}
 
-%%% From Decision \& Strategy I %%%
+%%% Decision Theory and Strategic Games %%%
 \subsection{Properties of payoff functions}
 Let $\alpha_1, \alpha_2$ represent two mixed strategies, then note the following properties of utility functions:
 \begin{align*}
@@ -18,10 +18,10 @@ A useful case of correlated strategies for proving correlated equilibrium is the
 \end{align*}
 Where $\sigma$ is a Nash equilibrium of the augmented game. \\
 
-From the notes, we can also note that given a behavioral strategy $\sigma$, we can also derive the payoff difference between $\sigma$ and an deviation $\sigma'$ (from the definition of $\sigma_i'$ above) as:
+Note also that given a behavioral strategy $\sigma$, we can derive the payoff difference between $\sigma$ and a deviation $\sigma'$ (from the definition of $\sigma_i'$ above) as:
 
 \begin{align*}
-    U_i(\sigma) - U_i(\sigma_i', \sigma_{-i})&= \sum_{\omega \in \Omega} \sum(a \in A) (\sigma(a|w)- (\sigma_i' \sigma_{-i})(a|\omega)) \pi(\omega) u_i(a) \\
+    U_i(\sigma) - U_i(\sigma_i', \sigma_{-i})&= \sum_{\omega \in \Omega} \sum_{a \in A} (\sigma(a|\omega)- (\sigma_i' \sigma_{-i})(a|\omega)) \pi(\omega) u_i(a) \\
     &=\sum_{a_{-i}} \mu(a_i, a_{-i}) (u_i(a_i,a_{-i})-u_i(a_i',a_{-i}))
 \end{align*} \\
 A lot of other tricks can be noted just by the definitions of all the relevant variables: e.g.
@@ -40,9 +40,9 @@ where \(\hat{A} := \{a : a_i = \hat{a}_i\}\).
 \subsection{Tricks with TPZSG's}
 Recall that, if \(u_1\) represents the utility of the maximizer, we can always write \(u_2(a_1,\,a_2) = -u_1(a_1,\,a_2)\). 
 
-%%% From Decision \& Strategy II %%%
+%%% Games of Incomplete Information %%%
 \subsection{Sequential Equilibria}
 
 \begin{itemize}
-    \item (From PSet 5) If an assessment \((\beta,\, \sigma)\) is consistent, it is sequentially rational if and only if it has no one-shot deviations. Here, we understand an OSD to be a strategy \(\sigma'_i\) which differs from \(\sigma_i\) at exactly one information set.
+    \item If an assessment \((\beta,\, \sigma)\) is consistent, it is sequentially rational if and only if it has no one-shot deviations. Here, we understand an OSD to be a strategy \(\sigma'_i\) which differs from \(\sigma_i\) at exactly one information set.
 \end{itemize}

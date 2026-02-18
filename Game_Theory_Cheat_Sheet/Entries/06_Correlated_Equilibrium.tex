@@ -1,8 +1,8 @@
-\section{Lecture 6: Correlated Equilibrium (CE)}
+\section{Correlated Equilibrium (CE)}
 \subsection{Correlation Device Definition}
-A correlation device is a collection $D= (\{\Omega_i\}_{i \in U}, \pi)$ where $\Omega=\prod_{i \in N} \Omega_i$ and $\pi \in \Delta (\Omega)$. IE: $\Omega_i$ is a finite set of signaled actions that player i observes and $\pi$ is the joint distribution of signals.
+A correlation device is a collection $D= (\{\Omega_i\}_{i \in N}, \pi)$ where $\Omega=\prod_{i \in N} \Omega_i$ and $\pi \in \Delta (\Omega)$. IE: $\Omega_i$ is a finite set of signaled actions that player i observes and $\pi$ is the joint distribution of signals.
 \subsection{Augmented Game Definition}
-Given a game $G=(N, A, u)$ w/ exp utility prefs and a correlation device D, the augmented game $(\sigma, D)$ is a game in which player is actions are behavioral strategies
+Given a game $G=(N, A, u)$ w/ exp utility prefs and a correlation device D, the augmented game $(G, D)$ is a game in which player $i$'s actions are behavioral strategies
 $$
 \sigma_{i}: \Omega_{i} \rightarrow \Delta\left(A_{i}\right)
 $$
@@ -19,7 +19,7 @@ $$
 \mu(a)=\sum_{\omega \in \Omega} \pi(\omega) \sigma(a / \omega)
 $$
 \subsection{CE Definition}
-A correllated equilibrium is a $\mu$ such that $\forall i, a_i, a_i'$
+A correlated equilibrium is a $\mu$ such that $\forall i, a_i, a_i'$
 
 \begin{align*}
     \sum_{a_{-i}} \mu(a_i, a_{-i})(u_i(a_i,a_{-i})-u_i(a_i',a_{-i})) \geq 0
@@ -31,7 +31,7 @@ A distribution $\mu \in \Delta (A)$ is induced by some $(D,\sigma)$ s.t. $\sigma
 \subsection{CE Existence Theorem}
 Fix a finite game w/ exp utility preferences $G(N,A,u)$ then $\exists \mu \in \Delta (A)$ such that $\mu$ is a CE. 
 \subsection{CE Loss Lemma}
-For any Fixed $\sigma \exists \mu \in \Delta(\{1,...m\})$ such that $\forall u_i \{1,..,.\} \rightarrow \mathbb{R}$,
+For any Fixed $\sigma \ \exists \mu \in \Delta(\{1,\ldots,m\})$ such that $\forall u_i: \{1,\ldots,m\} \rightarrow \mathbb{R}$,
 \begin{align*}
     L(\mu,u)=\sum_{j,k} \mu(j) \sigma(k \mid j)(u(j)-u(k))\geq 0
 \end{align*}

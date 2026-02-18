@@ -1,4 +1,4 @@
-\section{Lecture 4: Zero Sum Games \& Maxmin}
+\section{Zero Sum Games \& Maxmin}
 \subsection{Max-min Soln. Definition} 
 Given a game, the maxmin solution for player \(i\) is the set of solutions to
 \[\max_{a_i \in A_i}\min_{a_{-i} \in A_{-i}}u_i(a_i,\,a_{-i}).\]
@@ -10,7 +10,7 @@ The \textbf{duality gap} of a two-player zero-sum game is \(v_1^* + v_2^*\) (\(\
 
 \subsection{Duality Gap and Nash Equilibria} The duality gap is zero if and only if a Nash equilibrium exists. If the duality gap is zero, then the set of Nash equilibria are precisely the maxmin solutions for each player.
 \section{Minimax}
-If \(G\) is a two-player zero-sum game with finite pure actions and mixed strategies, then the game has a value; i,e, the maxmin solution exists and the duality gap is zero.
+If \(G\) is a two-player zero-sum game with finite pure actions and mixed strategies, then the game has a value; i.e., the maxmin solution exists and the duality gap is zero.
 \subsection{TPZS, values, and Nash equilibria}
 Every symmetric, two-player zero-sum game with mixed strategies has a value; i.e. it has a Nash equilibrium and \(v_1^* = -v_2^*\).
 \subsection{Farkas' Lemma}
@@ -19,8 +19,8 @@ Given \(A \in \R^{m \cross n}\) and \(b \in \R^m\), exactly one of the following
     \item \(\exists\,x \in \R^n\) such that \(Ax = b\) and \(x \geq 0\)
     \item \(\exists\,y \in \R^m\) such that \(yA \geq 0\) and \(yb < 0\)
 \end{enumerate}
-\subsection{Farkas' Lemma: HW Variants}
-One variant (covered in problem set 4) is as follows: given \(A \in \R^{m \cross n}\) and \(b \in \R^m\), exactly one of the following holds:
+\subsection{Farkas' Lemma: Variants}
+One variant is as follows: given \(A \in \R^{m \cross n}\) and \(b \in \R^m\), exactly one of the following holds:
 \begin{enumerate}[label = (\roman*)]
     \item \(\exists\,x \in \R^n\) such that \(Ax \leq b\)
     \item \(\exists\,y \in \R^m\) such that \(yA = 0\), \(y \geq 0\), and \(yb < 0\)

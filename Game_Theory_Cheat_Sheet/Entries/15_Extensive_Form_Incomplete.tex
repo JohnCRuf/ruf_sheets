@@ -1,4 +1,4 @@
-\section{Lecture 15: Extensive Form Games with Incomplete Information}
+\section{Extensive Form Games with Incomplete Information}
 \subsection{Set-up and Notation}
 \begin{itemize}
     \item Players: $i=1,...,N$
@@ -42,10 +42,10 @@ $\forall h\in Z, p_i \in P_i$ there is at most one $h' \in H$ s.t. $h>h'$ and $h
 
 \subsection{Perfect Recall Equivalency Proposition}
 Under the maintained assumption that
-the game has perf. recall. Then: $\forall \sigma, \in \Sigma_{i}$, $\exists \alpha \in \Delta\left(\Sigma_{i}^{p}\right)$ s.t. $\alpha ;$ and $\sigma_{i}$ are equivalent.
+the game has perfect recall. Then: $\forall \sigma_i \in \Sigma_{i}$, $\exists \alpha \in \Delta\left(\Sigma_{i}^{p}\right)$ s.t.\ $\alpha$ and $\sigma_{i}$ are equivalent.
 
 \subsection{Kuhn's Theorem}
-Suppose the game has perfect recall, then for any $\alpha_i \in \Delta(\Sigma_i^P)$, $\exists \sigma_i \in \Sigma_i $ s.t. $\alpha_i$ and $\sigma_i$ are equivalent. This goes in the opposite direction of the previous propisition.
+Suppose the game has perfect recall, then for any $\alpha_i \in \Delta(\Sigma_i^P)$, $\exists \sigma_i \in \Sigma_i $ s.t. $\alpha_i$ and $\sigma_i$ are equivalent. This goes in the opposite direction of the previous proposition.
 
 \subsection{Total Probability and Some Definitions}
 
@@ -68,17 +68,17 @@ Define $\mu_i(h'|h.\sigma_i)$ as the probability $i$'s behaviors are consistent 
     \end{cases}
 \end{align*}
 \subsection{Expected Utility}
-Player i's exp wtility from $\sigma$ starting at h
+Player i's expected utility from $\sigma$ starting at h
 $$
 U_{i}(\sigma, h)=\sum_{h^{\prime} \in Z} u_{i}\left(h^{\prime}\right) \mu\left(h^{\prime} \mid h, \sigma\right)
 $$
 \subsection{Nash Equilibrium}
-$\sigma$ is a Nash equm if $\forall$ i, $\sigma ; \in \Sigma_i$
+$\sigma$ is a Nash equilibrium if $\forall$ i, $\sigma_i' \in \Sigma_i$
 $$
-u_{i}\left(\sigma_{,} \emptyset \right) \geq u_{i}\left(\sigma_{i}, \sigma_{-i}, \phi\right) \text {. }
+u_{i}\left(\sigma, \emptyset \right) \geq u_{i}\left(\sigma_{i}', \sigma_{-i}, \emptyset\right) \text {. }
 $$
 \subsection{Interim Beliefs and Assessments}
-An interim belice for player $i$ is a mapping
+An interim belief for player $i$ is a mapping
 
 \begin{align*}
     \beta_i:P_{i} \rightarrow \Delta(H) \quad \text{s.t.} \quad \forall p_{i} \in P_{i}, \quad
@@ -94,7 +94,7 @@ And \begin{align*}
     \beta_i(h|p_i)=\lim_{k \rightarrow \infty} \frac{\mu(h| \sigma^k ,\emptyset)}{\sum_{h' \in P_i}\mu(h'| \sigma^k ,\emptyset)}
 \end{align*}
 \subsection{Sequential Rationality}
-An assessment is sequentially ration if $\forall i, \ p_i \in P_i, \ \sigma'_i \in \Sigma_i$:
+An assessment is sequentially rational if $\forall i, \ p_i \in P_i, \ \sigma'_i \in \Sigma_i$:
 
 \begin{align*}
     \sum_{h\in P_i}u_i(\sigma,h) \beta_i(h|p_i) \geq \sum_{h \in p_i} u_i(\sigma_i', \sigma_{-i}, h) \beta_i(h|p_i)

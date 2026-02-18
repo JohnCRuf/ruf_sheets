@@ -1,4 +1,4 @@
-\section{Lecture 17: Durable Goods Monopoly}
+\section{Durable Goods Monopoly}
 \subsection{Set-up}
 In the durable goods monopoly, 
 \begin{itemize}
@@ -9,13 +9,13 @@ In the durable goods monopoly,
 Let \(\delta\) be the discount factor from one period to the next; then, the profit associated with selling at \(t\) is \(\delta^tp_t\), and the payoff for purchasing at \(t\) is \(\delta^t(v - p_t)\).
 If the seller could credibly commit to a price, they could simply set \(p_t = p_0\) for all \(t\), so that no transactions would occur after the initial period.
 \subsection{Coase Conjecture}
-The Coase Conjecture states that, if waiting is nearly costless, then the outcome is close to the competitive outcome. (\textit{The intuition here is that the monopoly is competing with its future self}). Turns out it's true! (Taking the limit as \(\delta \to 1\),
+The Coase Conjecture states that, if waiting is nearly costless, then the outcome is close to the competitive outcome. (\textit{The intuition here is that the monopoly is competing with its future self}). Turns out it's true! Taking the limit as \(\delta \to 1\):
 \subsection{Non-Commitment Solution}
 We search for a solution of the form \(p_t = (\gamma\beta)^t \beta\) for some \(\beta\) and \(\gamma\), where \(\beta\) is the per-period reduction in cost and \(\delta\) determines the consumer's willingness to purchase.
 
 From optimality conditions, we get that
 \[\delta = \frac{1}{1 - \delta(a-\beta)},\quad \textit{(buyer optimality)}\]
-\[\frac{\alpha}{1 + \alpha} = \frac{1 - (\gamma\beta)^\alpha}{1 - \delta(\gamma\beta)^{1+\alpha}},\quad \textit{(seller optimality}.\]
+\[\frac{\alpha}{1 + \alpha} = \frac{1 - (\gamma\beta)^\alpha}{1 - \delta(\gamma\beta)^{1+\alpha}},\quad \textit{(seller optimality)}.\]
 
 The latter condition is derived from using the envelope theorem on the revenue,
 \[\frac{d}{dv}R(v) = \left[\frac{\partial}{\partial v}R(v, p) + \frac{\partial}{\partial p}R(v,p)\right]_{p = \beta v} = \left.\frac{\partial R(v,p)}{\partial p}\right|_{p = \beta v}.\]

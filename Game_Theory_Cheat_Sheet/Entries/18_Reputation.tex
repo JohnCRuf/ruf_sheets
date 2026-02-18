@@ -1,4 +1,4 @@
-\section{Lecture 18: Reputation}
+\section{Reputation}
 \subsection{Chain Store Game Set-up}
 In the Chain Store game, there are \(K\) (potential) entrants who decide in series, with one incumbent. The entire history is observable to all players. At each step, the incumbent prefers no entry to acquiescing, and acquiescing to fighting. The entrant prefers entering to not entering, if and only if the incumbent acquiesces.
 
@@ -10,8 +10,8 @@ We imagine that there are two types for the incumbent: the normal type, which be
 \subsection{Incumbent Minimum Payoff Theorem}
 In any sequential equilibrium of the Chain Store game with \(K\) entrants, the incumbent's total payoff is at least \(3 \left(K + \frac{\log(2\epsilon)}{\log(2)}\right)\).
 
-This is because, starting from any normal-type strategy \(\sigma_\mathrm{I}\), the incumbent could always deviate to \(\sigma_\mathrm{I}'(F|h) = 1\), mimicing the aggressive type. This forces the entrants to update their beliefs about the incumbent's type; if one of them plays In starting from history \(h\), the posterior probability that the incumbent is aggressive after being fought is
+This is because, starting from any normal-type strategy \(\sigma_\mathrm{I}\), the incumbent could always deviate to \(\sigma_\mathrm{I}'(F|h) = 1\), mimicking the aggressive type. This forces the entrants to update their beliefs about the incumbent's type; if one of them plays In starting from history \(h\), the posterior probability that the incumbent is aggressive after being fought is
 \[\frac{\epsilon(h)}{\epsilon(h) + (1 - \epsilon(h))\sigma_\mathrm{I}(F|h, \mathrm{In})},\]
 where \(\epsilon(h)\) is the posterior probability of the incumbent being aggressive at history \(h\). From this, we see that an entrant will only continue to play \(\mathrm{In}\) so long as \(\epsilon(h, \mathrm{In}, \mathrm{F}) \geq 2\epsilon(h)\).
 
-After \(k\) iterations of \((\mathrm{In}, \mathrm{F})\), this becomes the condition \(\epsilon(h) \geq 2^k\epsilon\). Implies by this condition is that \(k \geq -\frac{\log(2\epsilon)}{\log(2)}\).
+After \(k\) iterations of \((\mathrm{In}, \mathrm{F})\), this becomes the condition \(\epsilon(h) \geq 2^k\epsilon\). Implied by this condition is that \(k \geq -\frac{\log(2\epsilon)}{\log(2)}\).

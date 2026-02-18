@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -539,11 +539,21 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (./Entries/03_Normal_Form_Games.tex) (./Entries/04_Zero_Sum_Games.tex [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-(./Entries/05_Rationalizability.tex) (./Entries/06_Correlated_Equilibrium.tex
-[2]) (./Entries/07_Nash_Theorem_Lemke_Howson.tex [3])
-(./Entries/08_Extensive_Form_Complete.tex) (./Entries/09_Subjective_Utility.tex
-) (./Entries/10_Knowledge.tex) (./Entries/11_Bayesian_Games.tex [4])
-(./Entries/12_Value_of_Knowledge.tex) (./Entries/13_Jury_Games.tex
+(./Entries/05_Rationalizability.tex
+! Missing $ inserted.
+<inserted text> 
+                $
+l.36 \subsection
+                {Hammer Lemma}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+) (./Entries/06_Correlated_Equilibrium.tex [2])
+(./Entries/07_Nash_Theorem_Lemke_Howson.tex)
+(./Entries/08_Extensive_Form_Complete.tex [3])
+(./Entries/09_Subjective_Utility.tex) (./Entries/10_Knowledge.tex)
+(./Entries/11_Bayesian_Games.tex [4]) (./Entries/12_Value_of_Knowledge.tex)
+(./Entries/13_Jury_Games.tex
 Overfull \hbox (16.56863pt too wide) detected at line 49
 []
  []
@@ -551,27 +561,23 @@ Overfull \hbox (16.56863pt too wide) detected at line 49
 ) (./Entries/14_Email_Games.tex [5])
 (./Entries/15_Extensive_Form_Incomplete.tex) (./Entries/16_Auction_Theory.tex
 [6]) (./Entries/17_Durable_Goods_Monopoly.tex) (./Entries/18_Reputation.tex)
-(./Entries/19_Mechanism_Design.tex [7]) (./Entries/20_Tips_and_Tricks.tex
-Overfull \hbox (10.23157pt too wide) detected at line 26
-[]
- []
-
-) [8] (./main.aux)
+(./Entries/19_Mechanism_Design.tex [7]) (./Entries/20_Tips_and_Tricks.tex)
+[8] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 426CCA46E6856C1FE9A6C6FD720CF532;30805.
+(rerunfilecheck)             Checksum: E2BE5FA123000AB3740E68D9E82DAE6E;29578.
  ) 
 Here is how much of TeX's memory you used:
  12789 strings out of 476106
  193022 string characters out of 5793934
- 1982975 words of memory out of 5000000
+ 1983975 words of memory out of 5000000
  34363 multiletter control sequences out of 15000+600000
  568731 words of font info for 74 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 84i,16n,96p,666b,808s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,16n,96p,666b,836s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/jackruf/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.6
 00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.p
@@ -591,7 +597,7 @@ y5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (8 pages, 317708 bytes).
+Output written on main.pdf (8 pages, 314363 bytes).
 PDF statistics:
  866 PDF objects out of 1000 (max. 8388607)
  808 compressed objects within 9 object streams

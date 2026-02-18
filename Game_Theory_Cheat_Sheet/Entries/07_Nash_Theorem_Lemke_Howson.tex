@@ -1,4 +1,4 @@
-\section{Lecture 7: Nash's Theorem and Lemke-Howson Algorithm}
+\section{Nash's Theorem and Lemke-Howson Algorithm}
 \subsection{Nash's Theorem}
 Every finite game with mixed strategies has a Nash Equilibrium
 \subsection{Non-Degenerate Symmetric 2 Player Game Definition}
@@ -16,12 +16,11 @@ Let $U_x=(u(a_1,x),...,u(a_j,x))$ and $v=max_j(U_x)_j$ be the best response payo
 Now let M be $[U I]$ thus $[U I ] (y, z)=\Vec{1}$. Using this we can define:
 
 \begin{align*}
-    F=\{(y,z|y\geq 0, z \geq 0, Mf=1\}
+    F=\{(y,z) \mid y\geq 0, z \geq 0, Mf=1\}
 \end{align*} 
 
 and $f=(y,z) \in F$.
 
-\textbf{Add definition giving intuition for what exactly f=(y,z) is.}
 \subsection{Slack Variables Mixed Strategy Proposition}
 For any $f=(y,z) \in F$, $y_i>0$ iff i is played w/ positive probability in the corresponding mixed strategy: $x=\frac{y}{\sum y_i}$ where $z_i=1-(U_y)_i=0$ iff i is a best response.
 \subsection{Slack Variable Definition of Nash Equilibrium}
@@ -88,8 +87,8 @@ Let \(G = \left(\{1,\,2\},\, A = \{1,2, \ldots, m\}, u\right)\) be any symmetric
 \[G^\epsilon = \left(\{1,\,2\},\, A = \{1,2, \ldots, m\}, u^\epsilon\right),\]
 where \(u_i^\epsilon(a) = \frac{1}{1 + \epsilon^{a_i}}u_i(a)\). Then, there exists some \(\hat{\epsilon} > 0\) such that \(\epsilon \in (0,\, \hat{\epsilon})\) implies \(G^\epsilon\) is non-degenerate.
 
-\subsection{Coincidence of Nash Equilibria Between Degenerate and Preturbed Game}
-For any symmetric, two-player game \(G\), there exists some \(\Bar{\epsilon} > 0\) such that \(\epsilon \in (0,\,\Bar{\epsilon}\) implies \(G^\epsilon\) is nondegenerate, and if \(f\) is a (non-artificial) basic solution for \(G^\epsilon\) with basis \(B\), then there exists some feasible and non-artificial \(f'\) which is a solution for \(G\) with \(B(f') \subseteq B\).
+\subsection{Coincidence of Nash Equilibria Between Degenerate and Perturbed Game}
+For any symmetric, two-player game \(G\), there exists some \(\Bar{\epsilon} > 0\) such that \(\epsilon \in (0,\,\Bar{\epsilon})\) implies \(G^\epsilon\) is nondegenerate, and if \(f\) is a (non-artificial) basic solution for \(G^\epsilon\) with basis \(B\), then there exists some feasible and non-artificial \(f'\) which is a solution for \(G\) with \(B(f') \subseteq B\).
 
 \subsection{Dropping Non-degeneracy}
 For all two-player finite games with mixed strategies, there exists a Nash equilibrium.
