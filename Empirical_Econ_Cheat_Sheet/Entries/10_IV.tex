@@ -25,6 +25,15 @@ From $y=x'\beta+u$ and $\E(zu)=0$: $\E(zy)=\E(zx')\beta$. If $l=k$:
 \end{align*}
 Consistent by the LLN and CMT.
 
+\subsection{Potential Outcomes Framework for IV}
+Exclusion: $y(d,z')=y(d,z'')$ $\forall d,z',z''$. Write $y(d)\equiv y(d,z')$.
+
+Exogeneity: $y(d,z')\perp z|w$ $\forall d,z'$.
+
+Under constant linear treatment effects: $y(d)=x(w,d)'\beta+u$, $\E(u|w)=0$.
+
+Exclusion $\implies$ $\E(u|z,w)=0$, so $\E(zu)=0$.
+
 \subsection{Asymptotic Distribution}
 \begin{align*}
     \sqrt{n}(\hat\beta_{\text{IV}}-\beta)\dto N(0,V_{\text{IV}}),
