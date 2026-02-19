@@ -8,8 +8,6 @@
 \end{enumerate}
 For extremum estimators (MLE, GMM): show uniform convergence of objective function + identification at $\theta_0$.
 
-\textbf{Example (OLS):} $\hat\beta=(\frac{1}{n}\sum x_ix_i')^{-1}(\frac{1}{n}\sum x_iy_i)$. SLLN: $\frac{1}{n}\sum x_ix_i'\pto \E(xx')$, $\frac{1}{n}\sum x_iy_i\pto \E(xy)$. CMT: $\hat\beta\pto \E(xx')^{-1}\E(xy)=\beta$.
-
 \subsection{Trace Trick for Quadratic Forms}
 For scalar $U'AU$: $U'AU = \tr(U'AU) = \tr(AUU')$, so $\E[U'AU|X] = \tr(A\,\E[UU'|X])$. Key identity: $\tr(AB)=\tr(BA)$.
 
@@ -21,8 +19,6 @@ For scalar $U'AU$: $U'AU = \tr(U'AU) = \tr(AUU')$, so $\E[U'AU|X] = \tr(A\,\E[UU
     \item Apply CLT to iid mean-zero term.
     \item Show remainder is $o_p(1)$ using Slutsky.
 \end{enumerate}
-\textbf{Example (OLS):} $\sqrt{n}(\hat\beta\!-\!\beta) = (\frac{1}{n}\sum x_ix_i')^{-1}\frac{1}{\sqrt{n}}\sum x_iu_i$. CLT: $\frac{1}{\sqrt{n}}\sum x_iu_i\dto N(0,\Sigma)$. Slutsky: first factor $\pto Q^{-1}$. Result: $\sqrt{n}(\hat\beta\!-\!\beta)\dto N(0,Q^{-1}\Sigma Q^{-1})$.
-
 \subsection{Useful Inequalities}
 \textbf{Markov:} $P(|X|\geq t)\leq \frac{\E|X|}{t}$. \\
 \textbf{Chebyshev:} $P(|X-\mu|\geq t)\leq \frac{\Var(X)}{t^2}$. \\

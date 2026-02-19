@@ -28,16 +28,4 @@ Without homoskedasticity, use the \textbf{Eicker-Huber-White} (robust) estimator
     \hat\Sigma = \left(\frac{1}{n}\sum x_ix_i'\right)^{-1}\!\left(\frac{1}{n}\sum \hat{u}_i^2 x_ix_i'\right)\!\left(\frac{1}{n}\sum x_ix_i'\right)^{-1}.
 \end{align*}
 
-\subsection{Consistency of $\hat\Sigma$ (Key Proof Step)}
-Need $\frac{1}{n}\sum\hat{u}_i^2 x_ix_i'\pto \E(u^2xx')$. Decompose:
-\begin{align*}
-    \frac{1}{n}\sum \hat{u}_i^2x_ix_i' = \frac{1}{n}\sum u_i^2 x_ix_i' + \frac{1}{n}\sum(\hat{u}_i^2-u_i^2)x_ix_i'.
-\end{align*}
-First term $\asto \E(u^2xx')$ by SLLN. Second term $=o_p(1)$ because:
-\begin{align*}
-    |\hat{u}_i^2-u_i^2| &= |x_i'(\beta-\hat\beta_n)|\cdot|\hat{u}_i+u_i| \\
-    \max_{i\leq n}|\hat{u}_i^2-u_i^2| &\leq \|\beta-\hat\beta_n\|^2\max\|x_i\|^2 + 2\|\beta-\hat\beta_n\|\max\|x_iu_i\|.
-\end{align*}
-Use the lemma: if $\E(\|Z_i\|^r)<\infty$ and $Z_i$ identically distributed, then $\frac{\max_{i\leq n}\|Z_i\|}{n^{1/r}}\pto 0$.
 
-Applied: $\frac{\max\|x_i\|^2}{n}=o_p(1)$, $\frac{\max\|x_iu_i\|}{\sqrt{n}}=o_p(1)$, and $\sqrt{n}(\hat\beta-\beta)=O_p(1)$.

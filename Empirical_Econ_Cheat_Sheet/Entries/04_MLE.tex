@@ -9,16 +9,8 @@ Let $\{X_i\}_{i=1}^n$ iid with density $f_{\theta_0}$ for some $\theta_0\in\Thet
 
 \textbf{MLE:} $\hat\theta_n\in\arg\max_{\theta\in\Theta} L_n(\theta)$.
 
-\subsection{Why MLE is Consistent}
-Under regularity conditions, $L_n(\theta)\pto L(\theta):=\E(\ln f_\theta(X))$.
-
-\textbf{Key insight:} $\theta_0$ uniquely maximizes $L(\theta)$.
-
-\textbf{Proof:} Let $M(\theta)=L(\theta)-L(\theta_0)=\E\!\left[\ln\frac{f_\theta(X)}{f_{\theta_0}(X)}\right]$. By Jensen's inequality:
-\begin{align*}
-    M(\theta)\leq \ln\E\!\left[\frac{f_\theta(X)}{f_{\theta_0}(X)}\right]= \ln\!\int \frac{f_\theta(x)}{f_{\theta_0}(x)}f_{\theta_0}(x)\,dx = \ln 1 = 0,
-\end{align*}
-with equality iff $f_\theta(X)/f_{\theta_0}(X)=c$ a.s. Ruled out for $\theta\neq\theta_0$ by assumption.
+\subsection{Consistency}
+$L_n(\theta)\pto L(\theta):=\E(\ln f_\theta(X))$. By Jensen, $\theta_0$ uniquely maximizes $L(\theta)$: $\E[\ln(f_\theta/f_{\theta_0})]\leq \ln\E[f_\theta/f_{\theta_0}]=0$.
 
 \subsection{Asymptotic Distribution}
 Under regularity conditions:
@@ -38,7 +30,4 @@ FOCs yield $\hat\mu = \bar{X}_n$, $\hat\sigma^2 = \frac{1}{n}\sum(X_i-\bar{X}_n)
 $X_i\sim\text{Bernoulli}(\theta)$. Log-likelihood: $L_n = \bar{X}_n\ln\theta + (1-\bar{X}_n)\ln(1-\theta)$. FOC: $\hat\theta = \bar{X}_n$. Log-likelihood is concave, so FOC suffices.
 
 \subsection{Conditional MLE}
-If $Y|X$ has conditional density $f_\theta(y|x)$: $\ell_n(\theta)=\prod_{i} f_\theta(Y_i|X_i)$. Maximising this is equivalent to OLS when $Y|X\sim N(X'\beta,\sigma^2)$.
-
-\subsection{Normal Regression as CMLE}
-If $Y|X\sim N(\beta_0+\beta_1 X,\sigma^2)$, CMLE of $(\beta_0,\beta_1)$ minimizes $\sum(Y_i-\beta_0-\beta_1 X_i)^2$. These are the OLS estimators.
+If $Y|X$ has density $f_\theta(y|x)$: $\ell_n(\theta)=\prod_{i} f_\theta(Y_i|X_i)$. When $Y|X\sim N(X'\beta,\sigma^2)$, CMLE minimizes $\sum(Y_i-X_i'\beta)^2$ $=$ OLS.
