@@ -53,51 +53,14 @@ If G is non-degenerate, let B be a basis and $f \in F$ with $f_i=0 \ \forall i \
 We say $f \in F$ is \textbf{Basic} if $|B(f)|=m$
 \subsection{Basis Ankh Lemma}
 Suppose $f=(y,z) \in F_i$ is basic and not supported on BR, then $y_i>0, z_i>0$ and $\forall j \neq i$ $y_j z_j=0$ Moreover, $\exists $ exactly one $j\neq i$ with $y_j=z_j=0$
-\subsection{Pivot Operation Definition}
-Step 1: Start w/ basic point f. Pick $i \not\in B(f)=B$ and make $f_i$ positive. Define a new solution $f(t)$ where $f_i(g)=t$. Now let $t^*$ be the smallest t such that:
+\subsection{Pivot Operation and Lemke-Howson Algorithm}
+Start with basic $f$, pick $i \not\in B(f)$, make $f_i$ positive by solving $f(t)$ until some $f_j(t^*) = 0$. New point $f' = f(t^*)$. Pivoting is \textbf{reversible}: pivot from $f'$ on $j \in B(f) \setminus B(f')$ returns to $f$.
 
-\begin{align*}
-    f_j(t)=0=(M_B^{-1}(1-M_i t)) \\
-    t^*=(M_B^{-1}*1)_j-(M_B^{-1}M_i)_j t \\
-    t_j=\frac{(M_B^{-1}*1)_j}{M_B^{-1} M_i}
-\end{align*}
-New point $f'=f(t^*)$ where this operation is called pivoting from f on i which leads to $f'$.
-\subsection{Reversible Pivot Lemma}
-Suppose $f=(y,z) \in F$ is basic then pivoting from f on $i \not\in B(f)$ leads to a basic point $f'$ s.t. $|B(f) \cap B(f')|=m-1$. Moreover, pivoting from $f'$ on $j \in B(f) \ B(f')$ leads to f.
-\subsection{I-Adjacency Definition}
-Two Basic points, $f,f'$ are $i-adjacent$ if $\exists$ a pivot from f that leads to $f'$ and vice versa such that the path from $f(t)$ from f to f' is in $F_i$
-\subsection{I-Adjacency Lemma}
-Suppose $f \in F_i$ is basic. If $f$ is supported on best responses, $\exists$ exactly one $f' \in F_i$, $f' \neq f$ s.t. $f'$ is i-adjacent to $f$. \\
-If f is not supported on BR's then there are exactly two $f',f''$ $f' \neq f'' \neq f$ that are i-adjacent to $f$.
-\subsection{I-Path Definition Lemma}
-Let $f \in F_i$ be basic and supported on best responses. $\exists!$ sequence of basic points (called an \(i\)-path)  $\{f^\ell\}_{\ell=0}^L$ with $L>0$ such that
-\begin{itemize}
-    \item $f^0=f$
-    \item $f^\ell \neq f^{\ell'} \forall \ell \neq \ell'$
-    \item $f^\ell$ is i-adj to $f^{\ell+1} \forall \ell=0,...,L-1$ 
-    \item $f^L$ is also supported on best responses
-\end{itemize}
+\textbf{$i$-adjacency:} Two basic points are $i$-adjacent if connected by a pivot path staying in $F_i$. If $f$ is supported on BR, exactly one $i$-adjacent point exists; if not, exactly two.
 
-\subsection{Parity of Nash equilibria}
-Any non-degenerate, two-player symmetric game has an odd number of (symmetric) Nash equilibria. (This follows from the pairwise matching of best response supported basic points we established in the construction of Lemke-Howson, together with the fact that the artificial equilibrium is a basic point)
-
-\subsection{Perturbations to Degenerate Games}
-Let \(G = \left(\{1,\,2\},\, A = \{1,2, \ldots, m\}, u\right)\) be any symmetric, two-player game. For any \(\epsilon \geq 0\), define
-
-\[G^\epsilon = \left(\{1,\,2\},\, A = \{1,2, \ldots, m\}, u^\epsilon\right),\]
-where \(u_i^\epsilon(a) = \frac{1}{1 + \epsilon^{a_i}}u_i(a)\). Then, there exists some \(\hat{\epsilon} > 0\) such that \(\epsilon \in (0,\, \hat{\epsilon})\) implies \(G^\epsilon\) is non-degenerate.
-
-\subsection{Coincidence of Nash Equilibria Between Degenerate and Perturbed Game}
-For any symmetric, two-player game \(G\), there exists some \(\Bar{\epsilon} > 0\) such that \(\epsilon \in (0,\,\Bar{\epsilon})\) implies \(G^\epsilon\) is nondegenerate, and if \(f\) is a (non-artificial) basic solution for \(G^\epsilon\) with basis \(B\), then there exists some feasible and non-artificial \(f'\) which is a solution for \(G\) with \(B(f') \subseteq B\).
+\textbf{$i$-path:} From any BR-supported basic $f$, there is a unique sequence of $i$-adjacent basic points ending at another BR-supported point. This pairs NE $\implies$ \textbf{odd number of symmetric NE}.
 
 \subsection{Dropping Non-degeneracy}
-For all two-player finite games with mixed strategies, there exists a Nash equilibrium.
+For all two-player finite games with mixed strategies, there exists a Nash equilibrium. (Perturb degenerate games: $\exists\ \hat{\epsilon} > 0$ s.t.\ $G^\epsilon$ is non-degenerate for $\epsilon \in (0, \hat{\epsilon})$; NE of perturbed game converge to NE of original by Bolzano-Weierstrass.)
 
-\subsection{Bolzano-Weierstrass}
-Recall that, for any \(N \in \mathbb{N}\) and any bounded sequence \(\{x^k\}_{k=0}^\infty\) in \(\R^N\), we have that some subsequence \(\{x^{k_l}\}_{l=0}^\infty\) which converges.
 
-\subsection{Imitation Games}
-Fix \(G = \left(N,\, Z,\, u\right)\). Define a sequence of \textit{imitation games} given by \(\left\{G^m\right\}_{m=0}^\infty\) by
-\[G^m = \left(\{1,\,2\},\, X^m \cross X^m,\, \Tilde{u}_i\right),\]
-where \(X^m = \prod_{i \in N}x_i^m\), \(x_i^m \overset{\text{fin.}}{\subseteq} \Delta(A_i)\). That is, the set of actions for each player in the imitation game is the product set of some finite collections of mixed strategies for each player in the original game. We construct the utilities as
-\[\tilde{u}_1(\mu_1,\, \mu_2) = \sum \mu^1(\alpha_1) \mu^2(\alpha^2)\sum_{i \in N} u_i(\alpha_i^1,\, \alpha_{-i}^2)\]

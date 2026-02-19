@@ -1,0 +1,40 @@
+\section{Supply \& Production}
+
+\subsection{Cost Minimization}
+$$\min_{x} w \cdot x \quad \text{s.t.} \quad f(x) \geq q$$
+FOCs: $w_i = \mu f_i(x)$ $\implies$ $\text{MRTS}_{ij} = f_i/f_j = w_i/w_j$.
+
+\textbf{Cost function:} $C(w, q) = w \cdot x^*(w, q)$. Concave and HD1 in $w$.
+
+\textbf{Shephard's Lemma:} $x_i^*(w, q) = \partial C/\partial w_i$.
+
+\textit{Application:} To find how a wage increase affects input mix, differentiate $C$ rather than re-solving the optimization. Shephard's Lemma gives conditional factor demand directly.
+
+\subsection{Returns to Scale}
+$f(\lambda x) = \lambda^k f(x)$: $k>1$ IRS, $k=1$ CRS, $k<1$ DRS.
+
+\textbf{CRS:} $C(w,q) = qc(w)$, $MC = AC = c(w)$, zero profit. Euler: $f = \sum x_i f_i$ (output exhausted by marginal products).
+
+\textbf{DRS at firm, CRS at industry:} Each firm has upward-sloping MC (supply), but free entry pins $P = \min AC$ in the long run. Industry supply is horizontal at $P^{LR}$.
+
+\textit{Application:} Positive demand shock $\implies$ SR: $P$ rises, $\pi > 0$. LR: entry drives $P$ back to $\min AC$, quantity adjusts through number of firms $N$.
+
+\subsection{Profit Maximization}
+$\max_q \pi = pq - C(q)$. FOC: $p = MC(q)$. SOC: $MC'(q) > 0$.
+
+\textbf{Hotelling's Lemma:} $q^S(p) = \partial\pi(p)/\partial p$ where $\pi(p) = pq^S(p) - C(q^S(p))$.
+
+\subsection{Short-Run vs.\ Long-Run}
+Some inputs fixed in SR ($\bar K$): $C^{SR}(q;\bar K) \geq C^{LR}(q)$, equality at $q^*$ where $\bar K$ is optimal. $\implies$ LR supply more elastic (Le Chatelier).
+
+\textit{Application:} A tax on capital has a larger long-run effect on output than short-run, because firms can adjust capital stock in the long run.
+
+\subsection{Cobb-Douglas Production}
+$f(K,L) = AK^\alpha L^\beta$ with $\alpha + \beta = 1$ (CRS).
+
+Factor demands: $wL/rK = \beta/\alpha$ (fixed factor cost shares). $C = \kappa w^\beta r^\alpha q$.
+
+\textit{Application (Harberger):} With CD technology, factor shares $s_K = \alpha$, $s_L = \beta$ are constant regardless of factor prices. This pins down GE tax incidence (see Harberger model).
+
+\subsection{Industry vs.\ Firm Substitution}
+Even with \textbf{Leontief firms} ($\sigma_{\text{firm}}=0$), the \textit{industry} substitutes: factor price changes cause high-cost firms to exit while low-cost firms expand $\implies$ industry $\sigma > 0$ always. This is why industry-level regressions consistently find substitution even in industries where individual firms use fixed proportions.

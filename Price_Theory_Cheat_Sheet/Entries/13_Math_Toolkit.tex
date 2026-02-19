@@ -1,0 +1,79 @@
+\section{Mathematical Toolkit}
+
+\subsection{Lagrangian \& Karush-Kuhn-Tucker (KKT)}
+$\max f(x)$ s.t.\ inequality constraints $g_j(x) \leq 0$ and equality constraints $h_k(x) = 0$:
+$$\mathcal{L} = f - \sum_j \mu_j g_j - \sum_k \lambda_k h_k$$
+\textbf{KKT conditions} (necessary for optimality):
+\begin{enumerate}[nosep]
+  \item \textbf{Stationarity:} $\nabla f = \sum_j \mu_j\nabla g_j + \sum_k \lambda_k\nabla h_k$ (gradient of objective is a linear combination of constraint gradients)
+  \item \textbf{Primal feasibility:} $g_j(x^*) \leq 0$, $h_k(x^*) = 0$
+  \item \textbf{Dual feasibility:} $\mu_j \geq 0$ (shadow prices on inequalities are non-negative)
+  \item \textbf{Complementary slackness:} $\mu_j g_j(x^*) = 0$ --- either the constraint binds ($g_j = 0$) or its multiplier is zero ($\mu_j = 0$), never both slack
+\end{enumerate}
+
+\textbf{Interpretation:} $\lambda_k$ is the marginal value of relaxing constraint $h_k$; $\mu_j$ is the marginal value of relaxing $g_j$. If $\mu_j = 0$, the inequality is slack and doesn't affect the optimum.
+
+\textit{Always check corners.} If interior FOC $\implies x < 0$, the corner $x=0$ binds. Set $x=0$, re-solve the reduced system, and verify $\mu \geq 0$.
+
+\subsection{Envelope Theorem}
+$V(\alpha) = \max_x f(x,\alpha)$ s.t.\ $g(x,\alpha)=0$. Then:
+$$\frac{dV}{d\alpha} = \frac{\partial\mathcal{L}}{\partial\alpha}\bigg|_{x=x^*}$$
+
+\textit{Applications:}
+$\partial V/\partial p_i = -\lambda x_i$ (Roy's identity). $\partial e/\partial p_i = x_i^H$ (Shephard). $\partial\pi/\partial p = q^S$ (Hotelling).
+
+\textit{Why it matters:} In multi-period models, the envelope theorem means the two-period FOC often collapses to the static FOC (the inventor's problem).
+
+\subsection{Implicit Function Theorem}
+From $F(x^*,\alpha) = 0$ with $F_x \neq 0$:
+$$\frac{dx^*}{d\alpha} = -\frac{F_\alpha}{F_x}$$
+\textbf{Pattern:} Sign $dx^*/d\alpha$ without solving explicitly. Use SOC ($F_x < 0$ at max) to sign denominator; economic logic signs numerator.
+
+\textit{Application:} From $u'_f(f)/p_f = u'_m(M)$ and knowing $u''_f < 0$: if $T\uparrow$ raises food output $f$, then $p_f$ must fall (since $u'_f$ falls but RHS is fixed).
+
+\subsection{Homogeneous Functions}
+$f(\lambda x) = \lambda^k f(x)$ (HD$k$). \textbf{Euler:} $\sum x_i f_i = kf$.
+
+Corollary: derivatives HD$(k-1)$. HD1 cost: $C(tw,q) = tC(w,q)$. HD0 demand: $x^M(tp,tM) = x^M(p,M)$.
+
+\textit{Application:} HD1 production $\implies$ $f = \sum x_i f_i$ (Euler) $\implies$ paying each factor its MP exhausts output $\implies$ zero profit under CRS.
+
+\subsection{Duality Table}
+\begin{center}
+\begin{tabular}{@{}l|l@{}}
+\textbf{Consumer} & \textbf{Producer} \\
+\hline
+$\max U$ s.t.\ budget & $\min w\cdot x$ s.t.\ $f(x)\geq q$ \\
+Marshallian $x^M(p,M)$ & Factor demand $x(w,q)$ \\
+Indirect utility $V(p,M)$ & Cost $C(w,q)$ \\
+Hicksian $x^H(p,\bar u)$ & Supply $q^S(p)$ \\
+Expenditure $e(p,\bar u)$ & Profit $\pi(p,w)$ \\
+Slutsky equation & Marshall's Laws
+\end{tabular}
+\end{center}
+Every consumer result has a producer dual. The Slutsky decomposition (substitution + income) parallels Marshall's decomposition (substitution + scale).
+
+\subsection{Elasticity Calculus}
+$\epsilon_{y,x} = \frac{\partial y}{\partial x}\frac{x}{y} = \frac{d\ln y}{d\ln x}$.
+
+\textbf{Chain:} $\epsilon_{z,x} = \epsilon_{z,y}\cdot\epsilon_{y,x}$. \textbf{Product:} $z=y_1 y_2 \implies \epsilon_{z,x} = \epsilon_{y_1,x} + \epsilon_{y_2,x}$.
+
+\textbf{Sum:} $z = y_1+y_2 \implies \epsilon_{z,x} = \frac{y_1}{z}\epsilon_{y_1,x} + \frac{y_2}{z}\epsilon_{y_2,x}$.
+
+\textit{Application:} Revenue $R = pq$. $\epsilon_{R,p} = 1 + \epsilon_{q,p}$. Revenue rises with $p$ iff $|\epsilon_{q,p}| < 1$.
+
+\subsection{Hamilton-Jacobi-Bellman (HJB)}
+The HJB equation characterizes the value function $V(x)$ in continuous-time dynamic programming. With discount rate $r$, flow payoff $u(x,a)$, and state law of motion $\dot x = g(x,a)$:
+$$rV(x) = \max_a\{u(x,a) + V'(x)g(x,a)\}$$
+\textbf{Interpretation:} The \textit{flow return} on holding value $V$ (i.e.\ $rV$, what you'd earn investing $V$ at rate $r$) must equal the flow payoff $u$ plus the capital gain $V'\dot{x}$ from the state changing. At the optimum, you can't do better by switching actions.
+
+\textbf{With Poisson shocks} (arrival rate $\lambda$, new state $x'$):
+$$rV(x) = \max_a\{u(x,a) + V'(x)g(x,a) + \lambda[\E V(x') - V(x)]\}$$
+
+\textbf{Steady state} ($\dot V = 0$, $\dot x = 0$): HJB reduces to algebra. Subtract value functions ($V_1 - V_0$) to eliminate common terms.
+
+\textit{Application:} In search models, $V_e$ (employed) and $V_u$ (unemployed) satisfy two HJB equations. The reservation wage solves $V_e(\bar{w}) = V_u$.
+
+\textbf{Euler equation} (discrete time): $p_t = \E\!\left[\beta\frac{u'(c_{t+1})}{u'(c_t)}x_{t+1}\right]$. Asset price = expected discounted payoff weighted by the stochastic discount factor (SDF).
+
+

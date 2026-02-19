@@ -45,3 +45,13 @@ for all \(i\), all \(h \in S^*(H)\), and one-shot deviation \(\sigma_i\) to \(\s
 An EFGCI has \textbf{purely sequential moves} if \(\abs{P(h)} = 1\) for all \(h \in S^*(H)\).
 
 \textbf{Every finite EFGCI with purely sequential moves has an SPE.}
+
+\subsection{When to Use What}
+\begin{itemize}[nosep]
+    \item \textbf{NE alone:} simultaneous-move games, one-shot interactions. Fast but admits non-credible threats.
+    \item \textbf{SPE via backward induction:} finite sequential games with perfect info. Eliminates non-credible threats. Use when the tree is small enough to fold back.
+    \item \textbf{OSD principle:} most efficient way to verify SPE. Check each node for profitable one-shot deviations. If none exist, the profile is SPE.
+    \item \textbf{SPE of repeated games:} use OSD + continuation values. In infinitely repeated games, characterize SPE via folk theorem bounds.
+\end{itemize}
+
+\textit{Common pitfall:} NE of the normal form allows strategies that specify irrational play off the equilibrium path. Always check whether the game has a sequential structure---if so, SPE is the appropriate concept.

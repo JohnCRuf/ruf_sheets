@@ -1,0 +1,52 @@
+\section{Durable Goods \& Stock-Flow}
+
+\subsection{The Four Equations}
+A durable good (housing, cars, capital) has a \textbf{stock} $S$ and a \textbf{flow} of new production $I$. Rental price $R$ and asset price $P$ are linked:
+\begin{align*}
+  &\text{(1) Demand:} & S &= D(R) \\
+  &\text{(2) Asset pricing:} & R &= (r+\delta)P - \dot{P} \\
+  &\text{(3) Supply of new:} & I &= I(P) \\
+  &\text{(4) Stock evolution:} & \dot{S} &= I - \delta S
+\end{align*}
+Eq.\ (2) is the \textbf{user cost of capital}: rental $=$ interest $+$ depreciation $-$ capital gains.
+
+Equivalently: $P = \sum_{k=0}^{\infty} R_{t+k}\frac{(1-\delta)^k}{(1+r)^k}$ (present value of future rents).
+
+\subsection{Steady State}
+Set $\dot{P}=0$, $\dot{S}=0$:
+\begin{align*}
+  S^* &= D(R^*), & P^* &= \frac{R^*}{r+\delta}, \\
+  I^* &= I(P^*), & I^* &= \delta S^*
+\end{align*}
+\textbf{Solution order:} Work backward from rental market. Given $S^* \to R^*$ from (1), $R^* \to P^*$ from (2), $P^* \to I^*$ from (3), verify $I^* = \delta S^*$ from (4).
+
+\subsection{Comparative Statics: Construction Cost Increase}
+\textbf{SR (stock fixed):} $S$ unchanged $\implies$ $R$ unchanged $\implies$ $P$ unchanged. But higher construction costs reduce $I$ at given $P$.
+
+\textbf{Transition:} $I < \delta S \implies S$ falls $\implies R$ rises $\implies P$ rises. $P$ must \textit{overshoot} new SS to sustain $I = \delta S^*_{new}$ with higher costs.
+
+\textbf{New SS:} $S^*\downarrow$, $R^*\uparrow$, $P^*\uparrow$, $I^*\downarrow$.
+
+\subsection{Policy Applications}
+\textbf{Rent control} ($R$ capped below $R^*$): SR rental $\downarrow$, $P\downarrow$ immediately. Lower $P \implies I\downarrow \implies S$ falls over time $\implies$ effective rent rises via queuing/quality decline.
+
+\textbf{Property tax} (tax $\tau$ on value $P$): SR rental unchanged, $P$ drops (capitalizes tax). User cost: $R = (r+\delta+\tau)P$. LR: lower $P \implies I\downarrow \implies S\downarrow \implies R\uparrow$, $P$ partially rebounds.
+
+\textbf{Construction subsidy:} SR: $I$ expands, no immediate $R$ change. LR: $S\uparrow$, $R\downarrow$, $P$ may fall (new SS has lower rental).
+
+\textbf{Rental vs.\ investment tax:} In SS, a tax on rental income $R$ and a tax on the return to investment $(r+\delta)P$ are \textit{equivalent} since $R = (r+\delta)P$.
+
+\subsection{Convergence Speed}
+Adjustment to new SS is faster when:
+\begin{itemize}[nosep]
+  \item Demand for rental services is \textbf{inelastic} (small $S$ changes $\implies$ large $R$ changes)
+  \item Supply of new construction is \textbf{elastic} (strong $I$ response to $P$)
+  \item Depreciation rate $\delta$ is \textbf{high} (stock turns over faster)
+\end{itemize}
+
+\textit{Application:} Housing ($\delta$ low, supply inelastic in dense cities) adjusts slowly; cars ($\delta$ moderate, elastic supply) adjust faster. Rent control distortions persist for decades in housing.
+
+\textit{Worked example (property tax):} Housing demand $R = 100 - S$, construction $I = 2P$, $r = 0.05$, $\delta = 0.02$. Initial SS: $R^* = (r+\delta)P^*$, $I^* = \delta S^*$. With $\tau = 0.01$ property tax: user cost becomes $R = (0.05+0.02+0.01)P = 0.08P$. New SS: $P^*_{\text{new}} = R^*/0.08$ vs.\ old $P^* = R^*/0.07$. Immediate effect: $P$ drops (capitalizes tax); then $I\downarrow \implies S\downarrow \implies R\uparrow$ until new SS.
+
+\subsection{Durable Goods Monopoly (Coase Conjecture)}
+Monopolist selling durable competes with own future sales. With patient consumers and no commitment: $P \to MC$. Solutions: leasing, planned obsolescence, capacity constraints.

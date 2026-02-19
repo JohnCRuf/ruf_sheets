@@ -1,0 +1,39 @@
+\section{Externalities \& Equilibrium Effects}
+
+\subsection{When Private \texorpdfstring{$\neq$}{!=} Social Cost}
+Agent $i$ chooses $x_i$ to maximize private benefit, ignoring effect on others.
+
+\textbf{Pigouvian tax:} $t = MC_{external}$ at the optimum $\implies$ $P + t = MC_{social}$.
+
+\textbf{Coase:} With well-defined property rights and zero transaction costs, bargaining achieves efficiency regardless of initial allocation. Pigouvian taxes become unnecessary.
+
+\textit{Application:} Pollution tax = marginal external damage. But if transaction costs are low (a factory and one neighbor), Coasian bargaining may suffice.
+
+\textbf{Pecuniary vs.\ real externalities:} Price changes that transfer surplus (e.g., a new Walmart lowering local prices) are \textit{pecuniary}---they redistribute but do not create inefficiency. Only \textbf{real} externalities (unpriced physical effects) justify intervention. \textit{The price mechanism is not an externality.}
+
+\textit{Application (Coase):} Efficient allocation is independent of initial property rights assignment (with zero transaction costs). Distribution differs: free workers capture surplus, slaves do not.
+
+\subsection{Externalities as Unpriced Inputs}
+\textbf{Key insight:} An externality is an input with zero price. Overconsumption is the natural result.
+
+\textit{Application (health):} Hospitalization capacity is not priced. Individuals don't internalize their impact on aggregate hospital severity $s_h$:
+$$\text{Treatment threshold:} \quad \bar\theta = \frac{p_t}{s_h c_d}$$
+When $p_t$ falls (cheap treatment), fewer people prevent, raising $s_h$. But the social cost of $s_h$ is unpriced $\implies$ overconsumption of risky behavior.
+
+\textbf{Price elasticity of treatment demand:}
+$\frac{dD}{dp_t}\frac{p_t}{D} = -\frac{g(\bar\theta)}{1 - G(\bar\theta)}\cdot\frac{p_t}{c_d\eta}$ (inverse Mills ratio of the type distribution).
+
+\subsection{Fixed-Point Equilibria}
+Actions depend on aggregate $s$; $s$ depends on actions. \textbf{To show existence:}
+\begin{enumerate}[nosep]
+    \item Define $s = \Phi(s)$ where $\Phi$ maps aggregate $s$ through individual best responses
+    \item At max $s$: best responses imply lower $s$. At min $s$: higher $s$
+    \item By IVT (or Brouwer), fixed point exists
+\end{enumerate}
+
+\textit{Application:} In the prevention model, $s_h$ is a fixed point. If $s_h$ is high, everyone prevents $\implies s_h$ should be low. If $s_h$ is low, nobody prevents $\implies s_h$ should be high. Existence guaranteed; may have multiple equilibria.
+
+\subsection{Adding a Market}
+Introducing voluntary exchange when a market is missing (weakly) improves welfare: participants gain from trade, non-participants unaffected $\implies$ Pareto improvement.
+
+\textit{Application (kidneys):} Cash market increases supply, reduces wait time. Welfare rises if new supply $\gg$ crowded-out altruistic donors.

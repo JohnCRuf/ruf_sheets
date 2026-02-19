@@ -1,0 +1,46 @@
+\section{Factor Demand \& Marshall's Laws}
+Factor demand ties consumer theory to production: the same substitution-vs-scale decomposition that drives Slutsky drives Marshall's Laws. Every consumer result has a producer dual (see Duality Table in \S Math Toolkit).
+
+\subsection{Derived Demand}
+Demand for an input is \textit{derived} from demand for the output it produces. A wage increase $w \uparrow$ affects $L^*$ through two channels:
+
+\textbf{Substitution effect} (hold output fixed, reoptimize inputs): $\partial L^c/\partial w < 0$.
+
+\textbf{Scale effect} (higher cost $\implies$ higher price $\implies$ lower output): reinforces the substitution effect for normal inputs.
+
+\subsection{Two-Input Model}
+Firm produces $q = f(K,L)$, sells at price $p$. Cost minimization:
+$\frac{f_L}{f_K} = \frac{w}{r}$.
+
+\textbf{Elasticity of substitution:}
+$\sigma = \frac{d\ln(K/L)}{d\ln(w/r)}\big|_{q\text{ fixed}}$
+
+$\sigma = 0$: Leontief (no substitution). $\sigma = 1$: Cobb-Douglas. $\sigma = \infty$: linear technology.
+
+\subsection{Marshall's Laws of Derived Demand}
+Demand for a factor is \textbf{more elastic} when:
+\begin{enumerate}[nosep]
+    \item \textbf{Elasticity of substitution} $\sigma$ is high
+    \item \textbf{Demand for output} $|\epsilon_D|$ is high
+    \item Factor's \textbf{cost share} $s$ is large (caveat: when $\sigma < |\epsilon_D|$, larger share makes demand \textit{less} elastic)
+    \item \textbf{Supply of other factors} $\epsilon_S^{other}$ is high
+\end{enumerate}
+
+\textbf{Two-factor formula:}
+$$\eta_L = \frac{(1-s_L)\sigma\epsilon_S^K + s_L|\epsilon_D|\sigma + (1-s_L)|\epsilon_D|\epsilon_S^K}{(1-s_L)\epsilon_S^K + s_L\sigma + (1-s_L)|\epsilon_D|}$$
+
+With $\epsilon_S^K = \infty$ (perfectly elastic capital supply):
+$$\eta_L = (1-s_L)\sigma + s_L|\epsilon_D|$$
+A weighted average: substitution effect (weight $1-s_L$) and scale effect (weight $s_L$).
+
+\textbf{Cross-price elasticity:}
+$\beta_{ij} = s_j\epsilon_D + s_j\sigma_{ij}$
+
+\textit{Application (education production):} Inputs: student time ($sK$), purchased materials ($D$). Remote learning lowers productivity of $sK$ $\implies$ MC rises $\implies$ scale effect reduces all inputs. Substitution: shift toward purchased inputs (online tools). Decompose via Marshall's Laws: scale dominates when $\sigma$ is small, substitution dominates when $\sigma$ is large.
+
+\textit{Application (min wage):} $w$ forced above $w^*$: substitution replaces workers with capital; scale reduces output. Total effect depends on $\sigma$ and $|\epsilon_D|$ via Marshall's formula.
+
+\subsection{Isoprofit Curves}
+For a firm choosing $(w, L)$ along an isoprofit: $\pi = pf(K,L) - wL - rK$. The isoprofit curve in $(L,w)$ space is:
+$$w = \frac{pf(K,L) - rK - \bar{\pi}}{L}$$
+Higher isoprofits are closer to the origin. The firm's labor demand curve traces out the tangencies of isoprofit curves with the wage line.

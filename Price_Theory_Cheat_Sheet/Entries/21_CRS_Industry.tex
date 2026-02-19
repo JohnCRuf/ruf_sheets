@@ -1,0 +1,64 @@
+\section{CRS Industry \& Factor Prices}
+
+\subsection{Four-Equation CRS Model}
+A competitive industry with CRS firms, output $Q$, inputs $(L,K)$:
+\begin{align*}
+  &\text{(1) Zero profit:} & p = c(w,r) \\
+  &\text{(2) Labor demand:} & L = c_w(w,r)\cdot Q \\
+  &\text{(3) Capital demand:} & K = c_r(w,r)\cdot Q \\
+  &\text{(4) Output demand:} & Q = D(p)
+\end{align*}
+With factor supplies $L^S(w)$, $K^S(r)$: six equations, six unknowns ($p,w,r,Q,L,K$).
+
+\textbf{Solution order:} (1) pins $p$ given factor prices $\to$ (4) gives $Q \to$ (2),(3) give $L,K$.
+
+\subsection{Hat Calculus}
+Log-differentiate the four equations ($\hat{z} = dz/z$):
+\begin{align*}
+  \hat{p} &= s_L \hat{w} + s_K \hat{r} \\
+  \hat{L} &= -s_K \sigma \hat{w} + s_L \sigma \hat{r} + \hat{Q} \\
+  \hat{K} &= s_L \sigma \hat{w} - s_K \sigma \hat{r} + \hat{Q} \\
+  \hat{Q} &= \epsilon_D \hat{p}
+\end{align*}
+where $s_L, s_K$ are factor cost shares and $\sigma$ is the elasticity of substitution.
+
+\subsection{Lump-Sum vs.\ Per-Unit Tax}
+\textbf{Per-unit tax} ($t$ per unit): shifts MC up by $t$. Effects:
+\begin{itemize}[nosep]
+  \item SR (identical firms): $P\uparrow$, $q\downarrow$, $\pi<0$
+  \item LR: exit $\implies$ $P = \min AC + t$, firms remaining produce at same $q$, fewer firms
+  \item Identical firms LR: consumers bear 100\% (supply horizontal at $\min AC + t$)
+  \item Non-identical: shared between consumers and infra-marginal firms
+\end{itemize}
+
+\textbf{Lump-sum tax} ($F$ per firm): raises AC but \textbf{not} MC. Effects:
+\begin{itemize}[nosep]
+  \item SR: no change in output or price (MC unchanged)
+  \item LR: exit until $P = \min AC'$ (new, higher $\min AC$). Each surviving firm is \textit{larger} (min AC at higher $q$). Output per firm $\uparrow$, number of firms $\downarrow$
+\end{itemize}
+
+\subsection{Changes in Factor Prices}
+\textbf{Surprising result:} A wage increase can \textit{raise} profits of a competitive industry if demand is inelastic and there are fixed factors (revenue increase from $P\uparrow$ exceeds cost increase).
+
+\textbf{Monopolist:} A factor price increase \textit{never} raises monopolist profits (already optimizing).
+
+\subsection{Inferior Factors}
+A factor is \textbf{inferior} if increased output reduces demand for it. With two factors:
+$$\hat{L} = (\sigma s_K + \epsilon_D s_L)(\hat{w}/s_L)$$
+Factor $L$ is inferior iff $\sigma s_K < -\epsilon_D s_L$ (strong scale effect dominates substitution).
+
+\textit{Application:} Unskilled labor in a sector with elastic demand and low substitutability with capital. Output expansion from a demand shift may reduce unskilled employment if the scale effect induced by capital deepening is large enough.
+
+\subsection{Total Factor Productivity}
+\textbf{Primal approach:} $\hat{Q} = s_L\hat{L} + s_K\hat{K} + \widehat{TFP}$.
+
+\textbf{Dual approach:} $\hat{p} = s_L\hat{w} + s_K\hat{r} - \widehat{TFP}$.
+
+Dual says: productivity growth \textit{either} lowers output prices (holding factor prices fixed) \textit{or} raises factor prices (holding output price fixed).
+
+\textbf{Bias:} If TFP growth is labor-augmenting, at constant factor prices: $K/L$ falls, $w\uparrow$, $r$ unchanged. Capital-augmenting: opposite.
+
+\textit{Application:} Computing $\widehat{TFP} = \hat{Q} - s_L\hat{L} - s_K\hat{K}$ as a residual attributes all non-input-growth to productivity. Mismeasured inputs (quality changes) bias TFP estimates.
+
+\textit{Worked example (hat calculus):} Industry with $s_L = 0.6$, $s_K = 0.4$, $\sigma = 1$ (Cobb-Douglas), $\epsilon_D = -2$. Wage rises 10\% ($\hat{w} = 0.1$), capital price fixed ($\hat{r} = 0$).
+$\hat{p} = 0.6(0.1) = 0.06$ (price up 6\%). $\hat{Q} = -2(0.06) = -0.12$ (output down 12\%). $\hat{L} = -0.4(1)(0.1) + (-0.12) = -0.16$ (labor down 16\%). $\hat{K} = 0.6(1)(0.1) + (-0.12) = -0.06$ (capital down 6\%). Substitution away from labor (4pp) plus scale contraction (12pp).

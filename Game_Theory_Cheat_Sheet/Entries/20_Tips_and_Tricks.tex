@@ -1,5 +1,24 @@
 \section{Tips and Tricks}
 
+\subsection{Solution Concept Selection Guide}
+\begin{center}
+\begin{tabular}{@{}p{3.8cm}|p{4.5cm}@{}}
+\textbf{Game Structure} & \textbf{Solution Concept} \\ \hline
+Simultaneous, complete info & NE (pure or mixed) \\
+Simultaneous, want to rule out dominated play & Rationalizability / ISD \\
+Correlation device available & Correlated Equilibrium \\
+Two-player zero-sum & Maxmin = Minimax (LP) \\
+Sequential, complete info, perfect info & SPE via backward induction \\
+Sequential, complete info, imperfect info & SPE via OSD principle \\
+Static, incomplete info (types) & Bayesian NE \\
+Sequential + incomplete info & Sequential Equilibrium \\
+Robustness to trembles & Trembling Hand Perfect \\
+Mechanism / auction design & Revelation principle $\to$ direct mechanism 
+\end{tabular}
+\end{center}
+
+\textbf{Key refinement hierarchy:} Trembling Hand $\subseteq$ Sequential Eq.\ $\subseteq$ SPE $\subseteq$ NE. Each successive concept eliminates more profiles by imposing rationality at more information sets with consistent beliefs.
+
 %%% Decision Theory and Strategic Games %%%
 \subsection{Properties of payoff functions}
 Let $\alpha_1, \alpha_2$ represent two mixed strategies, then note the following properties of utility functions:
@@ -8,34 +27,9 @@ Let $\alpha_1, \alpha_2$ represent two mixed strategies, then note the following
     &=\sum_{a_1 \in A_1} \sum_{a_2 \in A_2} \alpha_1(a_1) \alpha_2(a_2) u(a_1,a_2)
 \end{align*}
 \subsection{Correlated Equilibrium Tricks}
-A useful case of correlated strategies for proving correlated equilibrium is the following deviation: Fix any $i \in N, \hat{a}_i, \hat{a}_i' \in A_i$. Define $\sigma_i'$ as:
-\begin{align*}
-    \sigma '_i (a_i | \omega_i ) = \begin{cases}
-    0 \ \text{if} \  a_i = \hat{a}_i \\
-    \sigma_i (\hat{a}_i|\omega_i) + \sigma(\hat{a}_i' | \omega_i) \ \text{if} \ a_i= \hat{a}'_i \\
-    \sigma_i (\hat{a}_i| \omega_i) \ \text{otherwise}
-    \end{cases}
-\end{align*}
-Where $\sigma$ is a Nash equilibrium of the augmented game. \\
-
-Note also that given a behavioral strategy $\sigma$, we can derive the payoff difference between $\sigma$ and a deviation $\sigma'$ (from the definition of $\sigma_i'$ above) as:
-
-\begin{align*}
-    U_i(\sigma) - U_i(\sigma_i', \sigma_{-i})&= \sum_{\omega \in \Omega} \sum_{a \in A} (\sigma(a|\omega)- (\sigma_i' \sigma_{-i})(a|\omega)) \pi(\omega) u_i(a) \\
-    &=\sum_{a_{-i}} \mu(a_i, a_{-i}) (u_i(a_i,a_{-i})-u_i(a_i',a_{-i}))
-\end{align*} \\
-A lot of other tricks can be noted just by the definitions of all the relevant variables: e.g.
-
-\begin{align*}
-    U_i(\sigma_i, \sigma_{-i})&=\sum_{\omega \in \Omega} \sum_{a \in A} \pi(\omega) \sigma_i(a_i|\omega_i) \sigma_{-i}(a_{-i}|\omega)u_i(a) \\
-    &= \sum_{a \in A} \mu(a) u_i(a),
-\end{align*}
-where \(\mu\) is the correlated equilibrium induced by \(\sigma\) (and the correlation device). Furthermore, for any particular \(\hat{a}_i \in A_i\), we have
-\begin{align*}
-    U_i(\sigma_i, \sigma_{-i}) &= \sum_{a \in \hat{A}} \mu(a) u_i(a) + \sum_{a \in \hat{A}^c} \mu(a) u_i(a)\\
-    &= \sum_{a_{-i}} \mu(\hat{a}_i, a_{-i}) u_i(\hat{a}_i, a_{-i}) + \sum_{a \in \hat{A}^c} \mu(a) u_i(a),
-\end{align*}
-where \(\hat{A} := \{a : a_i = \hat{a}_i\}\).
+Key deviation for verifying CE: fix $\hat{a}_i, \hat{a}_i' \in A_i$. The CE condition reduces to:
+$$\sum_{a_{-i}} \mu(\hat{a}_i, a_{-i}) (u_i(\hat{a}_i,a_{-i})-u_i(\hat{a}_i',a_{-i})) \geq 0$$
+for all $i$, $\hat{a}_i$, $\hat{a}_i'$. Check this inequality for each action pair.
 
 \subsection{Tricks with TPZSG's}
 Recall that, if \(u_1\) represents the utility of the maximizer, we can always write \(u_2(a_1,\,a_2) = -u_1(a_1,\,a_2)\). 

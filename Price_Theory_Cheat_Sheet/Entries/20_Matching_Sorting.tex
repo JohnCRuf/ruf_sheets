@@ -1,0 +1,56 @@
+\section{Matching, Sorting \& Education}
+Matching theory asks: when individuals differ and interact, who pairs with whom? The answer depends on whether types are complements (PAM) or substitutes (NAM) in production.
+
+\subsection{Assortative Matching}
+Two sides of a market (e.g., workers/firms, spouses). Match output $f(x,y)$ for types $x$ and $y$.
+
+\textbf{Positive assortative matching (PAM):} High types match with high types iff $f$ is \textbf{supermodular}:
+$$f_{xy} > 0 \iff \text{PAM is efficient}$$
+Supermodularity means the marginal product of one type increases with the other's type $\implies$ complementarity in production.
+
+\textbf{Negative assortative matching (NAM):} $f_{xy} < 0$ $\implies$ high matches with low (substitutability).
+
+\subsection{Marriage Market}
+With transferable utility: $f(x,y)$ is total surplus. Equilibrium payoffs $u(x)$, $v(y)$ satisfy:
+\begin{align*}
+  u(x) + v(y) &= f(x,y) \quad \text{for matched pairs} \\
+  u(x) + v(y) &\geq f(x,y) \quad \text{for unmatched pairs (stability)}
+\end{align*}
+\textbf{PAM when $f_{xy}>0$:} Matching the top with the top maximizes total surplus. Rearranging assignments to create mismatches reduces total output.
+
+\textit{Application:} Investment in own quality has \textbf{spillover benefits}---improving $x$ raises the matched partner's equilibrium payoff $v(y)$, attracting a better match.
+
+\subsection{Acquired Comparative Advantage}
+Even identical individuals may optimally specialize. Learning-by-doing creates comparative advantage: small initial differences $\to$ specialization $\to$ large skill gaps. Returns to education may be below $r$ if schooling yields direct utility $u_E$: invest until $\text{MB} = r + \delta - u_E$.
+
+\subsection{Education / Human Capital}
+Higher-ability workers have lower cost of skill acquisition $\implies$ sort into skill-intensive jobs.
+\begin{itemize}[nosep]
+  \item \textbf{General HC:} raises productivity everywhere; worker pays (employer can't capture returns)
+  \item \textbf{Specific HC:} raises productivity only at current firm; firm and worker share costs
+\end{itemize}
+
+\subsection{Addiction (Becker-Murphy)}
+Adjacent complementarity: past consumption $C_t$ raises current marginal utility via habit stock $S_t$:
+$$S_{t+1} = (1-\delta)S_t + C_t, \qquad \frac{\partial^2 U}{\partial C_t \partial S_t} > 0$$
+
+\textbf{Myopic vs.\ rational addict:}
+A \textit{myopic} addict treats $S$ as exogenous---only current MU matters. A \textit{rational} addict internalizes that $C_t$ raises future $S$, increasing future consumption desire. The Euler equation for the rational addict links $C_{t-1}$, $C_t$, and $C_{t+1}$:
+$$C_t = \theta C_{t-1} + \beta\theta C_{t+1} + \theta_1 p_t + \theta_2 e_t$$
+where $\theta$ captures the degree of adjacent complementarity and $\beta$ is the discount factor. \textit{Key test:} $\beta\theta > 0$ means future prices affect current consumption---myopic addicts would show $\beta\theta = 0$.
+
+\textbf{Steady-state analysis:}
+In SS, $C^* = C_{t-1} = C_t = C_{t+1}$ and $S^* = C^*/\delta$. The SS consumption level satisfies:
+$$U_C(C^*, C^*/\delta) = p + \frac{\delta}{r+\delta}\left[-U_S(C^*, C^*/\delta)\right]$$
+The second term is the \textit{future cost of addiction}: each unit of current consumption adds $1/\delta$ units to the steady-state stock, and $U_S$ captures the harmful effect of the stock (health damage, withdrawal). Rational agents \textit{partially} internalize this cost; myopic agents ignore it entirely.
+
+\textbf{Key results:}
+\begin{itemize}[nosep]
+  \item Rational addicts respond to \textit{future} price changes (a pre-announced tax reduces \textit{current} consumption)
+  \item Demand is \textit{more elastic} in the long run than the short run: SR, $S$ is fixed; LR, $S$ adjusts downward with $C$, amplifying the initial response
+  \item A monopolist may \textbf{price below MC} initially to build $S$, then extract rents once hooked
+  \item Cold-turkey quitting is optimal when adjustment costs are convex and $S$ is high---gradual reduction would prolong withdrawal
+  \item \textbf{Tax comparative static:} A permanent tax $\tau$ reduces SS consumption by more than the PE effect suggests, because lower $C \implies$ lower $S \implies$ lower desire $\implies$ further $C$ reduction (multiplier via the habit loop)
+\end{itemize}
+
+\textit{Application (PS5 2018):} Prohibition. Banning an addictive good raises its price $\implies$ heavy users (high $S$) substitute to black market or worse substitutes. Light users quit. Net welfare depends on distribution of $S$ in population. The rational model predicts that even \textit{announcing} a future ban reduces current consumption---users begin de-accumulating $S$ in anticipation.

@@ -1,28 +1,11 @@
 \section{Subjective Utility}
 \subsection{Basic Definitions}
-A state of the world is $s \in S$ where S is finite. \\
+States $s \in S$ (finite). Acts $f: S \rightarrow \mathbb{R}_+$, set of acts $F$. Acts are closed under addition and scalar multiplication.
 
-An act is a function, $f: s \rightarrow \mathbb{R}_+$ the set of acts is denoted as $F$\\
-
-Note that acts have the following properties: 
-\begin{align*}
-    \forall f,g \in F :
-    h=f+g \\
-    h(s)=f(s)+g(s) \forall s \\
-    \forall f \in F, \alpha \in \mathbb{R}_+ , \ h= \alpha f \\
-    h(s)= \alpha f(s) \ \forall s
-\end{align*}
-
-\subsection{Subjective Utility Representation (SEU Reps) of Preferences}
-$\succeq$ has a subjective utility representation $p \in \Delta(S)$ if 
-
-\begin{align*}
-    f \succeq g \iff \sum_s p(s)f(s) \geq \sum_s p(s)g(s)
-\end{align*}
-
-Where each sum is denoted as a subjective expected utility function.
-
-Note the following proposition: If p and q are SEU reps for $\succeq$ then p=q. 
+\subsection{SEU Representation}
+$\succeq$ has a subjective expected utility (SEU) rep $p \in \Delta(S)$ if
+$f \succeq g \iff \sum_s p(s)f(s) \geq \sum_s p(s)g(s)$.
+If $p$ and $q$ are both SEU reps for $\succeq$, then $p = q$.
 
 \subsection{SEU Axioms}
 \textbf{SEU Existence Theorem}  $\succeq$ on F has a SEU rep iff it is rational, monotonic, additive, non-trivial, and continuous.

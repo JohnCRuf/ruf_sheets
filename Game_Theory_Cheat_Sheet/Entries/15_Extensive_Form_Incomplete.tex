@@ -101,6 +101,15 @@ An assessment is sequentially rational if $\forall i, \ p_i \in P_i, \ \sigma'_i
 \end{align*}
 \subsection{Sequential Equilibrium}
 A sequential equilibrium is any assessment that is both consistent and sequentially rational. By the sequential equilibrium existence theorem, this exists.
+
+\subsection{When to Use Sequential Equilibrium}
+\begin{itemize}[nosep]
+    \item Use when the game is \textbf{sequential} with \textbf{incomplete information} (non-trivial information sets).
+    \item If all information sets are singletons (perfect info), SPE suffices---sequential equilibrium reduces to SPE.
+    \item \textbf{Practical approach:} (1) Guess a strategy profile. (2) Compute beliefs via Bayes' rule on the path. (3) For off-path info sets, assign beliefs that support the strategy. (4) Check sequential rationality at every info set.
+    \item \textbf{Consistency check:} beliefs must be the limit of Bayes' rule under fully mixed perturbations. Off-path beliefs are pinned down by the trembling sequence, not freely chosen.
+\end{itemize}
+
 \subsection{Trembling Hand Equilibrium}
 A trembling hand, or perfect equilibrium if there exists a totally mixed strategy profile $\bar{\sigma}$ and a sequence $(\sigma^k)_{k=1}^K$ of strategies such that:
 

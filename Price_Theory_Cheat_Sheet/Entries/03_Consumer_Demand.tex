@@ -1,0 +1,80 @@
+\section{Consumer Demand}
+
+\subsection{Utility Maximization (Marshallian)}
+$$\max_{x} U(x) \quad \text{s.t.} \quad p \cdot x \leq M$$
+Lagrangian: $\mathcal{L} = U(x) + \lambda(M - p \cdot x)$. FOCs:
+$$\frac{\partial U}{\partial x_i} = \lambda p_i \quad \forall i \qquad \implies \qquad \frac{U'_i}{p_i} = \frac{U'_j}{p_j} = \lambda$$
+The \textbf{equimarginal principle}: marginal utility per dollar is equalized across all goods. $\lambda$ is the marginal utility of income.
+
+Solution: \textbf{Marshallian demand} $x^M(p, M)$.
+
+\textbf{Indirect utility:} $V(p,M) = U(x^M(p,M))$.
+
+\textbf{Roy's Identity:} $x_i^M = -\frac{\partial V/\partial p_i}{\partial V/\partial M}$.
+
+\subsection{Expenditure Minimization (Hicksian)}
+$$\min_x p \cdot x \quad \text{s.t.} \quad U(x) \geq \bar{u}$$
+Solution: \textbf{Hicksian demand} $x^H(p, \bar{u})$.
+
+\textbf{Expenditure function:} $e(p, \bar{u}) = p \cdot x^H(p, \bar{u})$.
+
+\textbf{Shephard's Lemma:} $x_i^H = \frac{\partial e}{\partial p_i}$.
+
+$e(p,\bar{u})$ is concave, HD1 in $p$, increasing in $\bar{u}$.
+
+\subsection{The Slutsky Equation}
+Connects Marshallian and Hicksian systems:
+$$\frac{\partial x_i^M}{\partial p_j} = \underbrace{\frac{\partial x_i^H}{\partial p_j}}_{\text{substitution}} - \underbrace{\frac{\partial x_i^M}{\partial M} x_j^M}_{\text{income effect}}$$
+In \textbf{elasticity form}: $\epsilon_{ij}^M = \epsilon_{ij}^H - s_j\eta_i$,
+where $s_j = p_jx_j/M$ (budget share), $\eta_i = \frac{\partial x_i}{\partial M}\frac{M}{x_i}$ (income elasticity).
+
+\textbf{Own-price:} $\epsilon_{ii}^M = \epsilon_{ii}^H - s_i\eta_i$. For normal goods ($\eta_i > 0$), Marshallian demand is \textit{more} elastic than Hicksian.
+
+\subsection{Demand Identities}
+These follow from the budget constraint and HD0 of Hicksian demand.
+
+\textbf{Adding Up} (Engel aggregation + Cournot aggregation):
+$$\sum_i s_i \eta_i = 1, \qquad \sum_i s_i \epsilon_{ij}^M + s_j = 0$$
+
+\textbf{Homogeneity of degree zero:}
+$$\sum_j \epsilon_{ij}^M + \eta_i = 0$$
+
+\textbf{Slutsky Symmetry:} $\frac{\partial x_i^H}{\partial p_j} = \frac{\partial x_j^H}{\partial p_i}$, or equivalently:
+$$s_i\epsilon_{ij}^M = s_j\epsilon_{ji}^M + s_i s_j(\eta_j - \eta_i)$$
+\textit{Key:} Symmetry + Homogeneity $\implies$ Adding Up, and Symmetry + Adding Up $\implies$ Homogeneity. The three are \textbf{not all independent}.
+
+\subsection{Additively Separable Utility}
+$U = \sum_i u_i(x_i)$ with $u_i'' < 0$. Key properties:
+\begin{itemize}[nosep]
+    \item \textbf{No inferior goods}: $\partial x_i^M/\partial M > 0$ for all $i$
+    \item Demand: $x_i^M = (u_i')^{-1}(\lambda p_i)$ where $\lambda$ solves $\sum_i p_i(u_i')^{-1}(\lambda p_i) = M$
+    \item Since $\lambda$ must decrease when $M$ rises (to exhaust the budget), all goods increase $\implies$ no good can be inferior
+\end{itemize}
+
+\textit{Application (time allocation):} With $U = u_f(f) + u_\ell(\ell) + u_m(m)$ and linear production $p_f = w/A$, the FOC gives $A = u_\ell'(\ell)/u_f'(f)$---the consumption ratio is pinned by technology alone. Money supply changes $M$ only, leaving the real allocation unchanged (money neutrality).
+
+\subsection{Quasilinear Utility}
+$U = v(x) + m$ where $m$ is the numeraire. Then $v'(x) = p$ determines demand independently of income. No income effects; $CS = \int_0^{x^*}v'(t)\,dt - px^*$ is an exact welfare measure.
+
+\textit{Application:} Any partial equilibrium welfare analysis (DWL of a tax, monopoly surplus) is exact under quasilinearity. Use this as default assumption unless the question specifically involves income effects.
+
+\subsection{Cobb-Douglas Demand}
+$U = x_1^{\alpha} x_2^{1-\alpha}$. \textbf{Fixed budget shares:} $p_1 x_1 = \alpha M$, $p_2 x_2 = (1-\alpha)M$.
+
+Demand: $x_i = \frac{\alpha_i M}{p_i}$. Budget shares are invariant to prices and income. $\epsilon_{ii}^M = -1$, $\eta_i = 1$.
+
+\subsection{CES Demand}
+$U = \left(\sum_i \alpha_i x_i^\rho\right)^{1/\rho}$, $\rho \leq 1$. Elasticity of substitution $\sigma = \frac{1}{1-\rho}$.
+$$x_i = \frac{\alpha_i^\sigma p_i^{-\sigma}}{\sum_j \alpha_j^\sigma p_j^{1-\sigma}} M$$
+As $\sigma \to 1$: Cobb-Douglas. As $\sigma \to 0$: Leontief. As $\sigma \to \infty$: perfect substitutes.
+
+\subsection{Price Indices}
+Decompose income change $M^1/M^0 = (1+\Pi)(1+\Xi)$ into price and quantity:
+
+\textbf{Laspeyres} (base-period bundle at new prices): $\Pi_L = \frac{\sum X^0_i P^1_i}{\sum X^0_i P^0_i} - 1$. Overstates cost increase (ignores substitution toward cheaper goods).
+
+\textbf{Paasche} (new bundle at base prices): $\Pi_P = \frac{\sum X^1_i P^1_i}{\sum X^1_i P^0_i} - 1$. Understates cost increase.
+
+\textbf{True cost of living} lies between Paasche and Laspeyres: $\Pi_P \leq \Pi_{\text{true}} \leq \Pi_L$.
+
+The bias arises because Laspeyres uses the old bundle (no substitution) while Paasche uses the new (full substitution). \textbf{Chained indices} reduce bias by updating the base period frequently.

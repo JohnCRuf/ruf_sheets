@@ -1,0 +1,49 @@
+\section{Problem-Solving Patterns}
+
+\subsection{Applied Problem Template}
+\begin{enumerate}[nosep]
+    \item \textbf{Identify the economic question:} What prices or quantities do we want to predict?
+    \item \textbf{Write the model:} Objective, constraints, market clearing. Count eqs vs.\ unknowns
+    \item \textbf{Solve:} FOCs $\to$ demand/supply $\to$ equilibrium. Check corners
+    \item \textbf{Comparative statics:} Use IFT to sign $dx^*/d\alpha$ without re-solving
+    \item \textbf{Equilibrium effects:} Trace through indirect channels. Compare PE vs.\ GE
+\end{enumerate}
+
+\subsection{Worked Example: Tax on Ride-Sharing}
+\textit{Setup:} Per-trip tax $t$ on Uber. Riders have demand $Q^D(p)$, drivers have supply $Q^S(p - t)$.
+
+\textit{PE:} Consumer price $\uparrow$, driver price $\downarrow$. Split by $\epsilon_D$ vs.\ $\epsilon_S$. DWL $\propto t^2$.
+
+\textit{GE:} Higher commuting cost $\implies$ rent gradient steepens, CBD rents rise. Landlords bear part via capitalization.
+
+\subsection{Corner Solutions \& Regime Switching}
+\begin{itemize}[nosep]
+    \item Interior FOC $\implies x < 0$? Set $x = 0$, re-solve the reduced system
+    \item With multiple preventions: agents sort into regimes. Analyze each separately. Verify boundary conditions at switching thresholds
+    \item Fixed costs create \textbf{switching thresholds:} consumer switches when indifferent between two options. Find the price ratio at indifference
+\end{itemize}
+
+\textit{Application (opioids):} Rx vs.\ illicit opioids with different fixed costs $(f_R < f_I)$. Consumer switches from Rx to illicit when:
+$$p_R \geq \left(\frac{y - f_R}{y - f_I}\right)^{1/k}p_I \quad \text{(Cobb-Douglas, rational)}$$
+The rational consumer switches \textit{before} Rx is strictly dominated---anticipating the budget shift.
+
+\subsection{Using \texorpdfstring{$\sigma$}{sigma} to Classify Results}
+Many results depend on $\sigma$ relative to other elasticities:
+\begin{itemize}[nosep]
+    \item $\sigma > |\epsilon_D|$: substitution dominates scale $\implies$ factor share \textit{rises} with its own price
+    \item $\sigma < |\epsilon_D|$: scale dominates $\implies$ factor share falls
+    \item $\sigma = 1$ (CD): shares are constant, simplifies most problems
+    \item $\sigma = 0$ (Leontief): no substitution, only scale effects
+\end{itemize}
+\textit{When stuck}: try $\sigma = 1$ first, solve, then ask what changes for $\sigma \neq 1$.
+
+\subsection{Steady-State Tricks}
+In dynamic models, steady state ($\dot V = 0$) turns PDEs into algebra.
+\begin{itemize}[nosep]
+    \item HJB $\to$ algebraic equation for $V$ (or $\Delta V$)
+    \item Subtract value functions ($V_1 - V_0$) to eliminate common terms
+    \item Poisson arrival rates ($\gamma$, $\lambda$) enter as discount-rate adjustments: effective rate becomes $r + \gamma + \lambda$
+\end{itemize}
+
+\subsection{Nash Bargaining Shortcut}
+Surplus split by bargaining power $(\theta, 1-\theta)$: $B = \theta V_{\text{buyer}} + (1-\theta) V_{\text{seller}}$. The bid is a weighted average of continuation values.

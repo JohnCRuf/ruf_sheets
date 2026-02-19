@@ -1,0 +1,34 @@
+\section{Human Capital \& Dynamic Investment}
+Human capital investment is an application of durable goods theory: the \textit{stock} of skills depreciates, the \textit{flow} of investment has diminishing returns, and the optimal path is front-loaded because the payoff horizon shrinks with age.
+
+\subsection{Ben-Porath Model}
+Agent lives $[0, T_d]$, works from $T$ onward. Human capital: $\dot K_t = Q_t - \delta K_t$.
+
+Production: $Q_t = F(\alpha, s_t K_t, D_t)$ (ability $\alpha$, time fraction $s_t$, purchased inputs $D_t$).
+
+Returns: $\nu K_t$ during school, $\mu K_t$ during work ($\mu > \nu$).
+
+\textbf{Marginal benefit at time $t$:}
+$$MB_t = \frac{\nu}{r}[1 - e^{-r(T-t)}] + e^{-r(T-t)}\frac{\mu}{r}[1 - e^{-r(T_d - T)}]$$
+\textbf{Optimal rule:} $MC_t = MB_t$. Since $MB_t$ decreases in $t$: investment is \textbf{front-loaded}.
+
+\textit{Comparative statics:}
+\begin{itemize}[nosep]
+    \item $\alpha \uparrow$ (higher ability): MC shifts down $\implies$ more investment at every age
+    \item $T_d \uparrow$ (longer life): MB shifts up $\implies$ more investment (explains education $\uparrow$ with life expectancy)
+    \item $r \uparrow$: MB falls (future returns discounted more) $\implies$ less investment
+\end{itemize}
+
+\subsection{Cobb-Douglas Case}
+With $Q_t = \alpha(s_t K_t)^{\beta_1}D_t^{\beta_2}$ and $\beta_1+\beta_2 < 1$ (DRS):
+$$MC_t \propto Q_t^{\frac{1-\beta_1-\beta_2}{\beta_1+\beta_2}}$$
+MC is increasing in $Q$ $\implies$ uniquely defined $Q_t^*$ from $MC_t = MB_t$. With $\beta_1 + \beta_2 = 1$: constant MC, and the agent invests maximally or not at all (bang-bang solution).
+
+\subsection{Two-Period Investment}
+Invest $I$ today, return $R(I)$ tomorrow with $R'>0$, $R''<0$.
+
+FOC: $R'(I^*) = 1+r$. With borrowing constraint $I \leq \bar I$: if $R'(\bar I) > 1+r$, the agent underinvests.
+
+\textit{Application:} Credit constraints $\implies$ high-ability agents invest too little. This justifies student loans/subsidies: the distortion is not from a tax but from a missing market (credit for human capital).
+
+

@@ -1,0 +1,27 @@
+\section{Search \& Information}
+
+\subsection{Sequential Search}
+Agent draws offers from $F(w)$ at cost $c$ per search. Accept offer iff $w \geq \bar w$ (reservation value). Optimal $\bar w$ solves:
+$$c = \int_{\bar w}^{\infty}(w - \bar w)\,dF(w)$$
+LHS is constant; RHS is decreasing in $\bar w$ $\implies$ unique solution.
+
+\textit{Comparative statics:} $c \downarrow \implies \bar w \uparrow$ (cheaper search $\implies$ more selective). Mean of $F$ shifts up $\implies \bar w \uparrow$. Spread of $F$ increases $\implies \bar w \uparrow$ (more upside from waiting).
+
+\textit{Application (labor):} Unemployment benefits lower the effective search cost $\implies$ $\bar w$ rises $\implies$ longer unemployment spells but better matches.
+
+\subsection{Search in Asset Markets}
+Investors hold 0 or 1 unit. Preference shocks at rate $\gamma$; dealer meetings at rate $\lambda$. Nash bargaining (dealer power $\theta$).
+
+\textbf{Value of holding:} $\Delta V(\delta) = V_1(\delta) - V_0(\delta)$ solves:
+$$(r + \gamma + \lambda(1-\theta))\Delta V(\delta) = \delta + \gamma\!\int\!\Delta V(\delta')dF(\delta') + \lambda(1-\theta)P$$
+
+\textbf{Bid/ask:}
+$B(\delta) = \theta\Delta V(\delta) + (1-\theta)P$, \quad $A(\delta) = (1-\theta)\Delta V(\delta) + \theta P$.
+
+\textbf{Bid-ask spread:} $\frac{\theta(\epsilon + \epsilon')}{r + \gamma + \lambda(1-\theta)} > 0$ --- positive from \textbf{search frictions}, not market power.
+
+\textbf{Frictionless limit:} $\lambda(1-\theta)\to\infty \implies P \to \delta^*/r$, spread $\to 0$.
+
+\textit{Application:} The model explains why identical assets trade at different prices in OTC vs.\ exchange markets, and why spreads widen in crises (when $\lambda$ drops).
+
+

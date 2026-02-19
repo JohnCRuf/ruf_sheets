@@ -1,0 +1,43 @@
+\section{Competitive Equilibrium \& Welfare}
+
+\subsection{Market Equilibrium}
+$Q^D(p) = Q^S(p)$. With inverse demand $P^D(Q)$ and inverse supply $P^S(Q)$:
+$$P^D(Q^*) = P^S(Q^*)$$
+
+\subsection{Welfare}
+$CS = \int_0^{Q^*} P^D(Q)\,dQ - P^*Q^*$. \quad $PS = P^*Q^* - \int_0^{Q^*} P^S(Q)\,dQ$.
+
+$W = CS + PS$. Competitive equilibrium maximizes $W$ (First Welfare Theorem).
+
+\subsection{Tax Incidence (Partial Equilibrium)}
+Per-unit tax $t$. Let $\epsilon_D < 0$, $\epsilon_S > 0$:
+$$\frac{dp^D}{dt} = \frac{\epsilon_S}{\epsilon_S - \epsilon_D}, \qquad \frac{dp^S}{dt} = \frac{\epsilon_D}{\epsilon_D - \epsilon_S}$$
+The more \textbf{inelastic} side bears more. Incidence is independent of statutory assignment.
+
+\textit{Application:} Payroll tax ``paid by employers'' vs.\ ``paid by workers'' has the same incidence: what matters is $\epsilon_S$ vs.\ $\epsilon_D$, not statutory labels.
+
+\textbf{Deadweight loss} (Harberger triangle):
+$$DWL \approx \frac{1}{2}\frac{\epsilon_S |\epsilon_D|}{\epsilon_S - \epsilon_D} \frac{t^2}{P}Q$$
+DWL grows with $t^2$ $\implies$ broad low taxes dominate narrow high taxes.
+
+\textbf{Key implications:}
+\begin{enumerate}[nosep]
+  \item Doubling tax rate \textit{quadruples} DWL
+  \item Two 5\% taxes create $\approx \frac{1}{2}$ the DWL of one 10\% tax
+  \item Tax most heavily goods with inelastic demand/supply
+  \item DWL exists even with inelastic labor supply if non-cash compensation (fringe benefits) is untaxed---the tax distorts the \textit{form} of compensation
+\end{enumerate}
+
+\textbf{Pigouvian correction:} Tax $t = MC_{\text{external}}$ restores efficiency. Unlike ordinary taxes, this \textit{reduces} DWL. Target the externality directly---tax emissions, not electricity (see \S Externalities).
+
+\subsection{Non-Price Market Clearing}
+When prices cannot adjust:
+\begin{itemize}[nosep]
+    \item \textbf{Wait time:} Kidney market --- excess demand cleared by queue. Wait time $\tau$ acts as a ``shadow price'': $P_{eff} = P_{ceiling} + v\tau$
+    \item \textbf{Search costs:} Min wage --- effective leisure price $p_\ell = w - p_s$. Ratio $p_\ell/p_f < A \implies$ less food, more leisure, plus DWL from search
+    \item \textbf{Quality adjustment:} Rent control --- landlords reduce maintenance until effective price matches equilibrium
+\end{itemize}
+
+\textit{Modeling:} Replace constrained price with shadow price $P_{eff} = P_{\text{cap}} + \text{non-price cost}$, then re-solve.
+
+

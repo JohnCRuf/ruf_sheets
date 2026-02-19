@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 20:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.9)  18 FEB 2026 21:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -525,8 +525,10 @@ Package hyperref Info: Link coloring ON on input line 2.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
- (./support/heading.tex) (./Entries/01_Foundations.tex
+ (./support/heading.tex)
+(./Entries/01_Chicago_Approach.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -535,83 +537,58 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
-(./Entries/02_Lotteries_Expected_Utility.tex)
-(./Entries/03_Normal_Form_Games.tex) (./Entries/04_Zero_Sum_Games.tex [1
+(./Entries/02_Modeling_Shortcuts.tex) (./Entries/03_Consumer_Demand.tex)
+(./Entries/04_Supply_Production.tex [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-(./Entries/05_Rationalizability.tex) (./Entries/06_Correlated_Equilibrium.tex)
-(./Entries/07_Nash_Theorem_Lemke_Howson.tex [2])
-(./Entries/08_Extensive_Form_Complete.tex) (./Entries/09_Subjective_Utility.tex
-[3]) (./Entries/10_Knowledge.tex) (./Entries/11_Bayesian_Games.tex)
-(./Entries/12_Value_of_Knowledge.tex) (./Entries/13_Jury_Games.tex [4]
-Overfull \hbox (16.56863pt too wide) detected at line 49
-[]
- []
-
-) (./Entries/14_Email_Games.tex) (./Entries/15_Extensive_Form_Incomplete.tex
-[5]) (./Entries/16_Auction_Theory.tex) (./Entries/17_Durable_Goods_Monopoly.tex
-[6]) (./Entries/18_Reputation.tex) (./Entries/19_Mechanism_Design.tex)
-(./Entries/20_Tips_and_Tricks.tex
-Underfull \hbox (badness 6016) in paragraph at lines 11--11
-[]\OT1/cmr/m/n/8 Sequential, com-plete info,
- []
-
-
-Underfull \hbox (badness 6016) in paragraph at lines 12--12
-[]\OT1/cmr/m/n/8 Sequential, com-plete info,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-[]\OT1/cmr/m/n/8 Static, in-com-plete info
- []
-
-
-Underfull \hbox (badness 8038) in paragraph at lines 16--17
-[]\OT1/cmr/m/n/8 Revelation prin-ci-ple $\OMS/cmsy/m/n/8 !$ \OT1/cmr/m/n/8 di-r
-ect
- []
-
-[7]) [8] (./main.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Entries/05_Equilibrium
+_Welfare.tex) (./Entries/06_Monopoly.tex) (./Entries/18_Industrial_Organization
+.tex [2]) (./Entries/07_Factor_Demand.tex) (./Entries/08_GE_Tax_Incidence.tex [
+3]) (./Entries/21_CRS_Industry.tex)
+(./Entries/15_Durable_Goods.tex) (./Entries/17_Intertemporal.tex [4])
+(./Entries/19_Uncertainty_Crime.tex) (./Entries/09_Human_Capital.tex [5])
+(./Entries/16_Household_Production.tex) (./Entries/10_Search_Information.tex)
+(./Entries/11_Externalities.tex [6])
+(./Entries/12_Compensating_Differentials.tex)
+(./Entries/20_Matching_Sorting.tex) (./Entries/13_Math_Toolkit.tex [7])
+(./Entries/14_Problem_Solving.tex) [8] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B9E0FCE195A3D4161408489E015496C5;28702.
+(rerunfilecheck)             Checksum: 6B1C369606338DB5A594676E529852A5;22519.
  ) 
 Here is how much of TeX's memory you used:
- 12787 strings out of 476106
- 193008 string characters out of 5793934
- 1983975 words of memory out of 5000000
- 34363 multiletter control sequences out of 15000+600000
- 569071 words of font info for 75 fonts, out of 8000000 for 9000
+ 12702 strings out of 476106
+ 191743 string characters out of 5793934
+ 1984975 words of memory out of 5000000
+ 34318 multiletter control sequences out of 15000+600000
+ 566631 words of font info for 69 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 84i,16n,96p,541b,811s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/jackruf/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcbx1000.6
-00pk> </home/jackruf/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm080
-0.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbs
-y6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy
-8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (8 pages, 313153 bytes).
+ 84i,10n,96p,541b,879s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/jackruf/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.6
+00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (8 pages, 345063 bytes).
 PDF statistics:
- 858 PDF objects out of 1000 (max. 8388607)
- 800 compressed objects within 8 object streams
- 200 named destinations out of 1000 (max. 500000)
- 1257 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 718 PDF objects out of 1000 (max. 8388607)
+ 660 compressed objects within 7 object streams
+ 167 named destinations out of 1000 (max. 500000)
+ 1001 words of extra memory for PDF output out of 10000 (max. 10000000)
 

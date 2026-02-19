@@ -1,0 +1,44 @@
+\section{Household Production}
+Household production extends consumer theory by recognizing that utility comes not from market goods directly but from \textit{commodities} produced by combining goods and time. This framework explains why wages affect non-market behavior: they change the shadow price of time-intensive activities.
+
+\subsection{The Model}
+Agents produce commodities $Z$ from market goods $x$ and time $t_h$:
+\begin{align*}
+  Z &= f(x, t_h), \quad \text{e.g., } Z = x^\alpha t_h^{1-\alpha} \text{ (Cobb-Douglas)}
+\end{align*}
+Budget: $px = wH + A$. Time: $T = H + t_h + \ell$. Merging:
+$$px + w t_h = wT + A - w\ell \equiv \text{full income} - w\ell$$
+The \textbf{shadow price} of time in home production is $w$ (opportunity cost).
+
+\subsection{Two-Stage Optimization}
+\textbf{Stage 1:} Minimize cost of producing $Z$:
+$$\min_{x,t_h} px + wt_h \quad \text{s.t.} \quad f(x,t_h) = Z$$
+FOC: $\frac{f_{t_h}}{f_x} = \frac{w}{p}$. Cost function: $C(p,w,Z)$.
+
+With CRS Cobb-Douglas: $C = \kappa\, p^\alpha w^{1-\alpha} Z$ where $\kappa = \alpha^{-\alpha}(1-\alpha)^{-(1-\alpha)}$. \textbf{Shadow price of $Z$:} $\pi_Z = \kappa\, p^\alpha w^{1-\alpha}$.
+
+\textbf{Stage 2:} Choose $Z$ and $\ell$ to maximize $U(Z, \ell)$ subject to $\pi_Z Z + w\ell = wT + A$.
+
+\subsection{Comparative Statics}
+\textbf{Wage increase} ($w\uparrow$): Raises $\pi_Z$ (if time-intensive) and raises full income. Net effect on $Z$: substitution away from time-intensive commodities, income toward all normal goods.
+
+\textbf{Technology shock in home production} ($A_h\uparrow$): Shadow price $\pi_Z$ falls $\implies$ more $Z$ produced, possibly less market work.
+
+\textit{Application (temperature \& insulation):} PS2 2018. Home comfort $Z = f(\text{heating}, \text{insulation})$. Colder location $\implies$ marginal product of heating rises $\implies$ substitution toward heating, $\pi_Z$ rises $\implies$ less comfort consumed (scale effect).
+
+\subsection{Comparative Advantage in Home Production}
+With two household members, efficient allocation assigns tasks based on comparative advantage:
+$$\frac{w_1}{MP_{h,1}} > \frac{w_2}{MP_{h,2}} \implies \text{Person 1 works in market, Person 2 at home}$$
+The person with lower opportunity cost of home time specializes in household production.
+
+\textit{Application (PS3 2018):} Two-earner household chooses home vs.\ market production of meals. If $w_H/w_L$ rises, comparative advantage sharpens: high-wage spouse works more in market, low-wage spouse does more cooking. Corner solution: one spouse fully specializes.
+
+\subsection{Rationing and Household Production}
+When a market good is rationed ($x \leq \bar{x}$), the shadow price of the ration exceeds the market price. Key result: \textbf{rationing one good lowers the own-price elasticity of all other goods}, because the consumer loses a substitution margin.
+
+\subsection{Allocation of Time (Becker)}
+Full income: $\text{FI} = wT + A$. Time spent on activity $j$ has shadow price $w$ (opportunity cost). Optimal allocation: $\frac{MP_j}{p_j} = \frac{MP_{\ell}}{w}$ across all activities.
+
+\textbf{Wage increase:} Substitution toward market-intensive goods (eat out more, clean less). Income effect raises demand for all normal goods. Net: time-intensive leisure falls, market work rises (empirically dominant for primary earners).
+
+\textit{Application:} Rising female wages $\implies$ substitution from home to market goods (less cooking, more childcare markets, higher female LFP).

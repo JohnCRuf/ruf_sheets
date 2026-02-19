@@ -1,0 +1,58 @@
+\section{Uncertainty, Insurance \& Crime}
+
+\subsection{Expected Utility}
+Agent faces states $s \in \{1,\ldots,S\}$ with probabilities $\pi_s$. Chooses to maximize:
+$$\E[U] = \sum_s \pi_s U(C_s)$$
+\textbf{Risk aversion:} $U'' < 0 \implies$ agent prefers $\E[C]$ with certainty to the gamble. \textbf{Risk premium} $\rho$: $U(\E[C]-\rho) = \E[U(C)]$.
+
+\textbf{Arrow-Pratt:} $r_A = -U''/U'$ (absolute), $r_R = -U''C/U'$ (relative).
+
+\subsection{Insurance}
+Income $Y$, loss $L$ with probability $p$. Insurance: pay premium $\gamma$ for coverage $q$.
+
+\textbf{Fair insurance:} $\gamma = p$ per unit. At fair price, full insurance is optimal: $C_{\text{loss}} = C_{\text{no loss}}$ (smooth consumption across states).
+
+\textbf{Unfair insurance:} $\gamma > p$. Partial coverage optimal. FOC:
+$$\frac{U'(C_{\text{no loss}})}{U'(C_{\text{loss}})} = \frac{p(1-\gamma)}{(1-p)\gamma}$$
+More risk-averse agents buy more insurance despite unfair pricing.
+
+\subsection{State-Dependent Preferences}
+If utility depends on state (e.g., health): $U_s(C_s) \neq U_{s'}(C_{s'})$ even at same $C$.
+
+\textit{Application:} If marginal utility of consumption is \textbf{lower} when sick ($U'_{\text{sick}} < U'_{\text{healthy}}$ at same $C$), optimal insurance provides \textit{less} than full coverage---transfer income to healthy state where it's more valued.
+
+\textit{Application (disability):} Optimal disability insurance may not fully replace income if disability reduces ability to enjoy consumption.
+
+\subsection{Moral Hazard}
+Insurance reduces the cost of risky behavior $\implies$ behavioral response.
+
+\textbf{Model:} Probability of loss $p(e)$ depends on effort $e$, unobserved by insurer. Full insurance $\implies e = 0 \implies p$ maximized. Optimal contract trades off risk-sharing against incentives.
+
+\textit{Application (health):} Generous health insurance increases medical utilization (RAND experiment: \$0 copay $\implies$ 30\% more visits). Deductibles and copays restore incentives at the cost of risk exposure.
+
+\subsection{Crime \& Punishment (Becker)}
+Individual commits crime iff:
+$$B > p \cdot f + (1-p) \cdot 0 = pf$$
+where $B$ = benefit, $p$ = probability of punishment, $f$ = fine.
+
+\textbf{Optimal deterrence:} For a given expected penalty $pf$:
+\begin{itemize}[nosep]
+  \item \textbf{Risk-averse criminals}: higher $f$ with lower $p$ deters the same expected cost more cheaply (exploit concavity: a large fine hurts more than its expected value)
+  \item \textbf{Risk-loving criminals}: higher $p$ is more effective (they discount large but unlikely fines)
+\end{itemize}
+\textbf{Enforcement is costly}: raising $p$ requires police, courts. Raising $f$ is nearly free $\implies$ \textbf{Becker's result:} optimal policy sets $f$ maximal and $p$ minimal (for risk-averse offenders).
+
+\textit{Application (traffic):} Speed cameras (high $p$, low $f$) vs.\ license suspension (low $p$, high $f$). The optimal mix depends on offenders' risk attitudes and enforcement costs.
+
+\subsection{Peltzman Effect}
+Safety regulation reduces the cost of accidents $\implies$ agents take more risk. Net effect on safety is ambiguous:
+$$\text{Total accidents} = \underbrace{\text{accidents per risk unit}}_{\downarrow \text{(regulation)}} \times \underbrace{\text{risk-taking}}_{\uparrow \text{(behavioral)}}$$
+
+\textit{Application:} Seatbelt laws reduce driver deaths but increase pedestrian deaths (drivers drive faster). Airbags, ABS: offsetting behavior partially erodes engineering gains.
+
+\subsection{Health Policy \& Liability}
+Reassigning liability shifts behavioral responses:
+
+\textit{PS4 2018:} Restaurant liability for food poisoning $\implies$ restaurants invest more in safety, consumers eat more risky food (moral hazard). Net effect depends on relative elasticities.
+
+\textit{PS5 2018:} Cigarette externalities: Pigouvian tax $=$ marginal external cost is first-best.

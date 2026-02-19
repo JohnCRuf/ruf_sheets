@@ -1,20 +1,16 @@
 \section{Reputation}
 \subsection{Chain Store Game Set-up}
-In the Chain Store game, there are \(K\) (potential) entrants who decide in series, with one incumbent. The entire history is observable to all players. At each step, the incumbent prefers no entry to acquiescing, and acquiescing to fighting. The entrant prefers entering to not entering, if and only if the incumbent acquiesces.
+In the Chain Store game, \(K\) entrants decide sequentially whether to enter; one incumbent chooses to fight or acquiesce. Full history is observable. Incumbent prefers no entry $>$ acquiesce $>$ fight; entrant enters iff incumbent acquiesces.
 
-By backwards induction, the unmodified game has an equilibrium of \((\mathrm{In},\,\mathrm{A})\) at all steps. Clearly this model is missing something...
+Backward induction: $(\mathrm{In},\,\mathrm{A})$ at all steps.
 
 \subsection{Incumbent Types}
-We imagine that there are two types for the incumbent: the normal type, which behaves as we're used to, and the aggressive type, which has preference for fighting above all else. Suppose that the incumbent is aggressive with probability \(\epsilon > 0\). \textbf{Now,} there is no sequential equilibrium where entrant always enters and I acquiesces. This is because, for any \(\epsilon \leq \frac{1}{2}\), the first entrant will play in. But in the case where the incumbent is aggressive, they will fight, informing the second entrant that they're aggressive, and the second entrant will play out.
+Two types: normal (as above), aggressive (prefers fighting). Incumbent is aggressive w.p.\ $\epsilon > 0$. Now there is no SE where entrant always enters: if incumbent fights, posterior probability of aggressive type rises, deterring later entrants.
 
 \subsection{Incumbent Minimum Payoff Theorem}
-In any sequential equilibrium of the Chain Store game with \(K\) entrants, the incumbent's total payoff is at least \(3 \left(K + \frac{\log(2\epsilon)}{\log(2)}\right)\).
+In any SE of the Chain Store game with $K$ entrants, the incumbent's payoff $\geq 3(K + \log_2(2\epsilon))$.
 
-This is because, starting from any normal-type strategy \(\sigma_\mathrm{I}\), the incumbent could always deviate to \(\sigma_\mathrm{I}'(F|h) = 1\), mimicking the aggressive type. This forces the entrants to update their beliefs about the incumbent's type; if one of them plays In starting from history \(h\), the posterior probability that the incumbent is aggressive after being fought is
-\[\frac{\epsilon(h)}{\epsilon(h) + (1 - \epsilon(h))\sigma_\mathrm{I}(F|h, \mathrm{In})},\]
-where \(\epsilon(h)\) is the posterior probability of the incumbent being aggressive at history \(h\). From this, we see that an entrant will only continue to play \(\mathrm{In}\) so long as \(\epsilon(h, \mathrm{In}, \mathrm{F}) \geq 2\epsilon(h)\).
-
-After \(k\) iterations of \((\mathrm{In}, \mathrm{F})\), this becomes the condition \(\epsilon(h) \geq 2^k\epsilon\). Implied by this condition is that \(k \geq -\frac{\log(2\epsilon)}{\log(2)}\).
+\textbf{Key idea:} Normal type can deviate to always fighting (mimicking aggressive type). After $k$ rounds of $(\mathrm{In}, \mathrm{F})$, posterior $\epsilon(h) \geq 2^k \epsilon$, so entrants are deterred after $\leq -\log_2(2\epsilon)$ fights.
 
 \subsection{Folk Theorem (Repeated Games)}
 Let \(G^\infty(\delta)\) be the infinitely repeated game with discount \(\delta\). A payoff \(v\) is \textbf{individually rational} if \(v_i \geq \min_{a_{-i}}\max_{a_i} u_i\) for all \(i\), and \textbf{feasible} if \(v \in \mathrm{conv}(u(A))\). \textbf{Folk Thm:} Every feasible, individually rational \(v\) is an SPE payoff of \(G^\infty(\delta)\) for \(\delta\) sufficiently close to~1.
