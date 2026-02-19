@@ -10,6 +10,13 @@ If $X\sim N(0,\Sigma)$:
     n^r(g(X_n)-g(c))\dto N\!\left(0,\, Dg(c)\,\Sigma\, Dg(c)'\right).
 \end{align*}
 
+\subsection{Proof Sketch}
+By Taylor: $g(x)=g(c)+Dg(c)(x-c)+h_1(x)(x-c)$ with $h_1(c)=0$. Then:
+\begin{align*}
+    n^r(g(X_n)-g(c)) &= Dg(c)\,n^r(X_n-c) + h_1(X_n)\,n^r(X_n-c).
+\end{align*}
+Since $X_n\pto c$, CMT gives $h_1(X_n)\pto 0$, and since $n^r(X_n-c)=O_p(1)$, the remainder is $o_p(1)\cdot O_p(1)=o_p(1)$.
+
 \subsection{Second-Order Delta Method}
 If $g'(c)=0$ and $g''(c)$ exists (scalar case), then:
 \begin{align*}

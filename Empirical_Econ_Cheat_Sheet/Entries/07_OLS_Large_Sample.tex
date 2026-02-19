@@ -28,4 +28,13 @@ Without homoskedasticity, use the \textbf{Eicker-Huber-White} (robust) estimator
     \hat\Sigma = \left(\frac{1}{n}\sum x_ix_i'\right)^{-1}\!\left(\frac{1}{n}\sum \hat{u}_i^2 x_ix_i'\right)\!\left(\frac{1}{n}\sum x_ix_i'\right)^{-1}.
 \end{align*}
 
+\subsection{Consistency of $\hat\Sigma$ (Key Proof Step)}
+Need $\frac{1}{n}\sum\hat{u}_i^2 x_ix_i'\pto \E(u^2xx')$. Decompose:
+\begin{align*}
+    \frac{1}{n}\sum \hat{u}_i^2x_ix_i' = \frac{1}{n}\sum u_i^2 x_ix_i' + \frac{1}{n}\sum(\hat{u}_i^2-u_i^2)x_ix_i'.
+\end{align*}
+First term $\asto \E(u^2xx')$ by SLLN. Second term $=o_p(1)$:
+$\max_{i\leq n}|\hat{u}_i^2-u_i^2| \leq \|\hat\beta-\beta\|^2\max\|x_i\|^2 + 2\|\hat\beta-\beta\|\max\|x_iu_i\|$.
+Use: $\frac{\max\|Z_i\|}{n^{1/r}}=o_p(1)$ when $\E\|Z\|^r<\infty$.
+
 
