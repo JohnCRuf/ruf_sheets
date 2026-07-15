@@ -1,0 +1,45 @@
+\section{Signaling \& Cheap Talk}
+
+\subsection{Signaling Games}
+Sender knows type \(\theta \in \Theta\) (prior \(p\)), chooses costly message \(m\); receiver observes \(m\), updates beliefs \(\mu(\theta|m)\), takes action \(a\).
+
+\textbf{PBE requirements:}
+\begin{enumerate}[nosep]
+    \item Sender: \(m^*(\theta)\) optimal given receiver strategy \(a^*(m)\)
+    \item Receiver: \(a^*(m)\) optimal given beliefs \(\mu(\cdot|m)\)
+    \item Beliefs: Bayes' rule on the equilibrium path; \textbf{unrestricted off path}
+\end{enumerate}
+
+\textbf{Equilibrium taxonomy:}
+\begin{itemize}[nosep]
+    \item \textbf{Separating:} \(m^*\) injective---types revealed. Requires \textbf{single crossing}: signal cost falls with type, so low types won't mimic
+    \item \textbf{Pooling:} all types send the same \(m\)---beliefs at the pooled message equal the prior; sustained by pessimistic off-path beliefs
+    \item \textbf{Semi-separating:} some types mix
+\end{itemize}
+
+\textbf{Spence education model:} productivity \(\theta_H > \theta_L\), signal cost \(c(s,\theta) = s/\theta\), competitive wages \(w(s) = \mathbb{E}[\theta|s]\). Separating equilibrium: \(s_L = 0\), \(s_H = s^*\) with
+\begin{gather*}
+\theta_H - s^*/\theta_L \leq \theta_L \quad \text{(L won't mimic)} \\
+\theta_H - s^*/\theta_H \geq \theta_L \quad \text{(H prefers signaling)}
+\end{gather*}
+Education can be pure waste and still be individually rational.
+
+\textbf{Refinement (Intuitive Criterion, Cho--Kreps):} prune off-path beliefs that put weight on types who could not gain from the deviation under \textit{any} receiver response. Selects the \textbf{least-cost separating} (Riley) equilibrium in Spence; kills pooling equilibria supported by unreasonable beliefs.
+
+\subsection{Cheap Talk (Crawford--Sobel)}
+Messages are \textbf{costless and nonbinding}: information transmission relies purely on aligned interests, not signal cost.
+
+\textbf{Setup:} state \(\theta \sim U[0,1]\) known to sender; receiver picks \(a\); payoffs \(-(a-\theta)^2\) (receiver), \(-(a-\theta-b)^2\) (sender), bias \(b > 0\).
+
+\textbf{Results:}
+\begin{itemize}[nosep]
+    \item \textbf{Babbling equilibrium always exists}: messages ignored, no information sent---cheap talk games never have a unique equilibrium
+    \item All equilibria are \textbf{partitional}: sender reveals only which interval \([\theta_i, \theta_{i+1})\) contains \(\theta\)
+    \item Partition steps satisfy \(\theta_{i+1} - \theta_i = \theta_i - \theta_{i-1} + 4b\): intervals lengthen (bias compounds upward)
+    \item Max number of intervals \(N(b)\) is finite, decreasing in \(b\); as \(b \to 0\), \(N \to \infty\) (full revelation in the limit)
+    \item No communication possible when \(b \geq 1/4\)
+\end{itemize}
+
+\textbf{Contrast with signaling:} cost separates types in Spence; \textit{preference alignment} separates states here. Committing to coarse language is what makes partial honesty credible.
+
+\textit{Application:} expert advice (analysts, doctors, advisors)---the more the expert's incentives diverge, the vaguer the credible advice.

@@ -1,0 +1,37 @@
+\section{Bargaining}
+
+\subsection{Nash Bargaining Solution (Axiomatic)}
+Feasible set \(S\), disagreement point \(d = (d_1, d_2)\). The unique solution satisfying \textbf{Pareto efficiency}, \textbf{symmetry}, \textbf{invariance to affine transformations}, and \textbf{IIA} is
+\[(u_1^*, u_2^*) = \arg\max_{(u_1,u_2) \in S,\, u \geq d} (u_1 - d_1)(u_2 - d_2)\]
+
+\textbf{Generalized (asymmetric) Nash:} weights \(\alpha, 1-\alpha\): maximize \((u_1-d_1)^\alpha (u_2-d_2)^{1-\alpha}\). With transferable utility over surplus \(v\): \(u_1 = d_1 + \alpha(v - d_1 - d_2)\).
+
+\textbf{Comparative statics:} better outside option \(d_i\) \(\implies\) larger share for \(i\)---threats matter even when never exercised.
+
+\subsection{Rubinstein Alternating Offers}
+Players alternate proposals over a pie of size 1; discount factors \(\delta_1, \delta_2\); no exogenous end.
+
+\textbf{Unique SPE} (immediate agreement):
+\[x_1^* = \frac{1-\delta_2}{1-\delta_1\delta_2} \quad \text{(proposer 1's share)}\]
+Symmetric case \(\delta_1 = \delta_2 = \delta\): proposer gets \(\frac{1}{1+\delta}\), responder \(\frac{\delta}{1+\delta}\).
+
+\textbf{Logic:} responder accepts anything \(\geq\) discounted value of proposing next period; indifference conditions \(y^* = \delta_1 x^*\), \(1 - x^* = \delta_2(1 - y^*)\) pin down shares uniquely (one-shot deviation principle).
+
+\textbf{Properties:}
+\begin{itemize}[nosep]
+    \item \textbf{First-mover advantage}, vanishing as \(\delta \to 1\): limit split is 50--50
+    \item \textbf{Patience is power}: share increasing in own \(\delta\), decreasing in rival's
+    \item As offer frequency \(\to \infty\), converges to \textbf{Nash bargaining} with weights given by relative patience---the noncooperative foundation for the axiomatic solution
+\end{itemize}
+
+\textbf{Outside options:} an option binding only if it exceeds the equilibrium share (\textit{outside option principle})---a low outside option changes nothing; credibility, not existence, matters.
+
+\subsection{Bargaining Failures}
+Efficient immediate agreement relies on complete information:
+\begin{itemize}[nosep]
+    \item \textbf{Private values} (unknown valuations): delay and disagreement arise as screening devices---strikes and litigation are equilibrium information revelation, not mistakes
+    \item \textbf{Myerson--Satterthwaite:} with two-sided private information, no mechanism is simultaneously efficient, incentive-compatible, individually rational, and budget-balanced (see Mechanism Design entry)
+    \item \textbf{Commitment/hold-up:} sunk relationship-specific investment shifts \(d\); anticipating expropriation, parties underinvest---a motive for contracts and vertical integration
+\end{itemize}
+
+\textit{Application:} wage bargaining---union--firm splits quasi-rents by relative patience (strike funds raise \(\delta_u\)); housing sales---the party with the better outside listing extracts more.

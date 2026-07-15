@@ -1,0 +1,30 @@
+\section{Nonparametrics \& Quantile Regression}
+
+\subsection{Kernel Density Estimation}
+$$\hat f(x) = \frac{1}{nh}\sum_{i=1}^n K\!\left(\frac{X_i - x}{h}\right)$$
+$K$ symmetric, integrates to 1 (Epanechnikov, Gaussian); kernel choice is second-order, \textbf{bandwidth $h$ is everything}.
+
+\textbf{Bias--variance trade-off:} $\text{Bias} = O(h^2)$, $\Var = O\left(\frac{1}{nh}\right)$. MSE-optimal $h \propto n^{-1/5}$ $\implies$ convergence rate $n^{-2/5}$, slower than parametric $n^{-1/2}$.
+
+\subsection{Kernel (Local) Regression}
+\textbf{Nadaraya--Watson} (local constant): $\hat m(x) = \frac{\sum_i K_h(X_i - x)Y_i}{\sum_i K_h(X_i - x)}$ --- a weighted average of nearby $Y$'s. Boundary bias at the edges of support.
+
+\textbf{Local linear:} fit a weighted line at each $x$; kills boundary bias (this is why RDD uses local linear, not NW).
+
+\textbf{Curse of dimensionality:} with $d$ regressors, rate degrades to $n^{-2/(4+d)}$---nonparametrics need dense data; use semiparametric structure (partially linear, index models) when $d$ grows.
+
+\subsection{Quantile Regression}
+The $\tau$-th conditional quantile $Q_\tau(Y|X) = X'\beta_\tau$ solves:
+$$\hat\beta_\tau = \arg\min_b \sum_i \rho_\tau(Y_i - X_i'b), \qquad \rho_\tau(u) = u(\tau - \mathbf{1}(u<0))$$
+Check function $\rho_\tau$ asymmetrically penalizes over/under-prediction; $\tau = 0.5$ gives LAD (median regression).
+
+\textbf{Properties:}
+\begin{itemize}[nosep]
+  \item Robust to outliers in $Y$ (unlike OLS); equivariant to monotone transforms of $Y$
+  \item $\beta_\tau$ varying across $\tau$ = \textbf{distributional effects}: a policy can leave the mean fixed while compressing or spreading the distribution
+  \item Estimates the conditional quantile function, \textit{not} the quantile of individual treatment effects (no rank invariance for free)
+\end{itemize}
+
+\textbf{Inference:} asymptotic variance depends on the conditional density at the quantile $f_{Y|X}(Q_\tau)$ (nuisance); bootstrap is the practical default.
+
+\textit{Application:} union wage effects are larger at low quantiles (compression); returns to education vary across the wage distribution---mean regression hides both.

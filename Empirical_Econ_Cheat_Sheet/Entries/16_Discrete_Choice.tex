@@ -1,0 +1,33 @@
+\section{Discrete Choice}
+
+\subsection{Latent Utility Setup}
+Binary outcome from a threshold-crossing model:
+$$Y_i = \mathbf{1}(Y_i^* > 0), \qquad Y_i^* = X_i'\beta - \varepsilon_i, \quad \varepsilon_i \perp X_i \sim F$$
+$$P(Y_i=1|X_i) = F(X_i'\beta)$$
+\textbf{Probit:} $F = \Phi$. \textbf{Logit:} $F(v) = \frac{e^v}{1+e^v}$ (logistic).
+
+\textbf{Normalization:} scale of $\varepsilon$ is not identified (only $\beta/\sigma$); location fixed by the constant. Coefficients are \textit{not} comparable across models or samples with different error variance.
+
+\subsection{Estimation: MLE}
+$$\hat\beta = \arg\max_b \sum_i \left[Y_i \log F(X_i'b) + (1-Y_i)\log(1-F(X_i'b))\right]$$
+Log-likelihood is globally concave for logit and probit. Standard MLE asymptotics apply: $\sqrt{n}(\hat\beta - \beta) \dto N(0, \mathcal{I}^{-1})$.
+
+\textbf{Logit FOC:} $\sum_i (Y_i - \Lambda(X_i'\hat\beta))X_i = 0$ --- residuals orthogonal to regressors, as in OLS; with a constant, average fitted probability $=$ sample share.
+
+\subsection{Marginal Effects}
+Coefficients are index weights, not effects:
+$$\frac{\partial P(Y=1|X)}{\partial X_j} = f(X'\beta)\,\beta_j$$
+Report \textbf{average marginal effects} $\frac{1}{n}\sum_i f(X_i'\hat\beta)\hat\beta_j$ (preferred) or effects at means. Ratios $\beta_j/\beta_k$ \textit{are} invariant to the scale normalization.
+
+\textbf{Logit odds:} $\log\frac{P}{1-P} = X'\beta$: $\beta_j$ is the change in log-odds; $e^{\beta_j}$ the odds ratio.
+
+\textbf{LPM comparison:} OLS on $Y \in \{0,1\}$ estimates the best linear approximation to the CEF; fine for average effects with plausible index ranges, breaks (fitted values outside $[0,1]$) in the tails. Heteroskedasticity is mechanical: $\Var(Y|X) = p(X)(1-p(X))$.
+
+\subsection{Multinomial \& Conditional Logit}
+Choice $j \in \{0,\ldots,J\}$ with utilities $U_{ij} = X_{ij}'\beta + \varepsilon_{ij}$, $\varepsilon_{ij}$ iid type-I extreme value:
+$$P(Y_i = j) = \frac{e^{X_{ij}'\beta}}{\sum_k e^{X_{ik}'\beta}}$$
+
+\textbf{IIA:} relative odds $P_j/P_k$ do not depend on other alternatives---consequence of iid errors. \textit{Red bus/blue bus:} adding a duplicate alternative wrongly steals proportionally from all options. Remedies: nested logit (correlated errors within nests), random coefficients / mixed logit (BLP in demand estimation).
+
+\subsection{Endogeneity in Nonlinear Models}
+No direct 2SLS analogue---plugging fitted values into a probit (``forbidden regression'') is inconsistent. Use \textbf{control functions}: with $X_e = Z'\pi + v$, include $\hat v$ in the probit; valid when the first stage is correctly specified and errors are jointly normal (see Control Functions entry).

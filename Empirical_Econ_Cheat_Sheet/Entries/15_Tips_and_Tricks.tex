@@ -59,3 +59,20 @@ Use: $\frac{\max\|Z_i\|}{n^{1/r}}=o_p(1)$ when $\E\|Z\|^r<\infty$.
 \subsection{Bias-Variance Tradeoff (Irrelevant Variables)}
 Including irrelevant variable ($\beta_2\!=\!0$): no bias, but \emph{increases} variance. Omitting relevant variable ($\beta_2\!\neq\! 0$): introduces OVB, but \emph{decreases} variance.
 Via FWL: $\Var(\hat\beta_1|X) = \sigma^2/\text{SSR}_1$ where $\text{SSR}_1$ is residual SS from regressing $x_1$ on other regressors. Adding correlated regressors lowers $\text{SSR}_1$, inflating variance.
+
+\subsection{Standard Error Decision Tree}
+\begin{itemize}[nosep]
+    \item \textbf{Default:} heteroskedasticity-robust (HC1); homoskedastic SEs only under explicit assumption
+    \item \textbf{Grouped treatment or grouped errors:} cluster at the level of treatment assignment; few clusters ($<40$) $\implies$ wild cluster bootstrap
+    \item \textbf{Time series / spatial:} HAC (Newey--West) with bandwidth growing slowly in $n$; spatial analogue (Conley)
+    \item \textbf{Generated regressors} (two-step estimators, predicted values as inputs): naive SEs are wrong---stack the moments (GMM), use the delta method, or bootstrap the \textit{whole} procedure
+    \item \textbf{Multiple hypotheses:} family-wise corrections (Bonferroni, Romano--Wolf) or FDR when testing many outcomes
+\end{itemize}
+
+\subsection{Diagnostics That Actually Matter}
+\begin{itemize}[nosep]
+    \item \textbf{IV:} first-stage F, overid test (with $>1$ instrument), reduced form sign and magnitude---if the reduced form is zero, no 2SLS magic saves it
+    \item \textbf{DiD:} pre-trend plot (event study), composition stability, no anticipation
+    \item \textbf{RDD:} density of running variable at cutoff (McCrary), covariate smoothness, bandwidth sensitivity
+    \item \textbf{Placebos everywhere:} fake cutoffs, fake treatment years, outcomes that shouldn't move
+\end{itemize}

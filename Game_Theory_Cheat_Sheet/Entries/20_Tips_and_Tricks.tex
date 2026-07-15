@@ -71,3 +71,22 @@ $F$ & $0,0$ & $2,3$
 \end{tabular}
 \end{center}
 Claim: $\mu(O,O)=\frac{1}{2},\, \mu(F,F)=\frac{1}{2}$ is a CE. Check: P1 told $O$: deviation to $F$ gives $\mu(O|O)(u_1(O,O)-u_1(F,O))= 1\cdot(3-0)=3 \geq 0$ \checkmark. P1 told $F$: $1\cdot(2-0)=2\geq 0$ \checkmark. By symmetry, P2's conditions hold too.
+
+\subsection{PBE Cookbook (Signaling Games)}
+\begin{enumerate}[nosep]
+    \item \textbf{Enumerate candidates:} separating profiles (one per injective sender map) and pooling profiles (one per common message)
+    \item \textbf{Separating:} beliefs are degenerate on path. Write both IC constraints (each type prefers own message); solve for the signal range that satisfies both
+    \item \textbf{Pooling:} on-path belief $=$ prior. Choose the \textit{worst-case} off-path belief (usually ``deviator is the low type'') and check no type wants to deviate under it
+    \item \textbf{Verify receiver optimality} at every message, including off path
+    \item \textbf{Refine:} apply the intuitive criterion---if only one type could profit from an off-path message under any best response, beliefs there must put probability 1 on that type; recheck the pooling equilibria
+\end{enumerate}
+\textbf{Common errors:} forgetting off-path beliefs are part of the equilibrium object; checking only one type's IC; applying Bayes' rule off path (it doesn't apply).
+
+\subsection{Which Solution Concept?}
+\begin{itemize}[nosep]
+    \item Static, complete info $\to$ NE (check pure, then mixed via indifference)
+    \item Dynamic, complete info $\to$ SPE via backward induction / one-shot deviation
+    \item Static, incomplete info $\to$ BNE (strategy $=$ map from types to actions)
+    \item Dynamic, incomplete info $\to$ PBE / sequential equilibrium (strategies $+$ beliefs)
+    \item Claim about what \textit{can't} happen $\to$ rationalizability / iterated dominance
+\end{itemize}

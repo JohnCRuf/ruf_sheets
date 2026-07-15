@@ -53,3 +53,18 @@ $H_0: f(\beta)=0$, $f:\R^{k+1}\to\R^p$ continuously differentiable. Delta method
     \sqrt{n}(f(\hat\beta_n)-f(\beta))\dto N(0,D_\beta f(\beta)\,V\,D_\beta f(\beta)').
 \end{align*}
 Construct $\chi^2_p$ statistic as before. Note $f(\beta)=R\beta$ yields linear case since $D_\beta f = R$.
+
+\subsection{Bootstrap}
+Approximate the sampling distribution of $T_n(X_1,\ldots,X_n; F)$ by resampling from $\hat F_n$ instead of $F$.
+
+\textbf{Nonparametric bootstrap:} for $b = 1,\ldots,B$: draw $n$ observations \textit{with replacement} from the data, compute $T_n^{*b}$. Use the empirical distribution of $\{T_n^{*b}\}$ for SEs, critical values, or CIs.
+
+\textbf{Variance estimate:} $\widehat{\Var}(\hat\theta) = \frac{1}{B}\sum_b (\hat\theta^{*b} - \bar{\hat\theta}^{*})^2$.
+
+\textbf{CIs:} percentile $[\hat\theta^*_{(\alpha/2)}, \hat\theta^*_{(1-\alpha/2)}]$; or percentile-$t$ (bootstrap the \textit{t-statistic}, requires an SE within each draw).
+
+\textbf{Asymptotic refinement:} bootstrapping an (asymptotically) \textbf{pivotal} statistic (e.g.\ the t-stat) gives errors $o(n^{-1/2})$ vs.\ $O(n^{-1/2})$ for the normal approximation. Bootstrapping $\hat\theta$ itself gives no refinement---just a variance estimate.
+
+\textbf{When it fails:} parameters on a boundary, non-smooth statistics (max, matching estimators), weak instruments, and heavy clustering (bootstrap \textit{clusters}, not observations, when data are clustered).
+
+\textit{Practical default:} use the pairs (case) bootstrap for iid data, block bootstrap for time series, wild bootstrap for regression with heteroskedasticity and few clusters.

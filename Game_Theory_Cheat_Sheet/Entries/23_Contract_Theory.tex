@@ -1,0 +1,38 @@
+\section{Contract Theory}
+
+\subsection{Hidden Action (Moral Hazard)}
+Principal offers wage scheme \(w(y)\); agent picks unobserved effort \(e \in \{L, H\}\) at cost \(c(e)\); output \(y \sim f(\cdot|e)\). Agent utility \(u(w) - c(e)\), \(u\) concave; reservation utility \(\bar u\).
+
+\textbf{Program} (implement \(H\)): \(\min_{w(\cdot)} \mathbb{E}[w(y)|H]\) subject to
+\begin{gather*}
+\text{(IR)} \quad \mathbb{E}[u(w)|H] - c(H) \geq \bar u \\
+\text{(IC)} \quad \mathbb{E}[u(w)|H] - c(H) \geq \mathbb{E}[u(w)|L] - c(L)
+\end{gather*}
+
+\textbf{First best} (observable \(e\)): IC drops, full insurance---flat wage, effort dictated.
+
+\textbf{Second best:} optimal wage satisfies
+\[\frac{1}{u'(w(y))} = \lambda + \mu\left(1 - \frac{f(y|L)}{f(y|H)}\right)\]
+Pay is high where the \textbf{likelihood ratio} \(f(y|H)/f(y|L)\) is high---wages reward \textit{evidence of effort}, not output per se. Agent bears risk \(\implies\) implementation costs exceed first best (risk premium is the agency cost).
+
+\textbf{MLRP} (monotone likelihood ratio) \(\implies\) wage increasing in output. \textbf{Informativeness:} condition pay on any signal that adds information about \(e\); filter out common shocks (relative performance).
+
+\subsection{Hidden Information (Screening)}
+Principal designs a menu; agent has private type \(\theta \in \{\theta_L, \theta_H\}\) (prob.\ \(p_L, p_H\)). By the \textbf{revelation principle}, restrict to direct menus \(\{(q_L, t_L), (q_H, t_H)\}\) satisfying IC and IR per type.
+
+\textbf{Solution structure} (monopolist screening a buyer):
+\begin{itemize}[nosep]
+    \item Binding constraints: \textbf{IR of the low type}, \textbf{IC of the high type} (high type is tempted to mimic down); the other two are slack
+    \item \textbf{No distortion at the top:} \(q_H\) is efficient
+    \item \textbf{Distortion at the bottom:} \(q_L\) below efficient---sacrificing low-type surplus cheapens the high type's \textbf{information rent} \(U_H = \Delta\theta\, q_L\)
+    \item Low type may be excluded entirely if \(p_H\) is large
+\end{itemize}
+
+\textbf{Same anatomy everywhere:} second-degree price discrimination, optimal income taxation (Mirrlees), regulation of an unknown-cost firm (Baron--Myerson), insurance menus (deductibles screen risk types).
+
+\subsection{Moral Hazard vs.\ Screening: Exam Diagnostics}
+\begin{itemize}[nosep]
+    \item Private information \textit{before} contracting \(\implies\) screening/selection; \textit{after} \(\implies\) moral hazard
+    \item Screening distorts \textbf{quantities} (menus, rationing); moral hazard distorts \textbf{risk-sharing} (pay-performance)
+    \item Both leave rents: information rent (screening) vs.\ risk premium (moral hazard)
+\end{itemize}
