@@ -1,0 +1,81 @@
+\section{Magit: The Daily Loop}
+
+Evil owns the lowercase letters in magit buffers, so several keys differ from
+the vanilla docs online. Where they differ, the vanilla key is noted.
+
+\subsection{Open, refresh, quit}
+\begin{keys}
+\krow{SPC g g}{magit status \quad \key{SPC g G} status at this file}
+\krow{h}{dispatch: the menu of every menu (also \key{?})}
+\krowx{\korr{g r}{g R}}{refresh this buffer / everything}
+\krowx{\korr{q}{Q}}{bury this buffer / all magit buffers}
+\krow{\textasciigrave}{process buffer: \emph{this is where git's error text is}}
+\krow{|}{run an arbitrary git command}
+\end{keys}
+
+\subsection{Moving around the status buffer}
+\begin{keys}
+\krowx{\korr{j}{k}}{line down / up, as everywhere else}
+\krowx{\korr{C-j}{C-k}}{next / previous section}
+\krowx{\korr{]}{[}}{next / previous \emph{sibling} section}
+\krow{g h}{up to the parent section}
+\krow{TAB \ or \ z a}{fold or unfold the section at point}
+\krow{z 1 \dots z 4}{refold the whole buffer to that depth}
+\krowx{\korr{g u}{g s}}{jump to unstaged / staged}
+\krowx{\korr{g t}{g n}}{jump to tracked / untracked}
+\krowx{\korr{S-SPC}{S-DEL}}{peek at the diff and scroll it}
+\krow{RET}{visit the thing at point}
+\end{keys}
+
+\subsection{Stage and commit}
+\begin{keys}
+\krowx{\korr{s}{u}}{stage / unstage the thing at point}
+\krowx{\korr{S}{U}}{stage everything modified / unstage everything}
+\krow{x}{\danger{discard} the change at point \quad \emph{(vanilla \key{k})}}
+\krow{c c}{commit}
+\krow{c a}{amend \quad \key{c e} extend, keeping the message}
+\krow{c w}{reword the message \quad \key{c f} fixup}
+\krow{C-c C-c}{finish the message and commit}
+\krow{C-c C-k}{abort the message}
+\end{keys}
+Staging is recursive: put point on a hunk and \key{s} stages the hunk, on a file
+and it stages the file, on the section header and it stages the lot. Select a
+few lines in visual state first to stage exactly those.
+
+\subsection{Sync with the remote}
+\begin{keys}
+\krow{f a}{fetch all remotes \quad \key{f p} fetch the pushremote}
+\krow{f n}{fetch forge topics (PRs, issues) \quad \key{f N} notifications}
+\krowx{\korr{F p}{F u}}{pull from pushremote / upstream}
+\krow{F n}{same forge-topic fetch, from the pull menu}
+\krowx{\korr{p p}{p u}}{push to pushremote / upstream}
+\krow{p -f}{toggle force, then push \quad \emph{use with care}}
+\end{keys}
+Push is lowercase \key{p} here. Vanilla magit uses \key{P}, and \key{p} moves
+between sections; evil-collection swaps them so \key{k} and \key{p} stay
+vim-ish. Forge's PR list is separate from \texttt{git fetch}: use \key{f n}
+(or \key{@ f f}) before the Pull Requests section / \key{SPC g l p} can show
+anything new.
+
+\subsection{Review a PR (forge)}
+\begin{keys}
+\krow{RET}{on a PR in status: open its topic buffer}
+\krow{C-c C-n}{new comment \quad \key{C-c C-c} submit \quad \key{C-c C-k} abort}
+\krow{C-c RET}{topic menu: act on the PR at point}
+\krowx{\korr{/ A}{/ R}}{in that menu: approve / request changes}
+\end{keys}
+Approve opens a post buffer for the review text (fine to leave empty);
+\key{C-c C-c} submits it to GitHub \emph{immediately} --- forge has no
+draft-review state.
+
+\subsection{Git without opening magit}
+\begin{keys}
+\krowx{\korr{SPC g s}{SPC g r}}{stage / revert the hunk under point}
+\krowx{\korr{] d}{[ d}}{next / previous changed hunk}
+\krowx{\korr{SPC g S}{SPC g U}}{stage / unstage this whole file}
+\krow{SPC g B}{blame this file}
+\krow{SPC g L}{log for this file only}
+\krow{SPC g t}{step through the file's history (time machine)}
+\krow{SPC g y}{copy a link to this line on the remote}
+\krow{SPC g /}{magit dispatch \quad \key{SPC g .} file dispatch}
+\end{keys}

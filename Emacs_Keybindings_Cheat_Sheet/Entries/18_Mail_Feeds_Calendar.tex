@@ -1,0 +1,63 @@
+\section{Mail, Feeds, Calendar}
+
+\subsection{Mail \quad \key{SPC o m}}
+\begin{keys}
+\krow{SPC o m}{open mu4e}
+\krow{C}{compose \quad \key{R} reply \quad \key{F} forward}
+\krow{W}{reply to everyone}
+\krow{C-c C-c}{send \quad \key{C-c C-k} discard the draft}
+\krow{s}{search \quad \key{/} narrow the current search}
+\krow{J}{jump to a maildir \quad \key{b} a bookmark}
+\krow{RET}{read \quad \key{[ [} \key{] ]} previous / next unread}
+\end{keys}
+Marks are set first and applied afterwards:
+\begin{keys}[1.8cm]
+\krow{d}{trash \quad \key{D} \danger{delete outright}}
+\krow{r}{refile \quad \key{m} move somewhere you pick}
+\krow{!}{read \quad \key{?} unread \quad \key{+} flag}
+\krow{u}{unmark this \quad \key{U} unmark everything}
+\krow{x}{\textbf{execute} every mark you set}
+\end{keys}
+\key{SPC o L} finishes a pending DavMail login.
+
+\subsection{Feeds \quad \key{SPC o r}}
+\begin{keys}
+\krow{SPC o r}{open elfeed}
+\krow{SPC o R}{set the filter from anywhere}
+\krow{g}{update the feeds}
+\krow{f}{change the filter (your binding)}
+\krow{RET}{preview the entry in the side pane}
+\krow{b}{open it properly (browser or reader)}
+\krow{u}{mark read \quad \key{U} mark unread again}
+\krow{s}{live filter \quad \key{c} clear it}
+\krow{+ \ -}{add / remove a tag}
+\krow{y}{yank the entry's URL}
+\krow{=}{the scoring rule keymap}
+\end{keys}
+Entries are ranked by \fn{elfeed.score}; anything below the mark threshold is
+auto-read, and unread items older than two weeks expire, so \fn{+unread} really
+means recent.
+
+\subsection{YouTube and Substack}
+\begin{keys}
+\krow{SPC o y}{the YouTube subscription menu}
+\krowx{\korr{SPC o y a}{d}}{subscribe / unsubscribe}
+\krowx{\korr{SPC o y l}{y}}{list subscriptions / open the video feed}
+\krow{SPC o s}{Substack actions}
+\krow{SPC o S}{sync the accounts you follow}
+\end{keys}
+
+\subsection{Calendar}
+\begin{keys}
+\krow{SPC o c}{the calendar view}
+\krow{SPC o C}{sync every calendar}
+\krow{SPC o g}{time blocks}
+\krow{SPC o h}{the habits agenda}
+\end{keys}
+
+\subsection{Browsing}
+\begin{keys}
+\krow{SPC o w}{open a URL in EWW, inside Emacs}
+\krow{SPC o W}{open it in the system browser}
+\krow{SPC s l}{jump to a visible link on the page}
+\end{keys}

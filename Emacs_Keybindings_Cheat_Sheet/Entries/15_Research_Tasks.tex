@@ -1,0 +1,44 @@
+\section{Research Tasks \quad \key{SPC p r}}
+
+The \fn{tasks/} pipeline: \fn{download\_*} $\to$ \fn{clean\_*} $\to$
+\fn{merge\_*} $\to$ analysis $\to$ \fn{plot\_*}/\fn{tabulate\_*}. Tasks read
+upstream output only through \fn{../input} symlinks declared in their
+Makefiles.
+
+\subsection{Navigate a task}
+\begin{keys}
+\krow{SPC p r n}{scaffold a new task}
+\krow{SPC p r r}{this task's readme}
+\krow{SPC p r m}{its Makefile}
+\krow{SPC p r o}{its output directory, in dired}
+\krowx{\korr{SPC p r u}{SPC p r d}}{jump upstream / downstream}
+\krow{SPC p r g}{the task-flow graph (also \key{SPC p G})}
+\end{keys}
+
+\subsection{Run things}
+\begin{keys}
+\krow{SPC p r t}{run this task with make (also \key{SPC p m})}
+\krowx{\korr{SPC p t}{SPC p T}}{run / rerun a project task}
+\krow{SPC p c}{compile the project}
+\end{keys}
+
+\subsection{Logbook and slides}
+\begin{keys}
+\krow{SPC p r l}{new logbook entry}
+\krow{SPC p r L}{build the logbook PDF}
+\krow{SPC p r s}{build the slide deck}
+\end{keys}
+
+\subsection{Data files}
+\begin{keys}
+\krowx{\korr{SPC m a}{SPC m u}}{align / unalign CSV fields}
+\krowx{\korr{SPC m s}{SPC m S}}{sort by field / sort numerically}
+\krow{SPC m k}{kill a field \quad \key{SPC m t} transpose}
+\end{keys}
+
+\subsection{Statistics languages}
+\begin{keys}
+\krow{SPC c s}{send the buffer or region to the REPL}
+\krow{SPC o r}{open a REPL beside the code}
+\krow{SPC m}{the localleader menu for R, Julia, Stata}
+\end{keys}

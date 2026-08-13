@@ -1,0 +1,61 @@
+\section{Magit: Branches and Merges}
+
+\subsection{Branches \quad \key{b}}
+\begin{keys}
+\krow{b b}{checkout a branch or revision}
+\krow{b l}{checkout a local branch}
+\krow{b c}{create a branch and check it out}
+\krow{b n}{create a branch and stay where you are}
+\krow{b s}{spin off: take your recent commits with you}
+\krow{b m}{rename \quad \key{b x} reset to another ref}
+\krow{b k}{\danger{delete a branch} \quad \emph{(vanilla \key{b x})}}
+\end{keys}
+
+\subsection{Stash \quad \key{Z} (capital)}
+\begin{keys}
+\krow{Z z}{stash the index and the worktree}
+\krowx{\korr{Z i}{Z w}}{stash only the index / only the worktree}
+\krowx{\korr{Z a}{Z p}}{apply / pop the stash at point}
+\krowx{\korr{Z l}{Z v}}{list / show}
+\krow{Z b}{start a branch from a stash}
+\krow{Z Z}{snapshot: stash but keep your changes in place}
+\krow{Z k}{\danger{drop a stash}}
+\end{keys}
+Lowercase \key{z} is folding here, so stash moved up to \key{Z}.
+
+\subsection{Merge \quad \key{m}}
+\begin{keys}
+\krow{m m}{merge, committing if it applies cleanly}
+\krow{m e}{merge and edit the message first}
+\krow{m n}{merge but do not commit}
+\krow{m s}{squash merge}
+\krow{m p}{preview what a merge would do}
+\krow{m a}{absorb: merge the branch and delete it}
+\end{keys}
+While a merge is in progress the same prefix changes meaning: \key{m m} commits
+the merge and \key{m a} \danger{aborts} it. ``No commit'' only affects the
+message; a conflict always stops the merge regardless.
+
+\subsection{Rebase \quad \key{r}}
+\begin{keys}
+\krow{r i}{interactive rebase from a commit you pick}
+\krowx{\korr{r u}{r e}}{rebase onto upstream / onto anything}
+\krow{r s}{interactive rebase of a subset}
+\krowx{\korr{r r}{r a}}{continue / \danger{abort} a rebase in progress}
+\krow{r f}{autosquash the fixups}
+\end{keys}
+In the todo buffer: \key{p} pick, \key{r} reword, \key{e} edit, \key{s} squash,
+\key{f} fixup, \key{d} drop, \key{g j} / \key{g k} move a line down / up, then
+\key{C-c C-c} to start.
+
+\subsection{Conflicts}
+\begin{keys}
+\krow{e}{on a conflicted file: open a 3-way ediff}
+\krow{RET}{open the conflicted file normally}
+\end{keys}
+In ediff: \key{n} / \key{p} between conflicts, \key{a} take ours, \key{b} take
+theirs, \key{q} quit. \\
+In the file itself (smerge): \key{C-c \kcaret{} n} next conflict, \key{C-c
+\kcaret{} u} keep upper (ours), \key{C-c \kcaret{} l} keep lower (theirs),
+\key{C-c \kcaret{} a} keep both. \\
+Then stage with \key{s} and finish with \key{m m}.

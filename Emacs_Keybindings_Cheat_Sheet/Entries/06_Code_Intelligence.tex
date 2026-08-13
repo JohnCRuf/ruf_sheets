@@ -1,0 +1,55 @@
+\section{Writing Code \quad \key{SPC c}}
+
+\subsection{LSP (eglot)}
+\begin{keys}
+\krow{SPC c a}{code actions at point: the fix-it menu}
+\krow{SPC c r}{rename this symbol everywhere}
+\krowx{\korr{SPC c d}{SPC c D}}{definition / references}
+\krow{SPC c k}{documentation \quad \key{SPC c i} implementations}
+\krow{SPC c j}{jump to a project symbol}
+\krow{SPC c x}{list diagnostics for the buffer}
+\krowx{\korr{] e}{[ e}}{next / previous error}
+\end{keys}
+
+\subsection{Format and clean}
+\begin{keys}
+\krow{SPC c f}{format the region, or the whole buffer}
+\krow{g Q}{format just the motion you give it}
+\krowx{\korr{SPC c w}{SPC c W}}{strip trailing whitespace / newlines}
+\end{keys}
+Formatting also runs on save (\fn{+onsave}), so \key{SPC c f} is for when you
+want it before then.
+
+\subsection{Run it}
+\begin{keys}
+\krow{SPC c e}{evaluate the buffer or region}
+\krow{M-r}{evaluate the buffer, no leader}
+\krow{SPC c E}{evaluate the region and replace it with the result}
+\krow{SPC c s}{send the buffer or region to a REPL}
+\krow{SPC o r}{open a REPL in another window}
+\krowx{\korr{SPC c c}{SPC c C}}{compile / recompile}
+\end{keys}
+
+\subsection{Tests}
+\begin{keys}
+\krow{SPC p v}{test the current file}
+\krow{SPC p V}{test the package or project}
+\krow{SPC p C-v}{rerun the last test invocation}
+\end{keys}
+
+\subsection{Debugger \quad \key{SPC d}} (dape)
+\begin{keys}
+\krow{SPC d d}{start a session \quad \key{SPC d c} continue}
+\krow{SPC d b}{toggle a breakpoint \quad \key{SPC d B} remove all}
+\krowx{\key{SPC d n} \key{s} \key{o}}{step over / into / out}
+\krow{SPC d x}{evaluate an expression in the stopped frame}
+\krowx{\korr{SPC d i}{SPC d R}}{info panes / debug REPL}
+\krow{SPC d q}{quit the session}
+\end{keys}
+
+\subsection{Syntax and spelling}
+\begin{keys}
+\krow{SPC t f}{toggle the syntax checker}
+\krow{z =}{correct the misspelling at point (jinx)}
+\krow{Z =}{switch spellcheck languages}
+\end{keys}

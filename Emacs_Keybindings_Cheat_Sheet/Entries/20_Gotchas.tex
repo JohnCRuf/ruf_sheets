@@ -1,0 +1,60 @@
+\section{Gotchas}
+
+\subsection{\danger{Capitals matter}}
+\begin{keys}
+\krow{Z k}{drops a \textbf{stash}}
+\krow{b k}{deletes a \textbf{branch}}
+\krow{\% k}{deletes a \textbf{worktree}}
+\krow{x}{discards the change at point, no undo}
+\krowx{\korr{o}{O}}{resets (vanilla magit puts these on \key{x} \key{X})}
+\krow{SPC TAB x}{kills every workspace (it asks first)}
+\krow{SPC p w x}{kills every dev server and container}
+\end{keys}
+
+\subsection{Where the online docs will lie to you}
+Evil owns the lowercase letters in magit, so vanilla tutorials disagree:
+\begin{keys}[2.4cm]
+\krow{p}{push \emph{(vanilla \key{P})}}
+\krow{x}{discard \emph{(vanilla \key{k})}}
+\krowx{\korr{o}{O}}{reset \emph{(vanilla \key{x} \key{X})}}
+\krow{Z}{stash \emph{(vanilla \key{z}; \key{z} is folding now)}}
+\krow{\% \ or \ *}{worktree \emph{(vanilla \key{Z})}}
+\krowx{\korr{-}{\_}}{revert \emph{(vanilla \key{v} \key{V})}}
+\krow{\textasciigrave}{process buffer \emph{(vanilla \key{\$})}}
+\krow{y r \ y s \ y b}{show refs, copy value, copy revision}
+\end{keys}
+
+\subsection{Keys this config moved}
+\begin{keys}[2.6cm]
+\krow{g z}{refresh, in magit status. It is \emph{not} jump-to-stashes any
+  more; Doom rebinds it}
+\krow{@}{forge dispatch. Not \key{N}: evil keeps \key{N} for search-previous}
+\krow{SPC n p}{org-noter. Doom's \key{SPC n e} became the equations prefix}
+\krow{SPC f r}{recent files. \key{SPC p r} was freed to be the research prefix}
+\krow{SPC h T}{runs the config tests, where Doom toggles the profiler. The
+  theme picker is \key{SPC t t}}
+\krow{SPC o p}{Treemacs, not dirvish-side}
+\end{keys}
+
+\subsection{Things that are not what they look like}
+\begin{keys}[2.6cm]
+\krow{SPC u}{the universal argument. \key{C-u} scrolls}
+\krow{C-p}{find file in project, not previous line}
+\krow{C-s}{save. Search is \key{/} or \key{SPC s s}}
+\krow{C-c C-j}{in a terminal, hands keys \emph{to the shell}. \key{C-c C-e}
+  hands them back to Emacs}
+\krow{q}{buries the buffer in most read-only modes; it does not quit Emacs}
+\end{keys}
+
+\subsection{When git refuses}
+The reason is almost never in the echo area. Open the process buffer with
+\key{\textasciigrave} in any magit buffer and read the actual git output.
+
+\subsection{When a key does nothing}
+\begin{keys}[2.6cm]
+\krow{SPC h k}{shows what it is really bound to}
+\krow{SPC h b b}{searches every active binding}
+\krow{SPC ?}{context help for this buffer}
+\end{keys}
+A binding that resolves to the wrong command usually means two modules bound
+the same sequence; the later module in \fn{config.el} wins.

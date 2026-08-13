@@ -1,0 +1,68 @@
+\section{Magit: History, Worktrees, Forge}
+
+\subsection{Log and diff}
+\begin{keys}
+\krow{l l}{log the current branch \quad \key{l o} another one}
+\krow{l b}{all branches \quad \key{l a} all references}
+\krow{l r}{reflog: what HEAD has actually pointed at}
+\krow{d d}{diff dwim \quad \key{d r} diff a range}
+\krowx{\korr{d u}{d s}}{diff unstaged / staged}
+\krow{d w}{diff the worktree against a ref}
+\krowx{\korr{=}{+}}{show less / more context in a diff}
+\krow{g =}{back to the default context}
+\krow{y r}{show refs \quad \key{y s} copy the value at point}
+\krow{y b}{copy this buffer's revision}
+\end{keys}
+
+\subsection{Rewriting and rescuing}
+\begin{keys}
+\krow{A}{cherry-pick the commit at point}
+\krow{a}{apply a cherry without committing}
+\krowx{\korr{-}{\_}}{revert without committing / revert}
+\krowx{\korr{o}{O}}{reset quickly / the reset menu \emph{(vanilla \key{x} \key{X})}}
+\krow{W}{create or apply a patch \quad \key{w} apply a mailbox}
+\krow{B}{bisect}
+\krow{! }{run a git command or script}
+\end{keys}
+If a reset or rebase loses something, the reflog (\key{l r}) still has the old
+head. Put point on it and reset back with \key{o}.
+
+\subsection{Worktrees \quad \key{\%} (or \key{*})}
+\begin{keys}
+\krow{\% b}{checkout an existing branch into a new worktree}
+\krow{\% c}{create a branch and a worktree for it}
+\krow{\% g}{visit another worktree's status buffer}
+\krow{\% m}{move a worktree \quad \key{\% k} \danger{delete one}}
+\end{keys}
+Picking \key{origin/foo} creates the local \key{foo} for you, so you do not end
+up detached. Put worktrees under \fn{\ktilde/Projects/} so projectile finds
+them.
+
+\subsection{Branch-to-workspace flow}
+\begin{keys}[3.4cm]
+\krow{\% b}{make the worktree}
+\krow{SPC p D}{let projectile discover it}
+\krow{SPC p p}{open it in its own workspace}
+\end{keys}
+Each worktree then has its own buffers, its own terminal, and its own agent
+session.
+
+\subsection{Forge (GitHub) \quad \key{@}}
+\begin{keys}
+\krow{@}{forge dispatch \quad \key{SPC g '} from anywhere}
+\krow{@ f f}{fetch topics from GitHub (PRs, issues)}
+\krow{@ f n}{fetch notifications only}
+\krowx{\korr{f n}{F n}}{same fetch, from Magit's fetch / pull menus}
+\krowx{\korr{@ c i}{@ c p}}{create an issue / a pull request}
+\krowx{\korr{g i}{g m}}{jump to the issues / pull requests section}
+\krow{RET}{on a topic: open it}
+\krow{C-c C-n}{start a comment \quad \key{C-c C-c} submit}
+\krow{C-c C-k}{throw the comment away}
+\end{keys}
+\begin{keys}
+\krowx{\korr{SPC g l p}{SPC g l i}}{list cached pull requests / issues}
+\krowx{\korr{SPC g f p}{SPC g f i}}{visit a PR / an issue by number}
+\krowx{\korr{SPC g o p}{SPC g o i}}{open one in the browser}
+\end{keys}
+Fetch first with \key{@ f f} or \key{f n}; the list commands only show what
+forge has already pulled into its local database.

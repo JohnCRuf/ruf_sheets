@@ -1,0 +1,55 @@
+\section{Org and Notes \quad \key{SPC n}}
+
+\subsection{Capture and agenda}
+\begin{keys}
+\krow{SPC X}{capture a note right now}
+\krowx{\korr{SPC n n}{SPC n N}}{capture / go to the capture target}
+\krow{SPC n a}{agenda \quad \key{SPC n t} the todo list}
+\krow{SPC o h}{agenda, habits view}
+\krow{SPC o g}{time blocks}
+\krowx{\korr{SPC n c}{SPC n C}}{toggle the last clock / cancel it}
+\krow{SPC n o}{jump to the running clock}
+\krow{SPC n l}{store a link to here}
+\end{keys}
+
+\subsection{Inside an org buffer}
+\begin{keys}
+\krowx{\korr{TAB}{S-TAB}}{fold this heading / the whole outline}
+\krow{M-RET}{new heading at the same level}
+\krow{M-\textleftarrow \ \textrightarrow}{promote / demote}
+\krow{M-\textuparrow \ \textdownarrow}{move the subtree}
+\krow{SPC m t}{cycle the TODO state \quad \key{SPC m q} set tags}
+\krow{SPC m d d}{deadline \quad \key{SPC m d s} schedule}
+\krow{SPC m l l}{insert a link \quad \key{SPC m l s} store one}
+\krow{SPC m x}{toggle a checkbox \quad \key{SPC m '} edit the block}
+\krow{SPC m e}{export dispatcher}
+\krow{C-c C-c}{do the obvious thing here (tags, tables, blocks)}
+\end{keys}
+
+\subsection{Finding notes}
+\begin{keys}
+\krow{SPC n s}{search the notes and the vault together}
+\krowx{\korr{SPC n f}{SPC n F}}{find / browse a note file}
+\krow{SPC n g}{clip the region into the notes}
+\krow{SPC n h}{note history for this file}
+\krow{SPC n m}{tag search \quad \key{SPC n v} full-text view}
+\end{keys}
+
+\subsection{Obsidian vault \quad \key{SPC n w}}
+\begin{keys}
+\krow{SPC n w j}{jump to a note}
+\krow{SPC n w c}{capture \quad \key{SPC n w s} search the vault}
+\krow{SPC n w t}{find by tag}
+\krow{SPC n w l}{insert a wikilink \quad \key{SPC n w f} follow one}
+\krow{SPC n w b}{toggle the backlinks panel}
+\krowx{\korr{SPC n w g}{SPC n w G}}{whole graph / local graph}
+\krow{SPC n w o}{open this note in Obsidian itself}
+\krow{SPC n w r}{rescan the cache when notes look stale}
+\end{keys}
+
+\subsection{PDFs and annotation}
+\begin{keys}
+\krow{SPC n p}{start or resume org-noter on this PDF}
+\krowx{\korr{=}{-}}{zoom in / out \quad \key{0} or \key{W} fit width}
+\krow{P}{fit the page \quad \key{SPC m m} midnight mode}
+\end{keys}

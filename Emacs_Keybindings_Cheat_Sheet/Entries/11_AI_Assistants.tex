@@ -1,0 +1,46 @@
+\section{AI Assistants}
+
+\subsection{Agent shell (ACP) \quad \key{SPC l a}}
+\begin{keys}
+\krow{SPC l a}{this workspace's agent shell}
+\krow{SPC u SPC l a}{force a fresh session here}
+\krow{SPC l r}{resume an earlier session}
+\krow{RET}{submit the prompt}
+\krow{ESC \ then \ SPC b k}{kill the agent buffer}
+\end{keys}
+One session per workspace; the header line shows its directory and branch.
+Reads and edits are auto-approved, shell commands and deletions still ask.
+``Busy, please wait'' means the session is still starting, or its handshake
+died and it needs killing and relaunching.
+
+\subsection{Machine Spirit \quad \key{SPC l}}
+\begin{keys}
+\krow{SPC l E}{open or toggle the panel}
+\krowx{\key{SPC l N} \key{S} \key{K}}{new / switch / close session}
+\krow{SPC l L}{list sessions \quad \key{SPC l M} magit status for one}
+\krow{SPC l v}{review the changes it made}
+\krow{SPC l T}{timeline of what it did}
+\krow{SPC l A}{accept everything}
+\krowx{\korr{SPC l B}{SPC l R}}{checkpoint / revert to one}
+\krow{SPC l C}{\danger{clean up} stale worktrees}
+\krow{SPC l d}{dictate a prompt}
+\krow{C-c C-b}{checkpoint from inside the panel}
+\end{keys}
+Machine Spirit renders subagent-heavy work better than the agent shell does;
+reach for it when a skill fans out into many sub-tasks.
+
+\subsection{Dictation and inline LLM}
+\begin{keys}
+\krow{SPC i d}{dictate text at point (Whisper)}
+\krow{SPC o l l}{open gptel \quad \key{SPC o l s} send}
+\krow{SPC o l e}{explain the selection}
+\krow{SPC o l r}{rewrite the selection}
+\krowx{\korr{SPC o l a}{SPC o l f}}{add the region / a file to the context}
+\end{keys}
+
+\subsection{Which one to use}
+\begin{keys}[2.6cm]
+\krow{quick question}{gptel, \key{SPC o l e}}
+\krow{edit this repo}{agent shell, \key{SPC l a}}
+\krow{multi-step work}{Machine Spirit, \key{SPC l E}}
+\end{keys}

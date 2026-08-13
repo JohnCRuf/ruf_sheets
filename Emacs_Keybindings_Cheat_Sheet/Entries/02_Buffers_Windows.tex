@@ -1,0 +1,56 @@
+\section{Buffers and Windows}
+
+\subsection{Switching buffers}
+\begin{keys}
+\krow{SPC ,}{switch buffer \emph{within this workspace}}
+\krow{SPC <}{switch buffer, all of them}
+\krow{SPC \textasciigrave}{back to the last buffer (the one key to learn)}
+\krowx{\korr{SPC b [}{SPC b ]}}{previous / next buffer}
+\krow{SPC b h}{jump to the dashboard}
+\krow{SPC b x}{scratch buffer in a popup \quad \key{SPC x} toggles it}
+\end{keys}
+
+\subsection{Killing buffers}
+\begin{keys}
+\krow{SPC b k}{kill this buffer (\key{SPC b d} is the same)}
+\krow{SPC b O}{kill every \emph{other} buffer}
+\krow{SPC b Z}{kill buried buffers}
+\krow{SPC b K}{\danger{kill all buffers}}
+\end{keys}
+
+\subsection{Windows \quad \key{SPC w}}
+\begin{keys}
+\krowx{\korr{SPC w v}{SPC w s}}{split vertical / horizontal}
+\krowx{\korr{SPC w V}{SPC w S}}{split and move into the new window}
+\krow{SPC w c}{close this window \quad \key{SPC w n} new one}
+\krow{SPC w m m}{maximize: close all the others}
+\krow{SPC w o}{enlargen this one, keeping the rest}
+\krow{SPC w h j k l}{move focus left, down, up, right}
+\krow{SPC w H J K L}{\emph{move the window itself}}
+\krow{SPC w =}{rebalance \quad \key{SPC w x} swap two windows}
+\krowx{\korr{SPC w u}{SPC w C-r}}{undo / redo the last window change}
+\krow{SPC w w}{cycle \quad \key{SPC w C-w} pick one visually}
+\end{keys}
+Doom puts \fn{enlargen} on \key{SPC w o}, where vanilla evil closes the other
+windows. \key{SPC w m m} is the one that closes them.
+
+\subsection{Spatial motion (no leader needed)}
+\begin{keys}
+\krow{M-\textleftarrow \ \textdownarrow \ \textuparrow \ \textrightarrow}{move focus to the panel in that direction}
+\krow{C-M-\textleftarrow \ \textdownarrow \ \textuparrow \ \textrightarrow}{same, for terminals that eat plain \key{M-}}
+\krow{SPC w \textleftarrow \ \textdownarrow \ \textuparrow \ \textrightarrow}{same, via the leader}
+\end{keys}
+
+\subsection{Saved layouts}
+\begin{keys}
+\krow{SPC w 1}{code $+$ terminal}
+\krow{SPC w 2}{code $+$ Machine Spirit}
+\krow{SPC w 3}{writing}
+\krow{SPC o .}{workflow transient: layouts, terminals, sessions}
+\end{keys}
+
+\subsection{Popups}
+\begin{keys}
+\krow{SPC \ktilde}{toggle the last popup}
+\krow{q}{close the popup you are in}
+\end{keys}

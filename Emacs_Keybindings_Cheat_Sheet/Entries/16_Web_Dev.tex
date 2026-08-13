@@ -1,0 +1,37 @@
+\section{Web Dev \quad \key{SPC p w}}
+
+\subsection{Dev server and preview}
+\begin{keys}
+\krow{SPC p w d}{start the dev server and open the preview}
+\krow{SPC p w o}{open the live preview}
+\krow{SPC p w k}{stop this dev server}
+\krow{SPC p w r}{run an npm script}
+\krow{SPC p w i}{inspect the live React page}
+\krow{SPC p w x}{\danger{kill every dev server and container}}
+\end{keys}
+Parallel worktrees each get their own server: the first runs the full
+\fn{dev}, the rest run vite only and bump their ports automatically.
+
+\subsection{Storybook}
+\begin{keys}
+\krow{SPC p w s}{start Storybook \quad \key{SPC p w K} stop it}
+\krow{SPC p w b}{open a story}
+\krow{SPC p w f}{jump to a story's source}
+\krow{SPC p w e}{explain a component}
+\end{keys}
+
+\subsection{Scrutiny}
+\begin{keys}
+\krow{SPC p s}{the Scrutiny command center}
+\krowx{\korr{SPC p v}{SPC p V}}{test this file / the project}
+\krow{SPC p C-v}{rerun the last test}
+\krow{SPC p w a}{rebuild the agent containers}
+\krow{SPC o D}{docker}
+\end{keys}
+
+\subsection{Poking an API}
+\begin{keys}
+\krow{C-c C-c}{in a \fn{.http} buffer: send the request at point}
+\krow{C-c C-r}{send it and show the raw response}
+\krow{C-c C-v}{send it but stay where you are}
+\end{keys}

@@ -1,0 +1,53 @@
+\section{Workspaces, Projects, Files}
+
+\subsection{Workspaces \quad \key{SPC TAB}}
+Each project gets its own workspace, with its own buffer list and its own
+drawer terminal.
+\begin{keys}
+\krow{SPC TAB TAB}{show the tab bar}
+\krow{SPC TAB .}{switch by name}
+\krow{SPC TAB \textasciigrave}{last workspace}
+\krow{SPC TAB 1 \dots 9}{switch by position (also \key{M-1} \dots \key{M-9})}
+\krowx{\korr{SPC TAB ]}{[}}{next / previous}
+\krowx{\korr{SPC TAB n}{N}}{new / new and named (also \key{C-t})}
+\krow{SPC TAB r}{rename}
+\krow{SPC TAB d}{kill this workspace}
+\krow{SPC TAB k}{kill a workspace you pick}
+\krow{SPC TAB K}{kill all the others}
+\krow{SPC TAB R}{restore the last session}
+\krow{SPC TAB x}{\danger{kill the whole session} (asks first)}
+\end{keys}
+
+\subsection{Projects \quad \key{SPC p}}
+\begin{keys}
+\krow{SPC p p}{switch project, opening it in a fresh workspace}
+\krow{SPC p D}{discover projects under the search roots}
+\krow{SPC p .}{project dashboard}
+\krow{SPC p b}{switch to a buffer in this project}
+\krow{SPC p a}{add a project by hand}
+\krow{SPC p i}{invalidate the file cache when new files go missing}
+\krow{SPC p k}{kill this project's buffers}
+\krowx{\korr{SPC p t}{SPC p T}}{run a task / rerun the last one}
+\krow{SPC p c}{compile \quad \key{SPC p !} shell command at the root}
+\end{keys}
+
+\subsection{Files \quad \key{SPC f}}
+\begin{keys}
+\krow{SPC SPC}{find file in project (also \key{C-p})}
+\krow{SPC .}{find file from here}
+\krow{SPC f r}{recent files}
+\krow{SPC f f}{find file \quad \key{SPC f F} relative to this buffer}
+\krowx{\korr{SPC f s}{SPC f S}}{save / save as}
+\krow{SPC f R}{rename or move this file}
+\krow{SPC f D}{\danger{delete this file}}
+\krowx{\korr{SPC f y}{SPC f Y}}{yank its path / its project-relative path}
+\krowx{\korr{SPC f p}{SPC f P}}{find in / browse the Doom config}
+\krow{SPC f u}{reopen this file as root}
+\end{keys}
+
+\subsection{Directories}
+\begin{keys}
+\krow{SPC o -}{dired on this file's directory}
+\krow{SPC o p}{toggle the Treemacs sidebar}
+\krow{SPC o /}{dirvish over a directory you pick}
+\end{keys}

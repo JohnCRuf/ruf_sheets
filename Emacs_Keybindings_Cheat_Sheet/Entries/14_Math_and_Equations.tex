@@ -1,0 +1,53 @@
+\section{Math and Equations \quad \key{SPC n e}}
+
+\subsection{Notebook and scratch}
+\begin{keys}
+\krow{SPC n e n}{open the org math notebook}
+\krow{SPC n e s}{math scratchpad}
+\krow{SPC n e p}{preview the equation at point}
+\end{keys}
+
+\subsection{Insert}
+\begin{keys}
+\krow{SPC n e e}{a numbered equation}
+\krow{SPC n e a}{an aligned derivation}
+\krow{SPC n e m}{a matrix (asks rows, columns, environment)}
+\krow{SPC n e l}{an equation label \quad \key{SPC n e r} a reference}
+\end{keys}
+
+\subsection{Snippets that fire inside math}
+Typed inside \fn{\kbslash( \dots \kbslash)} or \fn{\$ \dots \$}, these expand as
+you type (laas).
+\begin{keys}[2.6cm]
+\krow{;E \ ;V \ ;C \ ;P}{$\mathbb{E}$, Var, Cov, Pr}
+\krow{;a \ ;b \ ;g}{Greek letters}
+\krow{;;d}{$\partial$ \quad \key{;8} $\infty$}
+\krow{x1}{$x_1$ \quad \key{x/} a fraction}
+\krowx{\korr{sr}{cb}}{squared / cubed}
+\krow{argmin \ argmax}{operators with a subscript slot}
+\krow{plim \ ols}{$\operatorname{plim}$, $\widehat{\beta}_{\mathrm{OLS}}$}
+\end{keys}
+Equations render to images when point leaves them (org-fragtog). Move back into
+one to edit the source again.
+
+\subsection{Check the algebra}
+\begin{keys}
+\krow{SPC n e c}{evaluate with Calc}
+\krow{SPC n e C}{embedded Calc, in place}
+\krow{SPC n e y}{verify with SymPy}
+\krow{SPC n e x}{ask the model to explain this equation}
+\krow{SPC n e t}{ask it to convert the equation}
+\end{keys}
+
+\subsection{Tablet round trip}
+\begin{keys}
+\krow{SPC n e i}{import handwritten math from the reMarkable}
+\krow{SPC n e o}{review the OCR transcription}
+\krow{SPC n e R}{send the write-up to the tablet}
+\end{keys}
+
+\subsection{From notes to a write-up}
+\begin{keys}
+\krow{SPC n e w}{promote the notes into a write-up}
+\krow{SPC n e P}{export the write-up as PDF}
+\end{keys}

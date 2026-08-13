@@ -1,0 +1,52 @@
+\section{Config and Recovery}
+
+\subsection{Editing the config}
+\begin{keys}
+\krow{SPC f p}{find a file in \fn{\ktilde/.config/doom}}
+\krow{SPC f P}{browse the config directory}
+\krow{SPC h r r}{reload the config in place}
+\krow{SPC c e}{eval the elisp you just changed}
+\end{keys}
+Modules load in numeric order from \fn{config.el}, and \fn{local.el} loads
+first so a plain \fn{setq} there beats every module default.
+
+\subsection{After changing \fn{init.el}}
+\begin{keys}[3.4cm]
+\krow{doom sync}{install or remove packages}
+\krow{doom sync -u}{and update them}
+\krow{doom doctor}{diagnose a broken setup}
+\krow{doom build}{recompile after an Emacs upgrade}
+\end{keys}
+
+\subsection{Health checks from inside Emacs}
+\begin{keys}
+\krow{SPC h D}{the rufwerk doctor: is every external tool present?}
+\krow{SPC h T}{the config test suite (\fn{make test})}
+\krow{SPC h B}{re-run bootstrap}
+\krow{SPC t t}{set the current theme permanently}
+\end{keys}
+
+\subsection{When something misbehaves}
+\begin{keys}
+\krow{SPC h k}{what is this key actually bound to?}
+\krow{SPC h b b}{search every binding}
+\krowx{\korr{SPC h f}{SPC h v}}{describe a function / a variable}
+\krow{SPC h e}{the \fn{*Messages*} buffer}
+\end{keys}
+For a backtrace on the next failure: \key{SPC :} then
+\fn{toggle-debug-on-error}.
+
+\subsection{Sessions}
+\begin{keys}
+\krowx{\korr{SPC q s}{SPC q l}}{quick-save / reload the session}
+\krowx{\korr{SPC q S}{SPC q L}}{save to / load from a named file}
+\krow{SPC q r}{restart Emacs \quad \key{SPC q d} restart the daemon}
+\krowx{\korr{SPC q q}{SPC q K}}{quit / \danger{quit and kill the daemon}}
+\end{keys}
+
+\subsection{Insert-state ESC}
+\begin{keys}
+\krow{M-\textless ESC\textgreater}{toggle whether \key{ESC} leaves insert state}
+\krow{SPC t e}{the same, via the leader}
+\end{keys}
+Turn it off when a paste or a TUI keeps kicking you into normal state.

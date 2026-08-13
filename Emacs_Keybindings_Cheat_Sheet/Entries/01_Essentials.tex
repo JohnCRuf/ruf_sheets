@@ -1,0 +1,51 @@
+\section{Essentials}
+
+\subsection{The three prefixes}
+\begin{keys}
+\krow{SPC}{leader, from normal/visual/motion state}
+\krow{M-SPC}{leader, from insert or emacs state}
+\krow{SPC m}{localleader: commands for this major mode}
+\krow{M-SPC m}{localleader from insert state}
+\krow{SPC u}{universal argument (replaces \key{C-u})}
+\end{keys}
+Almost everything below hangs off \key{SPC}. If you forget a prefix, just press
+it and wait: which-key lists what follows.
+
+\subsection{When you are lost}
+\begin{keys}
+\krow{SPC ?}{context help for the current buffer}
+\krow{SPC h}{Emacs help map (\key{SPC h f} function, \key{SPC h v} variable, \key{SPC h k} key)}
+\krow{SPC h b b}{search every active keybinding}
+\krow{SPC :}{\fn{M-x} (also \key{C-S-p})}
+\krow{SPC ;}{eval an elisp expression}
+\krow{C-g}{cancel the current command or prefix}
+\krow{ESC}{leave insert state; quit a transient menu}
+\end{keys}
+
+\subsection{Save, quit, undo}
+\begin{keys}
+\krow{C-s}{save buffer, from normal \emph{or} insert state}
+\krow{SPC b s}{save buffer \quad \key{SPC b S} save all}
+\krowx{\korr{u}{C-r}}{undo / redo}
+\krow{SPC s u}{browse undo history as a tree}
+\krow{SPC q q}{quit Emacs \quad \key{SPC q r} restart}
+\krowx{\korr{SPC q s}{SPC q l}}{quick-save / reload session}
+\end{keys}
+
+\subsection{Copy and paste across the terminal boundary}
+\begin{keys}
+\krow{C-S-c}{copy region to the system clipboard}
+\krow{C-S-v}{paste from the system clipboard}
+\krow{S-insert}{paste (same thing, easier in a terminal)}
+\end{keys}
+Inside Emacs, plain \key{y} and \key{p} still work as usual; these three exist so
+that a terminal Emacs and the rest of the desktop share a clipboard.
+
+\subsection{Font and frame}
+\begin{keys}
+\krowx{\korr{C-=}{C--}}{text scale up / down in this buffer}
+\krow{C-+}{reset font size}
+\krowx{\korr{M-C-=}{M-C--}}{font size for the whole frame}
+\krow{C-S-f}{toggle fullscreen}
+\krow{SPC t b}{big font mode}
+\end{keys}

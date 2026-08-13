@@ -1,0 +1,66 @@
+\section{Searching and Jumping}
+
+\subsection{Search \quad \key{SPC s}}
+\begin{keys}
+\krow{SPC /}{search the project with ripgrep (\key{SPC s p})}
+\krow{SPC *}{search the project for the symbol at point}
+\krow{SPC s s}{search this buffer \quad \key{SPC s S} for the thing at point}
+\krow{SPC s B}{search every open buffer}
+\krowx{\korr{SPC s d}{SPC s D}}{search this directory / another one}
+\krow{SPC s P}{search a project other than this one}
+\krow{SPC s i}{jump to a symbol in this buffer (imenu)}
+\krowx{\korr{SPC s j}{SPC s r}}{jump list / marks}
+\krow{SPC s l}{jump to a visible link}
+\krow{SPC '}{resume the last search where it left off}
+\end{keys}
+
+\subsection{Inside a search or completion prompt}
+\begin{keys}
+\krowx{\korr{C-j}{C-k}}{next / previous candidate}
+\krowx{\korr{C-S-j}{C-S-k}}{scroll the candidate list}
+\krow{TAB}{complete as far as the candidates agree}
+\krow{C-;}{act on the candidate (embark)}
+\krow{C-c C-e}{export the results to an editable buffer}
+\krow{C-c C-;}{export read-only \quad \key{C-c C-l} collect}
+\krow{ESC}{abort}
+\end{keys}
+The exported buffer is the trick worth remembering: run a project search, export
+it, edit the matches, and the edits write back to every file at once
+(\fn{wgrep}).
+
+\subsection{Jump to code}
+\begin{keys}
+\krow{g d}{definition \quad \key{g D} references}
+\krow{K}{documentation for the thing at point}
+\krow{g f}{open the file named at point}
+\krow{SPC c j}{jump to a symbol anywhere in the project}
+\krow{SPC c i}{implementations \quad \key{SPC c t} type definition}
+\krow{C-o}{come back}
+\end{keys}
+
+\subsection{Bookmarks and marks}
+\begin{keys}
+\krow{SPC RET}{jump to a bookmark}
+\krowx{\korr{SPC b m}{SPC b M}}{set / delete a bookmark}
+\krow{m\emph{x} \ \ \textasciigrave\emph{x}}{set mark \emph{x} / jump to it}
+\end{keys}
+
+\subsection{Bracket motions: \key{]} forward, \key{[} back}
+\begin{keys}[2.0cm]
+\krowx{\korr{] e}{[ e}}{error}
+\krowx{\korr{] d}{[ d}}{changed hunk since the last commit}
+\krowx{\korr{] t}{[ t}}{TODO / FIXME comment}
+\krowx{\korr{] m}{[ m}}{start of a method \quad \key{] M} its end}
+\krowx{\korr{] c}{[ c}}{comment block}
+\krowx{\korr{] a}{[ a}}{argument}
+\krowx{\korr{] f}{[ f}}{file in this directory}
+\krowx{\korr{] w}{[ w}}{workspace}
+\krowx{\korr{] o}{[ o}}{open a blank line below / above}
+\end{keys}
+
+\subsection{Look things up}
+\begin{keys}
+\krow{SPC s o}{look up the selection online}
+\krowx{\korr{SPC s t}{SPC s T}}{dictionary / thesaurus}
+\krow{SPC s k}{search the local docsets}
+\end{keys}

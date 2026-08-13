@@ -1,0 +1,41 @@
+\section{Terminals}
+
+\subsection{The drawer}
+One terminal per workspace, opening at the bottom of the frame.
+\begin{keys}
+\krow{C-\textasciigrave}{toggle the drawer, from anywhere}
+\krow{SPC o t}{the same, via the leader}
+\krow{SPC o T}{open a new named terminal}
+\krow{SPC o TAB}{switch to (or adopt) another terminal}
+\krowx{\korr{SPC o ]}{SPC o [}}{next / previous terminal}
+\end{keys}
+
+\subsection{Eat's three modes}
+The terminal has to decide who gets your keystrokes.
+\begin{keys}
+\krow{C-c C-j}{semi-char: typing goes to the shell (the default)}
+\krow{C-c C-e}{emacs mode: the buffer is read-only, Emacs keys work}
+\krow{C-c M-d}{char mode: \emph{everything} goes to the shell}
+\krow{C-c C-l}{line mode: edit a line, then send it}
+\end{keys}
+Use emacs mode when you want to search or copy out of the scrollback, char mode
+when a TUI needs a key that Emacs would otherwise steal.
+
+\subsection{Inside the terminal}
+\begin{keys}
+\krow{C-c C-z}{toggle whether \key{ESC} reaches the shell}
+\krowx{\korr{C-c C-p}{C-c C-n}}{jump to the previous / next shell prompt}
+\krow{C-c C-k}{\danger{kill the process} running in this terminal}
+\krow{C-S-v \ or \ S-insert}{paste}
+\krow{ESC \ then \ SPC b k}{close the terminal buffer itself}
+\end{keys}
+\key{C-c C-z} matters for TUIs like vim or a full-screen pager: by default Emacs
+swallows \key{ESC}, and the advice in \fn{config.el} is what makes this toggle
+work at all under evil.
+
+\subsection{Elsewhere}
+\begin{keys}
+\krow{SPC p !}{one-off shell command at the project root}
+\krow{SPC p \&}{the same, asynchronously}
+\end{keys}
+For anything longer-lived, \key{SPC :} then \fn{async-shell-command}.

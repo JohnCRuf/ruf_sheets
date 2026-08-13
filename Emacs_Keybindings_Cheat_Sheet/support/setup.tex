@@ -1,0 +1,87 @@
+
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb,amsmath}
+\usepackage{multicol,multirow}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[landscape]{geometry}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage{xcolor}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+
+\pagestyle{empty}
+
+% Section: centered in a light gray box with black outline
+\newcommand{\sectionbox}[1]{%
+  \fcolorbox{black}{black!8}{\parbox{\dimexpr\columnwidth-2\fboxsep-2\fboxrule\relax}{\centering #1}}}
+\titleformat{\section}[block]
+  {\normalfont\large\bfseries}{}{0mm}{\sectionbox}
+\titlespacing*{\section}{0mm}{0.3ex plus .3ex minus .2ex}{0.3ex plus .2ex}
+
+\makeatletter
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-0.8ex plus -.5ex minus -.2ex}%
+                                {0.3ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-0.8ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.3ex}
+
+% -----------------------------------------------------------------------
+% Keybinding notation
+% -----------------------------------------------------------------------
+\definecolor{keybg}{RGB}{234,234,244}
+\definecolor{warn}{RGB}{155,25,25}
+
+% \key{SPC g g} -- a chord or sequence, shaded so it reads as a key.
+% \fboxsep is trimmed so a key box fits inside a narrow table column.
+\newcommand{\key}[1]{{\setlength{\fboxsep}{1.2pt}%
+  \colorbox{keybg}{\strut\texttt{\footnotesize #1}}}}
+% \danger{...} -- destructive commands
+\newcommand{\danger}[1]{\textcolor{warn}{#1}}
+% \fn{magit-status} -- the command a key runs
+\newcommand{\fn}[1]{\texttt{\footnotesize #1}}
+
+% Two-column key table: keys on the left, what they do on the right.
+% Widths are computed from \columnwidth rather than using tabularx, because
+% tabularx scans for a literal \end{tabularx} and cannot be wrapped like this.
+\newenvironment{keys}[1][2.9cm]
+  {\par\nopagebreak\begin{tabular}%
+     {@{}>{\raggedright\arraybackslash}p{#1}@{\hspace{4pt}}%
+       >{\raggedright\arraybackslash}p{\dimexpr\columnwidth-#1-4pt\relax}@{}}}
+  {\end{tabular}\par\vspace{0.4ex}}
+
+% One row of a key table.
+\newcommand{\krow}[2]{\key{#1} & #2 \\}
+
+% A row whose key cell is marked up by hand, for alternatives that need to be
+% separate boxes so the column can break the line between them.
+\newcommand{\krowx}[2]{#1 & #2 \\}
+\newcommand{\korr}[2]{\key{#1}\,/\,\allowbreak\key{#2}}
+
+% Escapes for keys that collide with LaTeX syntax
+\newcommand{\ktilde}{\textasciitilde}
+\newcommand{\kcaret}{\textasciicircum}
+\newcommand{\kbslash}{\textbackslash}

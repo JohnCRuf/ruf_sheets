@@ -1,0 +1,77 @@
+\section{Editing Quickly}
+
+\subsection{The grammar}
+An edit is \textbf{operator} $+$ \textbf{motion or text object}. Learn the pieces
+once and every combination works.
+\begin{keys}[2.0cm]
+\krow{d c y v}{delete, change, yank, select}
+\krowx{\korr{g U}{g u}}{upcase / downcase}
+\krow{g q}{re-fill (wrap) \quad \key{g Q} format region}
+\krow{g c}{comment (\key{g c c} line, \key{g c i p} paragraph)}
+\krow{=}{indent}
+\end{keys}
+
+\subsection{Text objects: \key{i} inner, \key{a} around}
+\begin{keys}[2.0cm]
+\krowx{\korr{w}{W}}{word / WORD}
+\krow{p}{paragraph \quad \key{s} sentence}
+\krow{( [ \{ " '}{the matching pair}
+\krow{t}{tag (HTML/JSX)}
+\krow{f}{function \quad \key{c} comment}
+\krow{a}{argument \quad \key{i} indent block}
+\krow{q}{whatever quotes this \quad \key{u} URL}
+\krow{B}{the nearest block \quad \key{g} the whole buffer}
+\end{keys}
+So \key{c i "} changes what is inside the quotes, \key{d a f} deletes the whole
+function, \key{y i p} yanks the paragraph.
+
+\subsection{Surround}
+\begin{keys}[2.6cm]
+\krow{y s \emph{obj} \emph{char}}{surround an object}
+\krow{d s \emph{char}}{delete the surrounding pair}
+\krow{c s \emph{old} \emph{new}}{replace one pair with another}
+\krow{S \emph{char}}{in visual state, wrap the selection}
+\end{keys}
+So \key{y s i w "} quotes the word, \key{c s " '} swaps the quotes,
+\key{d s (} strips the parentheses.
+
+\subsection{Grow the selection}
+\begin{keys}
+\krow{SPC v}{expand region: word $\to$ string $\to$ block $\to$ function}
+\krow{SPC V}{contract it again}
+\end{keys}
+
+\subsection{Many cursors at once \quad \key{g z}}
+\begin{keys}[2.4cm]
+\krowx{\korr{g z d}{g z D}}{cursor here, jump to next / previous match}
+\krow{g z m}{a cursor on every match in the buffer}
+\krowx{\korr{g z j}{g z k}}{drop a cursor on the line below / above}
+\krow{g z s}{skip this match and move on}
+\krowx{\korr{g z u}{g z q}}{undo the last cursor / all of them}
+\krowx{\korr{I}{A}}{in visual block: insert at the start / end of every line}
+\end{keys}
+Or edit matches in place: \key{M-d} adds the next occurrence of the symbol,
+\key{v R} multiedits every match in the selection.
+
+\subsection{Snippets and folds}
+\begin{keys}
+\krow{TAB}{expand the snippet before point; jump to the next field}
+\krow{SPC i s}{insert a snippet from the list}
+\krow{SPC i y}{paste from the kill ring}
+\krow{SPC i u}{insert a unicode character by name}
+\krowx{\key{z a} \key{z c} \key{z o}}{toggle / close / open the fold at point}
+\krowx{\korr{z m}{z r}}{fold everything / unfold everything}
+\end{keys}
+
+\subsection{Jumping inside the buffer}
+\begin{keys}
+\krowx{\korr{g g}{G}}{top / bottom \quad \key{\{} \key{\}} by paragraph}
+\krow{\% }{jump to the matching bracket}
+\krowx{\korr{C-o}{C-i}}{back / forward through the jump list}
+\krow{\textasciigrave\textasciigrave}{return to where you were before the last jump}
+\krowx{\korr{f}{t}}{jump to a character on this line (\key{;} repeats)}
+\krow{g s SPC}{jump to any visible position by typing it (avy)}
+\krow{g s s}{jump by two characters}
+\end{keys}
+\key{g s} is the easymotion prefix, not surround. Surround is \key{y s},
+\key{c s}, \key{d s} above.
